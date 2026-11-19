@@ -1,0 +1,311 @@
+/* ==========================================================================
+   STYLE.CSS — Mahasiswa / FRS/KRS (Node 4116)
+   Inherits full shell from ../shell.css (Zero Shift Guarantee)
+   ========================================================================== */
+
+/* Shell loaded via HTML link */
+
+/* ==========================================================================
+   4. REGISTRATION PERIOD BANNER — Node 4196
+   ========================================================================== */
+.registration-period-banner {
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reg-banner-info h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.2px;
+}
+
+.reg-banner-info p {
+  font-size: 13px;
+  color: #374151;
+  margin-top: 3px;
+}
+
+.reg-status-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #FFFFFF;
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+}
+
+.reg-status-badge.submitted {
+  background-color: #FEF3C7;
+  color: #92400E;
+  border-color: #FCD34D;
+}
+
+/* ==========================================================================
+   5. TWO COLUMN FRS LAYOUT (748px / 364px) — Node 4201 & 4250
+   ========================================================================== */
+.frs-two-col-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.95fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.frs-courses-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.courses-card-header {
+  margin-bottom: 16px;
+}
+
+.courses-card-header h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.courses-card-header p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.frs-study-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.frs-study-table thead th {
+  background-color: #F8FAFC;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.frs-study-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-dark);
+}
+
+.course-meta-title {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.course-meta-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.class-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: #F1F5F9;
+  border-radius: var(--radius-sm);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.sks-tag {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.btn-remove-course {
+  background: none;
+  border: none;
+  color: #EF4444;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.btn-remove-course:hover {
+  background-color: #FEE2E2;
+}
+
+.btn-add-course-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 16px;
+  padding: 11px;
+  background-color: #F8FAFC;
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-add-course-bar:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-border);
+}
+
+/* RIGHT COLUMN SUMMARY CARD */
+.frs-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.frs-summary-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.frs-summary-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.summary-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 12.5px;
+  border-bottom: 1px dashed #F1F5F9;
+}
+
+.summary-label {
+  color: var(--text-muted);
+}
+
+.summary-val {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.summary-divider {
+  height: 1px;
+  background-color: var(--border-subtle);
+  margin: 16px 0;
+}
+
+.summary-check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.btn-submit-krs {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-submit-krs:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-submit-krs.submitted {
+  background-color: #EF4444;
+}
+.btn-submit-krs.submitted:hover {
+  background-color: #DC2626;
+}
+
+/* GUIDANCE CARD */
+.frs-guidance-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.frs-guidance-card h5 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.frs-guidance-card p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.guidance-dpa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.font-bold { font-weight: 700; }
+.text-primary { color: var(--primary); }
+.text-muted { color: var(--text-muted); }
+
+/* ==========================================================================
+   6. FOOTER META
+   ========================================================================== */
+.workspace-footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #94A3B8;
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIAK UFD — Universitas Fatmawati Digital</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #F8FAFC;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #1D302D;
+    }
+    .router-card {
+      background: #FFFFFF;
+      padding: 36px 44px;
+      border-radius: 16px;
+      border: 1px solid #E8EEEB;
+      box-shadow: 0 16px 40px rgba(35, 119, 87, 0.08);
+      text-align: center;
+      max-width: 440px;
+      width: 90%;
+    }
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3.5px solid #EAF7F1;
+      border-top-color: #237757;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 18px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #237757;
+      margin-bottom: 6px;
+    }
+    p {
+      font-size: 13px;
+      color: #64736C;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Smart Router Gateway -->
+  <div class="router-card">
+    <div class="spinner"></div>
+    <h3>SIAK UFD</h3>
+    <p>Memverifikasi sesi dan mengarahkan ke portal Anda...</p>
+  </div>
+
+  <script>
+    // Smart Router: Mengarahkan pengguna sesuai status login & role
+    (function routeGateway() {
+      try {
+        const raw = sessionStorage.getItem('ACADEMIC_OS_SESSION');
+        if (raw) {
+          const session = JSON.parse(raw);
+          if (session.role === 'mahasiswa') {
+            window.location.replace('pages/mahasiswa/dashboard/index.html');
+            return;
+          } else if (session.role === 'dosen') {
+            window.location.replace('pages/dosen/dashboard/index.html');
+            return;
+          } else if (session.role === 'akademik') {
+            window.location.replace('pages/akademik/dashboard/index.html');
+            return;
+          }
+        }
+      } catch (e) {
+        console.warn('Gagal membaca router session:', e);
+      }
+
+      // Default: Arahkan ke Halaman Login Portal
+      setTimeout(() => {
+        window.location.replace('pages/auth/login/index.html');
+      }, 250);
+    })();
+  </script>
+</body>
+</html>

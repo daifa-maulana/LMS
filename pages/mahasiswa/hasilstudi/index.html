@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Studi — SIAK UFD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shell.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="siak-app-canvas">
+
+    <!-- 1. SIDEBAR (224px) — Identical to Dashboard -->
+    <aside class="siak-sidebar">
+      <div>
+        <!-- Brand Row -->
+        <div class="sidebar-header-box">
+          <a href="../dashboard/index.html" class="siak-brand-row">
+            <div class="siak-wordmark-tile">S</div>
+            <div class="siak-brand-titles">
+              <h1>SIAK UFD</h1>
+            </div>
+          </a>
+          <p class="siak-brand-subtitle">Sistem Informasi Akademik</p>
+
+          <!-- Active Role Widget -->
+          <div class="active-role-widget" onclick="openRoleSwitcher()">
+            <div class="role-info-wrap">
+              <span class="role-title">Mahasiswa</span>
+              <span class="role-sub">Ruang kerja akademik</span>
+            </div>
+            <span class="role-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <div class="sidebar-nav-section">
+          <div class="menu-category-title">MENU UTAMA</div>
+          <ul class="siak-nav-list">
+            <li class="siak-nav-item">
+              <a href="../dashboard/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../biodata/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span>Biodata</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../frs/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </span>
+                <span>FRS/KRS</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../matakuliah/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <span>Mata Kuliah</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../jadwal/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </span>
+                <span>Jadwal Kuliah</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../hasilstudi/index.html" class="active">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </span>
+                <span>Hasil Studi</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../khs/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                </span>
+                <span>KHS</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../transkrip/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg>
+                </span>
+                <span>Transkrip Akademik</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../pengumuman/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                </span>
+                <span>Pengumuman</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer-box">
+        <div class="academic-help-card">
+          <div class="academic-help-card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <h6>Butuh bantuan?</h6>
+          </div>
+          <p>Hubungi layanan akademik</p>
+          <a href="../pengumuman/index.html">
+            <span>Pusat bantuan</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+        <div class="siak-footer-copyright">
+          SIAK UFD © 2025
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. MAIN LAYOUT (Topbar + Workspace) -->
+    <div class="siak-main-layout">
+
+      <!-- TOPBAR (72px) — Identical to Dashboard -->
+      <header class="siak-topbar">
+        <div class="topbar-breadcrumbs">
+          <span class="crumb-muted">Akademik</span>
+          <span class="crumb-muted">/</span>
+          <span class="crumb-active">Hasil Studi</span>
+        </div>
+
+        <div class="topbar-right-controls">
+          <div class="topbar-search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="topbar-search-input" placeholder="Cari matkul, nilai, jadwal...">
+          </div>
+
+          <button class="topbar-btn-icon" title="Notifikasi" onclick="alert('Tidak ada notifikasi baru')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+
+          <div class="topbar-profile-divider"></div>
+
+          <div class="topbar-profile-tile" onclick="location.href='../biodata/index.html'">
+            <div class="topbar-profile-meta">
+              <div class="topbar-profile-name">Alya Rahma Putri</div>
+              <div class="topbar-profile-role">Mahasiswa</div>
+            </div>
+            <span class="topbar-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- WORKSPACE SCROLL -->
+      <main class="siak-workspace-scroll">
+        <div class="workspace-inner-container">
+
+          <div class="workspace-header-row">
+            <div class="workspace-titles">
+              <h2>Hasil Studi</h2>
+              <p>Kelola hasil studi dengan informasi yang terintegrasi</p>
+            </div>
+            <div class="semester-selector-box">
+              <span>Genap 2024/2025</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+
+          <!-- Page Content (Node 4665) -->
+          <div class="page-content-wrapper">
+
+            <!-- Semester Result Summary (Node 4666) -->
+            <div class="semester-result-banner">
+              <div class="result-banner-left">
+                <div class="result-banner-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Semester Selesai & Tervalidasi</span>
+                </div>
+                <h3>Hasil yang patut dibanggakan, Alya.</h3>
+                <p>Genap 2024/2025 · Seluruh nilai telah divalidasi oleh Program Studi</p>
+              </div>
+              <div class="result-banner-metrics">
+                <div class="metric-block">
+                  <span class="metric-label">IPS SEMESTER</span>
+                  <span class="metric-value">3,86</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-block">
+                  <span class="metric-label">SKS LULUS</span>
+                  <span class="metric-value">21</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-block">
+                  <span class="metric-label">IPK KUMULATIF</span>
+                  <span class="metric-value">3,78</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Controls Header (Node 4675 - 4679) -->
+            <div class="table-actions-header">
+              <h4 class="table-title">Rincian hasil studi</h4>
+              <div class="action-buttons-group">
+                <a href="../khs/index.html" class="btn-action-outline">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                  <span>Lihat KHS Resmi</span>
+                </a>
+                <a href="../transkrip/index.html" class="btn-action-outline">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                  <span>Lihat Transkrip Lengkap</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Grade Table Card (Node 4680) -->
+            <div class="grade-table-card">
+              <table class="siak-grade-table">
+                <thead>
+                  <tr>
+                    <th style="width: 100px;">KODE</th>
+                    <th>MATA KULIAH</th>
+                    <th style="width: 80px; text-align: center;">SKS</th>
+                    <th style="width: 100px; text-align: center;">NILAI</th>
+                    <th style="width: 100px; text-align: center;">BOBOT</th>
+                    <th style="width: 100px; text-align: right;">MUTU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-mono text-muted">TI2401</td>
+                    <td class="font-medium text-dark">Analisis & Perancangan Sistem</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center"><span class="badge-grade grade-a">A</span></td>
+                    <td class="text-center font-mono">4,00</td>
+                    <td class="text-right font-mono font-medium">12,00</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-muted">TI2402</td>
+                    <td class="font-medium text-dark">Pemrograman Berorientasi Objek</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center"><span class="badge-grade grade-a">A</span></td>
+                    <td class="text-center font-mono">4,00</td>
+                    <td class="text-right font-mono font-medium">12,00</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-muted">TI2403</td>
+                    <td class="font-medium text-dark">Struktur Data</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center"><span class="badge-grade grade-a">A</span></td>
+                    <td class="text-center font-mono">4,00</td>
+                    <td class="text-right font-mono font-medium">12,00</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-muted">TI2404</td>
+                    <td class="font-medium text-dark">Matematika Diskrit</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center"><span class="badge-grade grade-a">A</span></td>
+                    <td class="text-center font-mono">4,00</td>
+                    <td class="text-right font-mono font-medium">12,00</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-muted">TI2405</td>
+                    <td class="font-medium text-dark">Arsitektur Komputer</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center"><span class="badge-grade grade-a">A</span></td>
+                    <td class="text-center font-mono">4,00</td>
+                    <td class="text-right font-mono font-medium">12,00</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-muted">TI2406</td>
+                    <td class="font-medium text-dark">Metode Penelitian</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center"><span class="badge-grade grade-a">A</span></td>
+                    <td class="text-center font-mono">4,00</td>
+                    <td class="text-right font-mono font-medium">12,00</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-muted">TI2407</td>
+                    <td class="font-medium text-dark">Kewirausahaan</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center"><span class="badge-grade grade-b">B</span></td>
+                    <td class="text-center font-mono">3,00</td>
+                    <td class="text-right font-mono font-medium">9,00</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr class="table-total-row">
+                    <td colspan="2" class="font-semibold text-dark">Total semester</td>
+                    <td class="text-center font-semibold text-primary">21 SKS</td>
+                    <td colspan="2"></td>
+                    <td class="text-right font-semibold font-mono text-primary">81,00</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+            <!-- Grade Legend (Node 4747) -->
+            <div class="grade-legend-card">
+              <div class="legend-header">
+                <span class="legend-title">SKALA NILAI</span>
+              </div>
+              <p class="legend-scale-text">
+                <strong>A</strong> = 4,00 &nbsp;·&nbsp;
+                <strong>A−</strong> = 3,70 &nbsp;·&nbsp;
+                <strong>B+</strong> = 3,30 &nbsp;·&nbsp;
+                <strong>B</strong> = 3,00 &nbsp;·&nbsp;
+                <strong>B−</strong> = 2,70 &nbsp;·&nbsp;
+                <strong>C+</strong> = 2,30 &nbsp;·&nbsp;
+                <strong>C</strong> = 2,00 &nbsp;·&nbsp;
+                <strong>D</strong> = 1,00 &nbsp;·&nbsp;
+                <strong>E</strong> = 0,00
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Bottom Meta (Node 4750, 4751) -->
+          <div class="workspace-footer-meta">
+            <span class="meta-item">Tahun akademik 2025/2026</span>
+            <span class="meta-separator">·</span>
+            <span class="meta-item">Terakhir diperbarui · 18 Agustus 2025, 08.30 WIB</span>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

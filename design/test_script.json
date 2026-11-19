@@ -1,0 +1,21 @@
+[
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "Portal Akademik Mahasiswa",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "DIGITECH UNIVERSITY - Portal Mahasiswa",
+      "x": 40,
+      "y": 40
+    }
+  }
+]
+

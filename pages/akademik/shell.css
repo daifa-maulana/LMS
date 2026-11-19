@@ -1,0 +1,576 @@
+/* ==========================================================================
+   SHELL.CSS — SIAK UFD Global Master Shell (Operator BAK Suite)
+   Single Source of Truth: FigCraft Master Nodes (Universal Emerald Design System)
+   Zero Layout Shift Guarantee | No Horizontal Scroll Guarantee
+   ========================================================================== */
+
+:root {
+  /* Core Emerald Palette */
+  --primary: #237757;
+  --primary-hover: #1B6045;
+  --primary-active: #154B36;
+  --primary-light: #EAF7F1;
+  --primary-border: #A3D8C3;
+
+  /* Neutral System Grays */
+  --bg-page: #F3F5F4;
+  --bg-card: #FFFFFF;
+  --text-dark: #1D2939;
+  --text-muted: #667085;
+  --text-light: #98A2B3;
+  --border-subtle: #E8EEEB;
+  --border-card: #E4EAE6;
+
+  /* Status Colors */
+  --status-success-bg: #EAF7F1;
+  --status-success-text: #237757;
+  --status-warning-bg: #FEF3C7;
+  --status-warning-text: #D97706;
+  --status-info-bg: #EFF8FF;
+  --status-info-text: #175CD3;
+
+  /* Architectural Fixed Dimensions */
+  --sidebar-width: 224px;
+  --topbar-height: 72px;
+  --content-max-width: 1136px;
+
+  /* Radii & Transitions */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   RESET & SYSTEM BASE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
+}
+
+/* Base Canvas */
+.siak-app-canvas,
+.siak-app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-page);
+}
+
+/* ==========================================================================
+   1. UNIFIED SIDEBAR (224px) — Operator BAK
+   ========================================================================== */
+.siak-sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  max-width: var(--sidebar-width);
+  height: 100vh;
+  background-color: #FFFFFF;
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 16px 20px 16px;
+  z-index: 50;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.siak-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.siak-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+
+/* Header & Wordmark */
+.sidebar-header-box {
+  margin-bottom: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.siak-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+
+.siak-wordmark-tile {
+  width: 32px;
+  height: 32px;
+  background-color: var(--primary);
+  border-radius: var(--radius-md);
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(35, 119, 87, 0.2);
+}
+
+.siak-brand-titles h1 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.siak-brand-subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-left: 42px;
+  margin-top: -2px;
+}
+
+/* Active Role Widget */
+.active-role-widget {
+  margin-top: 14px;
+  padding: 8px 12px;
+  background-color: #F8FAF9;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.active-role-widget:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.role-info-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.role-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.role-sub {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.role-chevron {
+  color: var(--text-muted);
+}
+
+/* Nav Menu */
+.sidebar-nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-category-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  padding: 10px 10px 4px 10px;
+}
+
+.siak-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.siak-nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  color: #475467;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.siak-nav-item a:hover {
+  background-color: #F8FAF9;
+  color: var(--text-dark);
+}
+
+.siak-nav-item a.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.nav-active-marker {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3.5px;
+  background-color: var(--primary);
+  border-radius: 0 4px 4px 0;
+}
+
+.siak-nav-item a.active .nav-active-marker {
+  display: block;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Help & Footer */
+.sidebar-help-widget {
+  padding: 12px;
+  background-color: #F8FAF9;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-top: 16px;
+}
+
+.help-icon-wrap {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.help-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.help-desc {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.help-link {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+
+.sidebar-footer-text {
+  font-size: 10px;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   2. MAIN LAYOUT & TOPBAR (72px)
+   ========================================================================== */
+.siak-main-layout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-page);
+  min-width: 0;
+}
+
+.siak-topbar {
+  height: var(--topbar-height);
+  min-height: var(--topbar-height);
+  max-height: var(--topbar-height);
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 40;
+}
+
+.topbar-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.topbar-breadcrumb .sep {
+  color: var(--text-light);
+}
+
+.topbar-breadcrumb .current {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.topbar-right-actions,
+.topbar-right-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar-breadcrumb .crumb-parent {
+  color: var(--text-muted);
+}
+
+.topbar-breadcrumb .crumb-separator {
+  color: var(--text-light);
+  margin: 0 2px;
+}
+
+.topbar-breadcrumb .crumb-current {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.topbar-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #F8FAF9;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  width: 240px;
+  transition: var(--transition);
+}
+
+.topbar-search-box:focus-within {
+  border-color: var(--primary);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(35, 119, 87, 0.12);
+}
+
+.topbar-search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 12px;
+  color: var(--text-dark);
+  width: 100%;
+}
+
+.topbar-search-box input::placeholder {
+  color: var(--text-light);
+}
+
+.topbar-search-box .search-icon {
+  color: var(--text-light);
+}
+
+.topbar-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.topbar-icon-btn:hover {
+  background-color: #F8FAF9;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.topbar-profile-widget,
+.topbar-user-tile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.topbar-profile-widget:hover,
+.topbar-user-tile:hover {
+  background-color: #F8FAF9;
+}
+
+.user-avatar-initials,
+.user-avatar-emerald {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-meta-wrap,
+.user-info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-full-name,
+.user-display-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.user-role-badge,
+.user-role-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   3. SCROLLABLE WORKSPACE (Max 1136px) — Zero Horizontal Scroll Guarantee
+   ========================================================================== */
+.siak-workspace-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  padding: 24px 32px 36px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.siak-workspace-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.siak-workspace-scroll::-webkit-scrollbar-thumb {
+  background: #D0D5DD;
+  border-radius: 6px;
+}
+
+.siak-content-container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Standard Page Title Header Row */
+.workspace-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.page-main-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.page-main-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.semester-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.semester-filter-pill:hover {
+  border-color: var(--primary);
+}
+
+.pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+/* Standard Page Meta Footer */
+.page-meta-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 10px;
+}

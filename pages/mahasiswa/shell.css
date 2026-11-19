@@ -1,0 +1,548 @@
+/* ==========================================================================
+   SHELL.CSS — SIAK UFD (Sistem Informasi Akademik)
+   Global Layout & Shell Stylesheet
+   Single Source of Truth: Derived directly from Mahasiswa Dashboard (Node 3810)
+   Guarantees 100% Zero-Shift consistency across all pages.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #237757;
+  --primary-hover: #1b5e44;
+  --primary-light: #EAF7F1;
+  --primary-btn: #45B98E;
+  --primary-border: #C8EBD9;
+  --bg-page: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --text-dark: #1D302D;
+  --text-muted: #64736C;
+  --text-nav: #586560;
+  --border-subtle: #E8EEEB;
+  --badge-gray-bg: #F0F3F5;
+  --badge-gray-text: #5B6874;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-pill: 9999px;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.siak-app-canvas {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 224px 1fr;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   1. SIDEBAR (224px) — Node 3811
+   ========================================================================== */
+.siak-sidebar {
+  background-color: #FFFFFF;
+  width: 224px;
+  height: 100vh;
+  padding: 24px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--border-subtle);
+  overflow-y: auto;
+  scrollbar-width: none;
+  flex-shrink: 0;
+}
+
+.siak-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-header-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.siak-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding-left: 6px;
+}
+
+.siak-wordmark-tile {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.siak-brand-titles h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.1;
+  letter-spacing: -0.3px;
+}
+
+.siak-brand-subtitle {
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin-top: 10px;
+  padding-left: 6px;
+  margin-bottom: 20px;
+}
+
+/* ACTIVE ROLE WIDGET (Node 3817) */
+.active-role-widget {
+  width: 100%;
+  height: 52px;
+  background-color: var(--bg-page);
+  border-radius: 8px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 24px;
+  transition: var(--transition);
+}
+
+.active-role-widget:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.role-info-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.role-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.role-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.role-chevron {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+/* NAVIGATION LIST */
+.sidebar-nav-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-category-title {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
+  padding-left: 8px;
+}
+
+.siak-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  list-style: none;
+}
+
+.siak-nav-item a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-nav);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.siak-nav-item a:hover {
+  background-color: var(--bg-page);
+  color: var(--primary);
+}
+
+.siak-nav-item a.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.nav-active-marker {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 9px;
+  bottom: 9px;
+  width: 3px;
+  background-color: var(--primary-btn);
+  border-radius: 0 3px 3px 0;
+}
+
+.siak-nav-item a.active .nav-active-marker {
+  display: block;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+.nav-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.8;
+}
+
+/* SIDEBAR FOOTER (Nodes 3860 & 3866) */
+.sidebar-footer-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.academic-help-card {
+  width: 100%;
+  background-color: var(--bg-page);
+  border-radius: var(--radius-md);
+  padding: 12px 12px 14px;
+  border: 1px solid var(--border-subtle);
+}
+
+.academic-help-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  color: var(--text-dark);
+}
+
+.academic-help-card-header svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--primary);
+}
+
+.academic-help-card h6 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.academic-help-card p {
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.academic-help-card a {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.academic-help-card a:hover {
+  text-decoration: underline;
+}
+
+.siak-footer-copyright {
+  font-size: 10px;
+  color: var(--text-muted);
+  padding-left: 6px;
+}
+
+/* ==========================================================================
+   2. MAIN CONTENT AREA (Topbar + Workspace + Footer)
+   ========================================================================== */
+.siak-main-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--bg-page);
+  min-width: 0;
+}
+
+/* TOPBAR (72px) — Node 3867 */
+.siak-topbar {
+  height: 72px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.topbar-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.topbar-breadcrumbs .crumb-muted {
+  color: var(--text-muted);
+}
+
+.topbar-breadcrumbs .crumb-active {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.topbar-right-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar-search-box {
+  background-color: var(--bg-page);
+  border-radius: var(--radius-sm);
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 260px;
+  height: 38px;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.topbar-search-box:focus-within {
+  border-color: var(--border-subtle);
+  background-color: #FFFFFF;
+}
+
+.topbar-search-box svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.topbar-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 12px;
+  font-family: inherit;
+  color: var(--text-dark);
+  width: 100%;
+}
+
+.topbar-btn-icon {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.topbar-btn-icon:hover {
+  background-color: var(--bg-page);
+  color: var(--primary);
+}
+
+.topbar-btn-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.topbar-profile-divider {
+  width: 1px;
+  height: 28px;
+  background-color: var(--border-subtle);
+  margin: 0 2px;
+}
+
+.topbar-profile-tile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.topbar-profile-tile:hover {
+  background-color: var(--bg-page);
+}
+
+.topbar-profile-meta {
+  text-align: left;
+}
+
+.topbar-profile-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.topbar-profile-role {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.topbar-chevron {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+/* ==========================================================================
+   3. MAIN WORKSPACE — Node 3882
+   ========================================================================== */
+.siak-workspace-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 28px 36px 24px;
+  scrollbar-width: thin;
+  scrollbar-color: #E8EEEB transparent;
+}
+
+.siak-workspace-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.siak-workspace-scroll::-webkit-scrollbar-thumb {
+  background-color: #E8EEEB;
+  border-radius: var(--radius-pill);
+}
+
+.workspace-inner-container {
+  max-width: 1136px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.workspace-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.workspace-titles h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.workspace-titles p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.semester-selector-box {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 0 14px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: pointer;
+  min-width: 220px;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.semester-selector-box:hover {
+  border-color: var(--primary);
+}
+
+/* FOOTER STRIP (Nodes 3979 & 3980) */
+.workspace-footer-strip,
+.workspace-footer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0 16px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.workspace-footer-meta .meta-separator {
+  margin: 0 4px;
+}

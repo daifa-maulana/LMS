@@ -1,0 +1,237 @@
+/* ==========================================================================
+   STYLE.CSS — Mahasiswa / Jadwal Kuliah (Node 4429)
+   Inherits full shell from ../shell.css (Zero Shift Guarantee)
+   ========================================================================== */
+
+/* Shell loaded via HTML link */
+
+/* ==========================================================================
+   4. SUBHEADER BAR — Node 4509 - 4511
+   ========================================================================== */
+.jadwal-action-subbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.jadwal-subbar-titles h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.jadwal-subbar-titles p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.btn-action-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.btn-action-outline:hover {
+  background-color: var(--bg-page);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   5. WEEKLY CALENDAR GRID (Node 4513)
+   ========================================================================== */
+.calendar-card-container {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.calendar-header-grid {
+  display: grid;
+  grid-template-columns: 60px repeat(5, 1fr);
+  background-color: #F8FAFC;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cal-head-time {
+  border-right: 1px solid var(--border-subtle);
+}
+
+.cal-head-day {
+  padding: 12px 16px;
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cal-head-day:last-child {
+  border-right: none;
+}
+
+.day-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.day-date {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.cal-head-day.active-day .day-name {
+  color: var(--primary);
+}
+.cal-head-day.active-day .day-date {
+  color: #FFFFFF;
+  background-color: var(--primary);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.calendar-body-layout {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  min-height: 490px;
+}
+
+.time-labels-col {
+  border-right: 1px solid var(--border-subtle);
+  background-color: #FAFCFB;
+  display: flex;
+  flex-direction: column;
+}
+
+.time-label-slot {
+  height: 60px;
+  font-size: 11px;
+  color: #94A3B8;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.calendar-days-columns {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.day-column {
+  position: relative;
+  border-right: 1px solid #F1F5F9;
+  min-height: 480px;
+}
+.day-column:last-child {
+  border-right: none;
+}
+
+.slot-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #F1F5F9;
+}
+
+/* EVENT BLOCKS (Mint Background with 3px Emerald Left Accent) */
+.event-block {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(35, 119, 87, 0.08);
+  transition: var(--transition);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.event-block:hover {
+  box-shadow: 0 4px 10px rgba(35, 119, 87, 0.15);
+  transform: translateY(-1px);
+}
+
+.event-accent-bar {
+  width: 3.5px;
+  background-color: var(--primary);
+  flex-shrink: 0;
+}
+
+.event-content {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.event-time {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.event-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-room {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.event-type {
+  font-size: 10px;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* ==========================================================================
+   6. FOOTER META
+   ========================================================================== */
+.workspace-footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #94A3B8;
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+

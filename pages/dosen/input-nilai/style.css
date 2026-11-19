@@ -1,0 +1,414 @@
+/* ==========================================================================
+   STYLE.CSS — Dosen / Input Nilai (Node 3089)
+   Inherits full shell from ../shell.css (Zero Shift Guarantee, No Horizontal Scroll)
+   ========================================================================== */
+
+/* Shell loaded via HTML link */
+
+/* ==========================================================================
+   1. ACTION BAR (Node 3089)
+   ========================================================================== */
+.input-nilai-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.course-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+
+.filter-select {
+  height: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0 36px 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  min-width: 260px;
+  transition: var(--transition);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.filter-select:hover {
+  border-color: var(--primary);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(35, 119, 87, 0.12);
+}
+
+.action-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-action-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.btn-action-outline:hover {
+  background-color: var(--bg-page);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-action-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 0 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 1px 3px rgba(35, 119, 87, 0.2);
+  text-decoration: none;
+}
+
+.btn-action-primary:hover {
+  background-color: #1B6045;
+  border-color: #1B6045;
+}
+
+/* ==========================================================================
+   2. GRADING RULES BANNER (Node 3089)
+   ========================================================================== */
+.grading-rules-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.rules-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rules-badge {
+  padding: 4px 10px;
+  background-color: #EAF7F1;
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.rules-text {
+  font-size: 13px;
+  color: #475467;
+  font-weight: 500;
+}
+
+.rules-formula-note {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   3. DATA TABLE CARD CONTAINER (Node 3089)
+   ========================================================================== */
+.table-card-container {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  width: 100%;
+}
+
+.table-responsive-box {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.siak-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.siak-data-table th {
+  background-color: #FAFCFB;
+  padding: 12px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #667085;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.siak-data-table th.th-center,
+.siak-data-table td.td-center {
+  text-align: center;
+}
+
+.siak-data-table td {
+  padding: 12px 18px;
+  font-size: 13px;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.siak-data-table tbody tr {
+  transition: var(--transition);
+}
+
+.siak-data-table tbody tr:hover {
+  background-color: #F8FAF9;
+}
+
+.siak-data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Mahasiswa Column */
+.student-profile-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #EAF7F1;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.student-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.student-name {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.student-nim {
+  font-size: 11.5px;
+  color: #667085;
+}
+
+/* Grade Input Fields */
+.grade-input-field {
+  width: 72px;
+  height: 34px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.grade-input-field:hover {
+  border-color: var(--primary);
+}
+
+.grade-input-field:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(35, 119, 87, 0.12);
+}
+
+.final-grade-cell {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #1D2939;
+}
+
+/* Grade Letter Badges */
+.badge-grade-a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  padding: 4px 10px;
+  background-color: #EAF7F1;
+  color: var(--primary);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge-grade-b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  padding: 4px 10px;
+  background-color: #EBF5FF;
+  color: #175CD3;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   4. PROGRESS NOTICE BANNER (Node 3089)
+   ========================================================================== */
+.progress-notice-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background-color: #EAF7F1;
+  border: 1px solid rgba(35, 119, 87, 0.2);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  color: var(--text-dark);
+}
+
+.notice-icon-wrap {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notice-bold {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   5. TABLE PAGINATION FOOTER (Node 3089)
+   ========================================================================== */
+.table-pagination-footer {
+  padding: 14px 24px;
+  background-color: #FAFCFB;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-page-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-page-nav:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-page-nav:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-page-number {
+  min-width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-page-number:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-page-number.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+}

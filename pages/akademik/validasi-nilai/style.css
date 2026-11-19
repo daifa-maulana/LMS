@@ -1,0 +1,360 @@
+/* SIAK UFD - Operator BAK Suite: Validasi Nilai (FigCraft Exact Alignment) */
+/* Shell imported via HTML link */
+
+/* Workspace Header Row */
+.workspace-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-main-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.page-main-subtitle {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.semester-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  transition: var(--transition);
+}
+
+.semester-filter-pill:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.pill-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+/* 4 STAT METRICS GRID */
+.stats-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.stat-metric-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04);
+}
+
+.stat-metric-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.stat-metric-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.stat-metric-sub {
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* TOOLBAR ROW */
+.table-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.table-toolbar-title h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.table-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search-input-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  min-width: 240px;
+  transition: var(--transition);
+}
+
+.search-input-box:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(35, 119, 87, 0.15);
+}
+
+.search-input-box input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: var(--text-dark);
+  width: 100%;
+  background: transparent;
+}
+
+.search-input-box input::placeholder {
+  color: var(--text-light);
+}
+
+.filter-select {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-dark);
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition);
+}
+
+.filter-select:focus {
+  border-color: var(--primary);
+}
+
+.btn-add-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  transition: var(--transition);
+}
+
+.btn-add-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* TABLE CARD CONTAINER */
+.table-card-container {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04);
+  margin-bottom: 24px;
+}
+
+.table-responsive-box {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.siak-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.siak-data-table th {
+  background-color: #F8FAF9;
+  padding: 12px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #475467;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.siak-data-table td {
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.siak-data-table tbody tr:hover {
+  background-color: #FAFCFB;
+}
+
+/* Course info cell */
+.course-name-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-title {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.course-code {
+  font-size: 11.5px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.lecturer-name-cell {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.class-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background-color: #F2F4F7;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.count-cell {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Status badges */
+.badge-status-menunggu {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #FEF6EE;
+  color: #B54708;
+  border: 1px solid #FECDCA;
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.badge-status-tervalidasi {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #ECFDF3;
+  color: #027A48;
+  border: 1px solid #A6F4C5;
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.link-action-review {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.link-action-review:hover {
+  text-decoration: underline;
+}
+
+/* PAGINATION FOOTER */
+.table-pagination-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+  background-color: #FFFFFF;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-page-nav, .btn-page-number {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.btn-page-number.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.btn-page-nav:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-dots {
+  color: var(--text-light);
+  padding: 0 4px;
+}
+
+.page-meta-footer-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--text-light);
+  padding-bottom: 24px;
+}

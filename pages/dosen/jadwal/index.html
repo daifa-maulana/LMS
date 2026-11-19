@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Mengajar — Dosen SIAK UFD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shell.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="siak-app-canvas">
+
+    <!-- 1. SIDEBAR (224px) — Dosen -->
+    <aside class="siak-sidebar">
+      <div>
+        <!-- Brand Row -->
+        <div class="sidebar-header-box">
+          <a href="../dashboard/index.html" class="siak-brand-row">
+            <div class="siak-wordmark-tile">S</div>
+            <div class="siak-brand-titles">
+              <h1>SIAK UFD</h1>
+            </div>
+          </a>
+          <p class="siak-brand-subtitle">Sistem Informasi Akademik</p>
+
+          <!-- Active Role Widget -->
+          <div class="active-role-widget" onclick="openRoleSwitcher()">
+            <div class="role-info-wrap">
+              <span class="role-title">Dosen</span>
+              <span class="role-sub">Ruang kerja akademik</span>
+            </div>
+            <span class="role-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <div class="sidebar-nav-section">
+          <div class="menu-category-title">MENU UTAMA</div>
+          <ul class="siak-nav-list">
+            <li class="siak-nav-item">
+              <a href="../dashboard/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../matakuliah/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <span>Mata Kuliah Saya</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="index.html" class="active">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </span>
+                <span>Jadwal Mengajar</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../mahasiswa/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span>Data Mahasiswa</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../input-nilai/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </span>
+                <span>Input Nilai</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../presensi/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </span>
+                <span>Input Presensi</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../validasi-nilai/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </span>
+                <span>Validasi Nilai</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../riwayat-penilaian/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </span>
+                <span>Riwayat Penilaian</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Meta & Help Section -->
+      <div>
+        <div class="sidebar-help-widget">
+          <div class="help-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="help-title">Butuh bantuan?</div>
+          <p class="help-desc">Hubungi layanan akademik</p>
+          <a href="#" class="help-link"><span>Pusat bantuan</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        </div>
+        <div class="sidebar-footer-text">
+          SIAK UFD © 2025
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. MAIN APP CONTAINER -->
+    <div class="siak-main-layout">
+
+      <!-- TOPBAR (72px) -->
+      <header class="siak-topbar">
+        <div class="topbar-breadcrumb">
+          <span>Akademik</span>
+          <span class="sep">/</span>
+          <span class="current">Jadwal Mengajar</span>
+        </div>
+
+        <div class="topbar-right-actions">
+          <div class="topbar-search-box">
+            <span class="search-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" placeholder="Cari di SIAK UFD...">
+          </div>
+
+          <button class="topbar-icon-btn" title="Notifikasi">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+
+          <div class="topbar-profile-widget" onclick="openRoleSwitcher()">
+            <div class="user-avatar-initials">AP</div>
+            <div class="user-meta-wrap">
+              <span class="user-full-name">Dr. Aditya Pratama</span>
+              <span class="user-role-badge">Dosen</span>
+            </div>
+            <span class="user-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- SCROLLABLE WORKSPACE (Max 1136px) -->
+      <main class="siak-workspace-scroll">
+        <div class="siak-content-container">
+
+          <!-- PAGE TITLE & SEMESTER ROW -->
+          <div class="workspace-header-row">
+            <div>
+              <h2 class="page-main-title">Jadwal Mengajar</h2>
+              <p class="page-main-subtitle">Kelola jadwal mengajar dengan informasi yang terintegrasi.</p>
+            </div>
+            <div class="semester-filter-pill">
+              <span class="pill-dot"></span>
+              <span>Ganjil 2025/2026</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+
+          <!-- SUBHEADER BAR: Dates & Controls -->
+          <div class="jadwal-action-subbar">
+            <div class="jadwal-subbar-titles">
+              <h3>18–22 Agustus 2025</h3>
+              <p>Minggu ke-3 · Semester ganjil</p>
+            </div>
+            <div class="jadwal-date-controls">
+              <button type="button" class="btn-action-outline">Hari ini</button>
+              <button type="button" class="btn-action-outline">‹ &nbsp; Minggu ini &nbsp; ›</button>
+            </div>
+          </div>
+
+          <!-- WEEKLY TEACHING CALENDAR (Node 2788) -->
+          <div class="calendar-card-container">
+            <!-- Header Grid: Days -->
+            <div class="calendar-header-grid">
+              <div class="cal-head-time"></div>
+              <div class="cal-head-day active-day">
+                <span class="day-name">Senin</span>
+                <span class="day-date">18</span>
+              </div>
+              <div class="cal-head-day">
+                <span class="day-name">Selasa</span>
+                <span class="day-date">19</span>
+              </div>
+              <div class="cal-head-day">
+                <span class="day-name">Rabu</span>
+                <span class="day-date">20</span>
+              </div>
+              <div class="cal-head-day">
+                <span class="day-name">Kamis</span>
+                <span class="day-date">21</span>
+              </div>
+              <div class="cal-head-day">
+                <span class="day-name">Jumat</span>
+                <span class="day-date">22</span>
+              </div>
+            </div>
+
+            <!-- Body Layout: Time slots + Event Blocks -->
+            <div class="calendar-body-layout">
+              <!-- Time labels column: 07.00 - 14.00 (8 slots of 70px) -->
+              <div class="time-labels-col">
+                <div class="time-label-slot">07.00</div>
+                <div class="time-label-slot">08.00</div>
+                <div class="time-label-slot">09.00</div>
+                <div class="time-label-slot">10.00</div>
+                <div class="time-label-slot">11.00</div>
+                <div class="time-label-slot">12.00</div>
+                <div class="time-label-slot">13.00</div>
+                <div class="time-label-slot">14.00</div>
+              </div>
+
+              <!-- Days columns -->
+              <div class="calendar-days-columns">
+                <!-- Senin 18 -->
+                <div class="day-column">
+                  <div class="slot-line" style="top: 70px;"></div>
+                  <div class="slot-line" style="top: 140px;"></div>
+                  <div class="slot-line" style="top: 210px;"></div>
+                  <div class="slot-line" style="top: 280px;"></div>
+                  <div class="slot-line" style="top: 350px;"></div>
+                  <div class="slot-line" style="top: 420px;"></div>
+                  <div class="slot-line" style="top: 490px;"></div>
+
+                  <!-- Event 1: Basis Data (08.00 - 09.40) -->
+                  <div class="event-block" style="top: 72px; height: 114px;" onclick="location.href='../matakuliah/index.html'">
+                    <div>
+                      <div class="event-time">08.00–09.40</div>
+                      <div class="event-title">Basis Data</div>
+                      <div class="event-room">TI-3A · Lab 02</div>
+                    </div>
+                    <a href="../matakuliah/index.html" class="event-action-link" onclick="event.stopPropagation()">Lihat kelas →</a>
+                  </div>
+
+                  <!-- Event 2: Rekayasa PL (13.00 - 14.40) -->
+                  <div class="event-block" style="top: 422px; height: 114px;" onclick="location.href='../matakuliah/index.html'">
+                    <div>
+                      <div class="event-time">13.00–14.40</div>
+                      <div class="event-title">Rekayasa PL</div>
+                      <div class="event-room">TI-5A · R. 302</div>
+                    </div>
+                    <a href="../matakuliah/index.html" class="event-action-link" onclick="event.stopPropagation()">Lihat kelas →</a>
+                  </div>
+                </div>
+
+                <!-- Selasa 19 -->
+                <div class="day-column">
+                  <div class="slot-line" style="top: 70px;"></div>
+                  <div class="slot-line" style="top: 140px;"></div>
+                  <div class="slot-line" style="top: 210px;"></div>
+                  <div class="slot-line" style="top: 280px;"></div>
+                  <div class="slot-line" style="top: 350px;"></div>
+                  <div class="slot-line" style="top: 420px;"></div>
+                  <div class="slot-line" style="top: 490px;"></div>
+
+                  <!-- Event 1: Algoritma (08.00 - 09.40) -->
+                  <div class="event-block" style="top: 72px; height: 114px;" onclick="location.href='../matakuliah/index.html'">
+                    <div>
+                      <div class="event-time">08.00–09.40</div>
+                      <div class="event-title">Algoritma</div>
+                      <div class="event-room">TI-1A · Lab 01</div>
+                    </div>
+                    <a href="../matakuliah/index.html" class="event-action-link" onclick="event.stopPropagation()">Lihat kelas →</a>
+                  </div>
+                </div>
+
+                <!-- Rabu 20 -->
+                <div class="day-column">
+                  <div class="slot-line" style="top: 70px;"></div>
+                  <div class="slot-line" style="top: 140px;"></div>
+                  <div class="slot-line" style="top: 210px;"></div>
+                  <div class="slot-line" style="top: 280px;"></div>
+                  <div class="slot-line" style="top: 350px;"></div>
+                  <div class="slot-line" style="top: 420px;"></div>
+                  <div class="slot-line" style="top: 490px;"></div>
+
+                  <!-- Event 1: Pemrograman OOP (10.00 - 11.40) -->
+                  <div class="event-block" style="top: 212px; height: 114px;" onclick="location.href='../matakuliah/index.html'">
+                    <div>
+                      <div class="event-time">10.00–11.40</div>
+                      <div class="event-title">Pemrograman OOP</div>
+                      <div class="event-room">TI-3B · Lab 02</div>
+                    </div>
+                    <a href="../matakuliah/index.html" class="event-action-link" onclick="event.stopPropagation()">Lihat kelas →</a>
+                  </div>
+                </div>
+
+                <!-- Kamis 21 -->
+                <div class="day-column">
+                  <div class="slot-line" style="top: 70px;"></div>
+                  <div class="slot-line" style="top: 140px;"></div>
+                  <div class="slot-line" style="top: 210px;"></div>
+                  <div class="slot-line" style="top: 280px;"></div>
+                  <div class="slot-line" style="top: 350px;"></div>
+                  <div class="slot-line" style="top: 420px;"></div>
+                  <div class="slot-line" style="top: 490px;"></div>
+                </div>
+
+                <!-- Jumat 22 -->
+                <div class="day-column">
+                  <div class="slot-line" style="top: 70px;"></div>
+                  <div class="slot-line" style="top: 140px;"></div>
+                  <div class="slot-line" style="top: 210px;"></div>
+                  <div class="slot-line" style="top: 280px;"></div>
+                  <div class="slot-line" style="top: 350px;"></div>
+                  <div class="slot-line" style="top: 420px;"></div>
+                  <div class="slot-line" style="top: 490px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CALENDAR LEGEND & INFO STRIP -->
+          <div class="calendar-legend-bar">
+            <div class="legend-items">
+              <span class="legend-item"><span class="legend-dot"></span> Kelas tatap muka</span>
+            </div>
+            <div>Jadwal mengikuti zona waktu WIB.</div>
+          </div>
+
+          <!-- METADATA FOOTER ROW -->
+          <div class="page-meta-footer-row">
+            <div>Tahun akademik 2025/2026</div>
+            <div>Terakhir diperbarui · 18 Agustus 2025, 08.30 WIB</div>
+          </div>
+
+        </div>
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

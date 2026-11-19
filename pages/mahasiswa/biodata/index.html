@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodata Mahasiswa — SIAK UFD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shell.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="siak-app-canvas">
+
+    <!-- 1. SIDEBAR (224px) — Identical to Dashboard -->
+    <aside class="siak-sidebar">
+      <div>
+        <!-- Brand Row -->
+        <div class="sidebar-header-box">
+          <a href="../dashboard/index.html" class="siak-brand-row">
+            <div class="siak-wordmark-tile">S</div>
+            <div class="siak-brand-titles">
+              <h1>SIAK UFD</h1>
+            </div>
+          </a>
+          <p class="siak-brand-subtitle">Sistem Informasi Akademik</p>
+
+          <!-- Active Role Widget -->
+          <div class="active-role-widget" onclick="openRoleSwitcher()">
+            <div class="role-info-wrap">
+              <span class="role-title">Mahasiswa</span>
+              <span class="role-sub">Ruang kerja akademik</span>
+            </div>
+            <span class="role-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <div class="sidebar-nav-section">
+          <div class="menu-category-title">MENU UTAMA</div>
+          <ul class="siak-nav-list">
+            <li class="siak-nav-item">
+              <a href="../dashboard/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="index.html" class="active">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span>Biodata</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../frs/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </span>
+                <span>FRS/KRS</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../matakuliah/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <span>Mata Kuliah</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../jadwal/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </span>
+                <span>Jadwal Kuliah</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../hasilstudi/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </span>
+                <span>Hasil Studi</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../khs/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                </span>
+                <span>KHS</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../transkrip/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg>
+                </span>
+                <span>Transkrip Akademik</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../pengumuman/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                </span>
+                <span>Pengumuman</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer-box">
+        <div class="academic-help-card">
+          <div class="academic-help-card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <h6>Butuh bantuan?</h6>
+          </div>
+          <p>Hubungi layanan akademik</p>
+          <a href="../pengumuman/index.html">
+            <span>Pusat bantuan</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+        <div class="siak-footer-copyright">
+          SIAK UFD © 2025
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. MAIN LAYOUT (Topbar + Workspace) -->
+    <div class="siak-main-layout">
+
+      <!-- TOPBAR (72px) — Identical to Dashboard -->
+      <header class="siak-topbar">
+        <div class="topbar-breadcrumbs">
+          <span class="crumb-muted">Akademik</span>
+          <span class="crumb-muted">/</span>
+          <span class="crumb-active">Biodata</span>
+        </div>
+
+        <div class="topbar-right-controls">
+          <div class="topbar-search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="topbar-search-input" placeholder="Cari matkul, nilai, jadwal...">
+          </div>
+
+          <button class="topbar-btn-icon" title="Notifikasi" onclick="alert('Tidak ada notifikasi baru')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+
+          <div class="topbar-profile-divider"></div>
+
+          <div class="topbar-profile-tile" onclick="location.href='index.html'">
+            <div class="topbar-profile-meta">
+              <div class="topbar-profile-name">Alya Rahma Putri</div>
+              <div class="topbar-profile-role">Mahasiswa</div>
+            </div>
+            <span class="topbar-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 3. MAIN WORKSPACE SCROLL -->
+      <main class="siak-workspace-scroll">
+        <div class="workspace-inner-container">
+
+          <!-- Workspace Header -->
+          <div class="workspace-header-row">
+            <div class="workspace-titles">
+              <h2>Biodata</h2>
+              <p>Kelola biodata dengan informasi yang terintegrasi</p>
+            </div>
+            <div class="semester-selector-box">
+              <span>Ganjil 2025/2026</span>
+              <span class="topbar-chevron">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Page Content (Node 4060) -->
+          <div class="page-content-wrapper">
+
+            <!-- Student Identity Banner (Node 4061) -->
+            <div class="student-identity-banner">
+              <div class="identity-avatar">AR</div>
+              <div class="identity-info">
+                <div class="identity-name-row">
+                  <h3>Alya Rahma Putri</h3>
+                  <span class="badge-status-active">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Mahasiswa aktif
+                  </span>
+                </div>
+                <p class="identity-sub">2023010042 · S1 Teknik Informatika · Angkatan 2023</p>
+                <span class="identity-meta-pill">Semester 5 · Kelas reguler</span>
+              </div>
+            </div>
+
+            <!-- Two Column Layout: 748px / 364px -->
+            <div class="biodata-two-col-layout">
+              
+              <!-- Left Column: Personal Information (Node 4067) -->
+              <div class="biodata-card-box personal-info-card">
+                <div class="card-header">
+                  <h4>Informasi pribadi</h4>
+                  <p>Data identitas mengacu pada dokumen resmi mahasiswa.</p>
+                </div>
+
+                <div class="fields-grid">
+                  <div class="field-item full-width">
+                    <label class="field-label">Nama lengkap</label>
+                    <div class="field-value-box">Alya Rahma Putri</div>
+                  </div>
+
+                  <div class="field-item">
+                    <label class="field-label">Nomor induk mahasiswa</label>
+                    <div class="field-value-box font-mono">2023010042</div>
+                  </div>
+
+                  <div class="field-item">
+                    <label class="field-label">Program studi</label>
+                    <div class="field-value-box">S1 Teknik Informatika</div>
+                  </div>
+
+                  <div class="field-item">
+                    <label class="field-label">Tempat lahir</label>
+                    <div class="field-value-box">Bandung</div>
+                  </div>
+
+                  <div class="field-item">
+                    <label class="field-label">Tanggal lahir</label>
+                    <div class="field-value-box">12 Mei 2005</div>
+                  </div>
+
+                  <div class="field-item">
+                    <label class="field-label">Jenis kelamin</label>
+                    <div class="field-value-box">Perempuan</div>
+                  </div>
+
+                  <div class="field-item">
+                    <label class="field-label">Agama</label>
+                    <div class="field-value-box">Islam</div>
+                  </div>
+
+                  <div class="field-item full-width">
+                    <label class="field-label">Alamat tempat tinggal</label>
+                    <div class="field-value-box">Jl. Melati No. 18, Bandung, Jawa Barat</div>
+                  </div>
+                </div>
+
+                <div class="card-hint-notice">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <span>Perubahan nama dan NIM diajukan melalui BAK.</span>
+                </div>
+              </div>
+
+              <!-- Right Column: Contact Details (Node 4095) + Advisor (Node 4108) -->
+              <div class="biodata-side-col">
+                
+                <!-- Contact Details Card (Node 4095) -->
+                <div class="biodata-card-box contact-card">
+                  <div class="card-header">
+                    <h4>Informasi kontak</h4>
+                  </div>
+
+                  <div class="contact-fields-list">
+                    <div class="field-item">
+                      <label class="field-label">Email mahasiswa</label>
+                      <div class="field-value-box text-primary font-mono">alya.rahma@mahasiswa.ufd.ac.id</div>
+                    </div>
+
+                    <div class="field-item">
+                      <label class="field-label">Email pribadi</label>
+                      <div class="field-value-box font-mono">alya.rahma@example.com</div>
+                    </div>
+
+                    <div class="field-item">
+                      <label class="field-label">Nomor telepon</label>
+                      <div class="field-value-box font-mono">0812-3456-7890</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Academic Advisor Card (Node 4108) -->
+                <div class="biodata-card-box advisor-card">
+                  <div class="card-header">
+                    <h4>Dosen pembimbing akademik</h4>
+                  </div>
+
+                  <div class="advisor-info-tile">
+                    <div class="advisor-avatar">ML</div>
+                    <div class="advisor-meta">
+                      <h5>Dr. Maya Lestari</h5>
+                      <p>NIDN 0412088501 · S1 Teknik Informatika</p>
+                    </div>
+                  </div>
+
+                  <div class="advisor-schedule-hint">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>Konsultasi: Selasa, 10.00–12.00 WIB (R. 302)</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Footer Strip -->
+          <div class="workspace-footer-strip">
+            <span>Tahun akademik 2025/2026</span>
+            <span>Terakhir diperbarui · 18 Agustus 2025, 08.30 WIB</span>
+          </div>
+
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

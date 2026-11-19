@@ -1,0 +1,329 @@
+[
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "1. Beranda - Portal Akademik Mahasiswa",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 960
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Header Topbar",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 56
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "🎓 DIGITECH UNIVERSITY",
+      "x": 30,
+      "y": 18
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "[STUDENT]  2024/2025 Genap",
+      "x": 260,
+      "y": 20
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Da'ffa Maulana (20230801045)",
+      "x": 1200,
+      "y": 18
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Menu Bar",
+      "x": 0,
+      "y": 56,
+      "width": 1440,
+      "height": 42
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Beranda    Akun ▾    Civitas ▾    Aktivitas ▾    Nilai ▾    Kegiatan Akhir ▾    Keuangan ▾",
+      "x": 30,
+      "y": 68
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Selamat Datang, Da'ffa Maulana",
+      "x": 50,
+      "y": 130
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Mulai aktivitas perkuliahanmu dari sini.",
+      "x": 50,
+      "y": 165
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Akses cepat: Pilih layanan yang sering kamu akses",
+      "x": 50,
+      "y": 210
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Card Bimbingan",
+      "x": 50,
+      "y": 240,
+      "width": 250,
+      "height": 110
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "🖥️ Bimbingan\nKonsultasi akademik\n\nBuka layanan →",
+      "x": 65,
+      "y": 255
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Card Jadwal",
+      "x": 320,
+      "y": 240,
+      "width": 250,
+      "height": 110
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "📅 Jadwal\nJadwal perkuliahan\n\nBuka layanan →",
+      "x": 335,
+      "y": 255
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Card E-Learning",
+      "x": 590,
+      "y": 240,
+      "width": 250,
+      "height": 110
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "📖 E-Learning\nMateri & ruang belajar\n\nBuka layanan →",
+      "x": 605,
+      "y": 255
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Card FRS Online",
+      "x": 860,
+      "y": 240,
+      "width": 250,
+      "height": 110
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "📝 FRS Online\nRencana studi Anda\n\nBuka layanan →",
+      "x": 875,
+      "y": 255
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Card Student Hub",
+      "x": 1130,
+      "y": 240,
+      "width": 250,
+      "height": 110
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "🎓 Student Hub\nLayanan mahasiswa\n\nBuka layanan →",
+      "x": 1145,
+      "y": 255
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Panel Perkembangan IPK",
+      "x": 50,
+      "y": 380,
+      "width": 880,
+      "height": 380
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "📈 Perkembangan IPK",
+      "x": 70,
+      "y": 400
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "4.0 ---------------------------------------------------- [Sem 4: 3.86]\n3.0 ------------------------ [Sem 2: 3.80] -- [Sem 3: 3.82]\n2.0 ---------- [Sem 1: 3.75]\n1.0 ----------------------------------------------------\n0.0 ----------------------------------------------------\n      Semester 1           Semester 2           Semester 3           Semester 4",
+      "x": 80,
+      "y": 460
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Panel Pengumuman",
+      "x": 960,
+      "y": 380,
+      "width": 420,
+      "height": 380
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "📢 Pengumuman",
+      "x": 980,
+      "y": 400
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "📄 Tidak Ada Pengumuman Saat Ini\n\n(Semua informasi perkuliahan dan KRS aktif telah disinkronkan)",
+      "x": 1000,
+      "y": 520
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "2. Halaman FRS Online & KHS",
+      "x": 1540,
+      "y": 0,
+      "width": 1440,
+      "height": 960
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Pengisian Formulir Rencana Studi (FRS / KRS)",
+      "x": 1590,
+      "y": 40
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Strip Mahasiswa",
+      "x": 1590,
+      "y": 80,
+      "width": 1340,
+      "height": 70
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "NIM: 20230801045   |   Nama: Da'ffa Maulana   |   Prodi: Teknik Informatika (S-1)   |   Total SKS: 16 SKS",
+      "x": 1620,
+      "y": 105
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Tabel FRS",
+      "x": 1590,
+      "y": 170,
+      "width": 1340,
+      "height": 320
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "No | Kode  | Mata Kuliah & Dosen Pengampu                | SKS | Jadwal & Ruang          | Status\n-----------------------------------------------------------------------------------------------------------------\n1  | IF201 | Sistem Basis Data Lanjut (Dr. Hendra G.)     | 3   | Senin, 08:00 - 10:30    | Disetujui PA\n2  | IF202 | Pemrograman Web Fullstack (Nurul Aini, M.T.) | 3   | Rabu, 10:30 - 13:00     | Disetujui PA\n3  | IF203 | Rekayasa Perangkat Lunak (Bambang S., M.T.I) | 3   | Selasa, 13:00 - 15:30   | Disetujui PA\n4  | IF204 | Jaringan Komputer & Keamanan (Achmad P.)     | 4   | Kamis, 08:00 - 11:20    | Disetujui PA\n5  | IF205 | Kecerdasan Buatan & ML (Dr. Hendra G.)       | 3   | Jumat, 08:30 - 11:00    | Disetujui PA",
+      "x": 1610,
+      "y": 200
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kartu Hasil Studi (KHS) Semester Genap",
+      "x": 1590,
+      "y": 520
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Summary IPS",
+      "x": 1590,
+      "y": 560,
+      "width": 420,
+      "height": 90
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Total SKS: 16 SKS\nIndeks Prestasi Semester (IPS): 3.88",
+      "x": 1620,
+      "y": 585
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Summary IPK",
+      "x": 2040,
+      "y": 560,
+      "width": 420,
+      "height": 90
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Indeks Prestasi Kumulatif (IPK): 3.86\nStatus: Sangat Memuaskan (Cumlaude)",
+      "x": 2070,
+      "y": 585
+    }
+  }
+]
+

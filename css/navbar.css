@@ -1,0 +1,147 @@
+/* ==========================================================================
+   NAVBAR.CSS — Left Navigation Sidebar
+   Sesuai Tampilan Left Sidebar Learnthru pada Gambar Referensi
+   ========================================================================== */
+
+.sidebar-left {
+  background-color: var(--bg-sidebar);
+  border-radius: 0;
+  height: 100vh;
+  padding: 30px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid rgba(226, 232, 240, 0.8);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sidebar-left::-webkit-scrollbar {
+  display: none;
+}
+
+/* Brand Logo */
+.brand-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  margin-bottom: 38px;
+  text-decoration: none;
+}
+
+.brand-icon-mark {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-icon-mark .shape-blue {
+  width: 14px;
+  height: 24px;
+  background-color: #2C467A;
+  border-radius: 6px 0 0 6px;
+}
+
+.brand-icon-mark .shape-coral {
+  width: 14px;
+  height: 12px;
+  background-color: #F87171;
+  border-radius: 0 6px 6px 0;
+  margin-top: -6px;
+}
+
+.brand-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1E293B;
+  letter-spacing: -0.3px;
+}
+
+/* Nav Menu */
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+
+.nav-link-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.nav-link-item .nav-icon {
+  font-size: 15px;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.nav-link-item:hover {
+  background-color: #F8FAFC;
+  color: var(--primary);
+}
+
+.nav-link-item:hover .nav-icon {
+  color: var(--primary);
+}
+
+.nav-link-item.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.nav-link-item.active .nav-icon {
+  color: var(--primary);
+}
+
+/* Need Help Bottom Card */
+.help-bottom-card {
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.help-badge-circle {
+  width: 44px;
+  height: 44px;
+  background: #EFF6FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.help-bottom-card h5 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.help-bottom-card p {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.35;
+}

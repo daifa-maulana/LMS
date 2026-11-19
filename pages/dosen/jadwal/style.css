@@ -1,0 +1,299 @@
+/* ==========================================================================
+   STYLE.CSS — Dosen / Jadwal Mengajar (Node 2788)
+   Inherits full shell from ../shell.css (Zero Shift Guarantee, No Horizontal Scroll)
+   ========================================================================== */
+
+/* Shell loaded via HTML link */
+
+/* ==========================================================================
+   1. SUBHEADER BAR & CONTROLS (Node 2788)
+   ========================================================================== */
+.jadwal-action-subbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.jadwal-subbar-titles h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.jadwal-subbar-titles p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+.jadwal-date-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-action-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.btn-action-outline:hover {
+  background-color: var(--bg-page);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   2. WEEKLY TEACHING CALENDAR CONTAINER (Node 2788)
+   ========================================================================== */
+.calendar-card-container {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.calendar-header-grid {
+  display: grid;
+  grid-template-columns: 70px repeat(5, minmax(0, 1fr));
+  background-color: #FAFCFB;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cal-head-time {
+  border-right: 1px solid var(--border-subtle);
+}
+
+.cal-head-day {
+  padding: 14px 16px;
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.cal-head-day:last-child {
+  border-right: none;
+}
+
+.day-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.day-date {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.cal-head-day.active-day .day-name {
+  color: var(--primary);
+}
+
+.cal-head-day.active-day .day-date {
+  color: #FFFFFF;
+  background-color: var(--primary);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   3. CALENDAR BODY & TIME SLOTS (Node 2788)
+   ========================================================================== */
+.calendar-body-layout {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  min-height: 560px;
+  position: relative;
+}
+
+.time-labels-col {
+  border-right: 1px solid var(--border-subtle);
+  background-color: #FAFCFB;
+  display: flex;
+  flex-direction: column;
+}
+
+.time-label-slot {
+  height: 70px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #667085;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  box-sizing: border-box;
+}
+
+.time-label-slot:last-child {
+  border-bottom: none;
+}
+
+.calendar-days-columns {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  position: relative;
+}
+
+.day-column {
+  position: relative;
+  border-right: 1px solid var(--border-subtle);
+  height: 560px;
+}
+
+.day-column:last-child {
+  border-right: none;
+}
+
+.slot-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--border-subtle);
+}
+
+/* ==========================================================================
+   4. EVENT BLOCKS — Mint fill #EAF7F1, 3.5px left border #237757
+   ========================================================================== */
+.event-block {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  background-color: #EAF7F1;
+  border: 1px solid rgba(35, 119, 87, 0.15);
+  border-left: 3.5px solid var(--primary);
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(35, 119, 87, 0.08);
+  transition: var(--transition);
+  cursor: pointer;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.event-block:hover {
+  box-shadow: 0 4px 12px rgba(35, 119, 87, 0.16);
+  transform: translateY(-1px);
+}
+
+.event-time {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.event-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1D2939;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 3px 0 2px 0;
+}
+
+.event-room {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
+.event-action-link {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.event-action-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. CALENDAR LEGEND & INFO STRIP (Node 2788)
+   ========================================================================== */
+.calendar-legend-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.legend-items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  display: inline-block;
+}
+
+.page-meta-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  color: var(--text-light);
+  margin-top: 24px;
+  padding-bottom: 40px;
+}

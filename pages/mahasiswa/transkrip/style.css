@@ -1,0 +1,385 @@
+/* ==========================================================================
+   STYLE.CSS — Mahasiswa / Transkrip Akademik (Node 4969)
+   Inherits full shell from ../shell.css (Zero Shift Guarantee)
+   ========================================================================== */
+
+/* Shell loaded via HTML link */
+
+/* ==========================================================================
+   4. TWO-COLUMN TRANSKRIP LAYOUT (748px / 364px) — Node 5048
+   ========================================================================== */
+.transkrip-two-col-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.95fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* LEFT COLUMN: A4 DOCUMENT VIEWER (Node 5049) */
+.a4-viewer-card {
+  background-color: #E2E8F0;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.a4-viewer-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.a4-paper-sheet {
+  width: 100%;
+  max-width: 660px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 36px 32px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+/* LETTERHEAD */
+.doc-letterhead {
+  text-align: center;
+}
+.doc-brand-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: 0.5px;
+}
+.doc-brand-subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  margin-top: 2px;
+}
+.doc-brand-address {
+  font-size: 9.5px;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+.doc-double-divider {
+  border-top: 2px solid #0F172A;
+  border-bottom: 1px solid #0F172A;
+  height: 4px;
+  margin: 12px 0 16px;
+}
+
+.doc-title-block {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.doc-title-block h3 {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #0F172A;
+}
+.doc-title-block p {
+  font-size: 11px;
+  color: #475569;
+  margin-top: 2px;
+}
+
+/* STUDENT METADATA GRID */
+.doc-student-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  margin-bottom: 16px;
+  font-size: 11.5px;
+}
+.doc-meta-row {
+  display: flex;
+  align-items: center;
+}
+.doc-meta-lbl {
+  width: 110px;
+  color: #475569;
+  font-weight: 500;
+}
+.doc-meta-sep {
+  margin-right: 6px;
+  color: #94A3B8;
+}
+.doc-meta-val {
+  font-weight: 600;
+  color: #0F172A;
+}
+
+/* COURSES SCROLLBOX & TABLE */
+.doc-courses-scrollbox {
+  max-height: 440px;
+  overflow-y: auto;
+  border: 1px solid #CBD5E1;
+  margin-bottom: 16px;
+  scrollbar-width: thin;
+}
+
+.doc-grades-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+.doc-grades-table th {
+  border: 1px solid #94A3B8;
+  background-color: #F8FAFC;
+  padding: 6px 8px;
+  font-weight: 700;
+  color: #0F172A;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.doc-grades-table td {
+  border: 1px solid #E2E8F0;
+  padding: 5px 8px;
+  color: #1E293B;
+}
+
+.semester-header-row td {
+  background-color: #F1F5F9;
+  font-weight: 700;
+  font-size: 10px;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  padding: 6px 8px;
+}
+
+/* SUMMARY STRIP */
+.doc-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #94A3B8;
+  background-color: #F8FAFC;
+  padding: 8px 12px;
+  margin-bottom: 24px;
+}
+.doc-stat-col {
+  display: flex;
+  flex-direction: column;
+}
+.doc-stat-lbl {
+  font-size: 9px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+}
+.doc-stat-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-top: 2px;
+}
+
+/* SIGNATURES */
+.doc-signature-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.doc-sig-box {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  font-size: 10.5px;
+}
+.doc-sig-box.text-right {
+  align-items: flex-end;
+}
+.sig-place-date {
+  color: #475569;
+}
+.sig-role {
+  font-weight: 600;
+  color: #0F172A;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+.sig-qr-placeholder {
+  margin-bottom: 8px;
+}
+.qr-box {
+  width: 48px;
+  height: 48px;
+  border: 1.5px dashed #94A3B8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: #F1F5F9;
+}
+.sig-name {
+  font-weight: 700;
+  color: #0F172A;
+  text-decoration: underline;
+}
+.sig-id {
+  font-size: 9.5px;
+  color: #64748B;
+}
+
+/* RIGHT COLUMN: ACTIONS & PROGRESS */
+.transkrip-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.transkrip-action-card, .transkrip-info-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.transkrip-action-card h4, .transkrip-info-card h5 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.action-buttons-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-primary-wide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-primary-wide:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-outline-wide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-outline-wide:hover {
+  background-color: var(--bg-page);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.progress-bar-wrap {
+  margin-bottom: 10px;
+}
+.progress-bar-track {
+  width: 100%;
+  height: 8px;
+  background-color: #F1F5F9;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--radius-pill);
+}
+.progress-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+}
+.progress-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.validation-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background-color: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.validation-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.validation-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-subtle);
+}
+.v-lbl { color: var(--text-muted); }
+.v-val { font-weight: 600; color: var(--text-dark); }
+
+.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.font-bold { font-weight: 700; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-primary { color: var(--primary); }
+
+/* ==========================================================================
+   5. FOOTER META
+   ========================================================================== */
+.workspace-footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #94A3B8;
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+
