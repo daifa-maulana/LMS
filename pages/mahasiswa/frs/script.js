@@ -1,24 +1,16 @@
 /**
- * SCRIPT.JS — SIAK UFD FRS / KRS Online
+ * SCRIPT.JS — SIAK UFD FRS / KRS Online (Dynamic via siakStorage)
+ * Single Source of Truth from LocalStorage
  * Exact match to FigCraft Node 4116, 6329, 6688
  */
 
-const INITIAL_FRS_COURSES = [
-  { id: 1, kode: "TI2301", matkul: "Basis Data", dosen: "Dr. Aditya Pratama", kelas: "TI-5A", sks: 3 },
-  { id: 2, kode: "TI2302", matkul: "Jaringan Komputer", dosen: "Rina Anggraini, M.Kom.", kelas: "TI-5A", sks: 3 },
-  { id: 3, kode: "TI2303", matkul: "Statistika", dosen: "Dwi Saputra, M.Si.", kelas: "TI-5A", sks: 3 },
-  { id: 4, kode: "TI2304", matkul: "Sistem Operasi", dosen: "Dr. Maya Lestari", kelas: "TI-5A", sks: 3 },
-  { id: 5, kode: "TI2305", matkul: "Pemrograman Web", dosen: "Fajar Hidayat, M.Kom.", kelas: "TI-5A", sks: 3 },
-  { id: 6, kode: "TI2306", matkul: "Interaksi Manusia Komputer", dosen: "Dr. Indah Puspita", kelas: "TI-5A", sks: 3 },
-  { id: 7, kode: "TI2307", matkul: "Bahasa Inggris Akademik", dosen: "Siti Nurhaliza, M.Pd.", kelas: "TI-5A", sks: 3 }
-];
+const CURRENT_STUDENT_NIM = '2023010042';
 
-let currentCourses = JSON.parse(localStorage.getItem('siak_frs_courses')) || [...INITIAL_FRS_COURSES];
-let krsStatus = localStorage.getItem('siak_frs_status') || 'draft'; // 'draft' | 'submitted'
-
-function saveState() {
-  localStorage.setItem('siak_frs_courses', JSON.stringify(currentCourses));
-  localStorage.setItem('siak_frs_status', krsStatus);
+function getFRSSnapshot() {
+  if (window.siakStorage) {
+    return window.siakStorage.getStudentFRS(CURRENT_STUDENT_NIM);
+  }
+  return { nim: CURRENT_STUDENT_NIM, status: 'draft', courses: [] };
 }
 
 function renderFRS() {
@@ -30,6 +22,10 @@ function renderFRS() {
   const btnSubmit = document.getElementById('btn-submit-krs');
 
   if (!tableBody) return;
+
+  const frsData = getFRSSnapshot();
+  const currentCourses = frsData.courses || [];
+  const krsStatus = frsData.status || 'draft';
 
   tableBody.innerHTML = '';
 
@@ -46,7 +42,7 @@ function renderFRS() {
       <td style="text-align: center;"><span class="sks-tag font-mono">${c.sks}</span></td>
       <td style="text-align: right;">
         ${krsStatus === 'draft' 
-          ? `<button class="btn-remove-course" onclick="removeCourse(${c.id})">Hapus</button>`
+          ? `<button class="btn-remove-course" onclick="removeCourse('${c.id}')">Hapus</button>`
           : `<span style="font-size: 11px; color: #64748B;">Terkunci</span>`}
       </td>
     `;
@@ -86,34 +82,42 @@ function renderFRS() {
 }
 
 function removeCourse(id) {
-  if (krsStatus === 'submitted') {
+  const frsData = getFRSSnapshot();
+  if (frsData.status === 'submitted') {
     showToast("KRS telah diajukan. Batalkan pengajuan terlebih dahulu untuk mengubah mata kuliah.");
     return;
   }
-  const course = currentCourses.find(c => c.id === id);
-  currentCourses = currentCourses.filter(c => c.id !== id);
-  saveState();
+  const course = (frsData.courses || []).find(c => c.id === id);
+  const updatedCourses = (frsData.courses || []).filter(c => c.id !== id);
+  
+  if (window.siakStorage) {
+    window.siakStorage.saveStudentFRS(CURRENT_STUDENT_NIM, updatedCourses);
+  }
   renderFRS();
   showToast(`Mata kuliah ${course ? course.matkul : ''} berhasil dihapus.`);
 }
 
 function submitKRS() {
-  if (currentCourses.length === 0) {
+  const frsData = getFRSSnapshot();
+  if (!frsData.courses || frsData.courses.length === 0) {
     alert("Silakan pilih minimal 1 mata kuliah sebelum mengajukan KRS.");
     return;
   }
   if (confirm("Ajukan rencana studi ke Dosen Pembimbing Akademik (Dr. Maya Lestari)?")) {
-    krsStatus = 'submitted';
-    saveState();
+    if (window.siakStorage) {
+      window.siakStorage.saveStudentFRS(CURRENT_STUDENT_NIM, frsData.courses, 'submitted');
+    }
     renderFRS();
     showToast("KRS berhasil diajukan ke Dosen PA! Status kini: Menunggu Persetujuan.");
   }
 }
 
 function cancelSubmission() {
+  const frsData = getFRSSnapshot();
   if (confirm("Apakah Anda ingin membatalkan pengajuan KRS untuk melakukan revisi rencana studi?")) {
-    krsStatus = 'draft';
-    saveState();
+    if (window.siakStorage) {
+      window.siakStorage.saveStudentFRS(CURRENT_STUDENT_NIM, frsData.courses, 'draft');
+    }
     renderFRS();
     showToast("Pengajuan dibatalkan. KRS kembali ke status Draft.");
   }
@@ -150,11 +154,3 @@ function showToast(message) {
 document.addEventListener('DOMContentLoaded', () => {
   renderFRS();
 });
-
-
-// Role Switcher Navigation
-function openRoleSwitcher() {
-  if (confirm("Ganti peran (Role Switcher)? Anda akan diarahkan ke halaman login peran.")) {
-    window.location.href = '../../auth/login/index.html';
-  }
-}
