@@ -1,0 +1,308 @@
+/* ==========================================================================
+   LOGIN.CSS — Learnthru Style Login Portal
+   Universitas Teknologi Digital (Academic OS)
+   ========================================================================== */
+
+.login-fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F0F3F9;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.login-fullscreen-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Floating Learnthru Card */
+.login-learnthru-card {
+  width: 100%;
+  max-width: 1060px;
+  min-height: 620px;
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(44, 70, 122, 0.12);
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  overflow: hidden;
+}
+
+/* Left Hero Column with Learnthru Gradient */
+.login-card-left {
+  background: linear-gradient(135deg, #253961 0%, #3B5488 45%, #7D8CB2 80%, #F4829F 100%);
+  padding: 44px 36px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.login-brand-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-brand-icon .shape-blue {
+  width: 16px;
+  height: 28px;
+  background-color: #FFFFFF;
+  border-radius: 6px 0 0 6px;
+}
+
+.login-brand-icon .shape-coral {
+  width: 16px;
+  height: 14px;
+  background-color: #F87171;
+  border-radius: 0 6px 6px 0;
+  margin-top: -6px;
+}
+
+.login-brand-title h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.login-brand-title span {
+  font-size: 11px;
+  color: #CAD5EA;
+  font-weight: 500;
+}
+
+.login-hero-headline {
+  margin: 32px 0 20px;
+}
+
+.login-hero-headline h2 {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  margin-bottom: 12px;
+}
+
+.login-hero-headline p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.55;
+}
+
+/* Isometric 3D Illustration Area */
+.login-hero-art-box {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 24px;
+}
+
+.login-hero-art-box svg {
+  max-width: 160px;
+  height: auto;
+}
+
+.login-left-pill-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+  align-self: flex-start;
+}
+
+/* Right Form Column */
+.login-card-right {
+  padding: 44px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+}
+
+.login-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #EEF2FA;
+  color: #2C467A;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.login-right-heading h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1E293B;
+  letter-spacing: -0.4px;
+  margin-bottom: 4px;
+}
+
+.login-right-heading p {
+  font-size: 13px;
+  color: #64748B;
+  margin-bottom: 24px;
+}
+
+/* Segmented Role Control (Learnthru Pill Track) */
+.role-segmented-track {
+  background-color: #EEF2FA;
+  border-radius: 9999px;
+  padding: 4px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.role-pill-btn {
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.role-pill-btn.active {
+  background-color: #2C467A;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(44, 70, 122, 0.2);
+}
+
+/* Form Fields */
+.login-input-group {
+  margin-bottom: 16px;
+}
+
+.login-input-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 6px;
+}
+
+.login-field-box {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  background-color: #F8FAFC;
+  font-size: 13px;
+  color: #1E293B;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.login-field-box:focus {
+  border-color: #2C467A;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(44, 70, 122, 0.08);
+}
+
+/* Captcha Row */
+.captcha-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 12px;
+}
+
+.captcha-visual-badge {
+  background-color: #EEF2FA;
+  border: 1px solid #CBD5E1;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #2C467A;
+  user-select: none;
+}
+
+/* Pill Submit Button */
+.btn-login-submit {
+  width: 100%;
+  padding: 13px;
+  border-radius: 9999px;
+  background-color: #2C467A;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 20px rgba(44, 70, 122, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-login-submit:hover {
+  background-color: #1E335A;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(44, 70, 122, 0.32);
+}
+
+/* Security Note & Footer */
+.login-security-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #64748B;
+  margin-top: 16px;
+}
+
+.login-card-footer {
+  text-align: center;
+  font-size: 11.5px;
+  color: #94A3B8;
+  margin-top: 20px;
+}
+

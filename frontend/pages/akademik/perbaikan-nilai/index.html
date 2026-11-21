@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perbaikan Nilai — SIAK UFD Operator BAK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shell.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="siak-app-canvas">
+
+    <!-- SIDEBAR (224px fixed width) -->
+    <!-- 1. SIDEBAR (224px) — Operator BAK -->
+    <aside class="siak-sidebar">
+      <div>
+        <!-- Brand Row -->
+        <div class="sidebar-header-box">
+          <a href="../dashboard/index.html" class="siak-brand-row">
+            <div class="siak-wordmark-tile">S</div>
+            <div class="siak-brand-titles">
+              <h1>SIAK UFD</h1>
+            </div>
+          </a>
+          <p class="siak-brand-subtitle">Sistem Informasi Akademik</p>
+
+          <!-- Active Role Widget -->
+          <div class="active-role-widget" onclick="openRoleSwitcher()">
+            <div class="role-info-wrap">
+              <span class="role-title">Operator BAK</span>
+              <span class="role-sub">Ruang kerja akademik</span>
+            </div>
+            <span class="role-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <div class="sidebar-nav-section">
+          <div class="menu-category-title">MENU UTAMA</div>
+          <ul class="siak-nav-list">
+            <li class="siak-nav-item">
+              <a href="../dashboard/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../mahasiswa/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span>Mahasiswa</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../dosen/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </span>
+                <span>Dosen</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../program-studi/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <span>Program Studi</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../matakuliah/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </span>
+                <span>Mata Kuliah</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../frs-krs/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </span>
+                <span>FRS/KRS</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../validasi-nilai/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </span>
+                <span>Validasi Nilai</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../publikasi-nilai/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
+                <span>Publikasi Nilai</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="index.html" class="active">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </span>
+                <span>Perbaikan Nilai</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../khs-transkrip/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <span>KHS & Transkrip</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Meta & Help Section -->
+      <div>
+        <div class="sidebar-help-widget">
+          <div class="help-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="help-title">Butuh bantuan?</div>
+          <p class="help-desc">Hubungi layanan akademik</p>
+          <a href="#" class="help-link"><span>Pusat bantuan</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        </div>
+        <div class="sidebar-footer-text">
+          SIAK UFD © 2025
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN APP AREA (Top bar 72px + Scrollable content max 1136px) -->
+    <div class="siak-main-layout">
+
+      <!-- TOP BAR (72px fixed height) -->
+      <!-- TOPBAR (72px) -->
+      <header class="siak-topbar">
+        <div class="topbar-breadcrumb">
+          <span>Akademik</span>
+          <span class="sep">/</span>
+          <span class="current">Perbaikan Nilai</span>
+        </div>
+
+        <div class="topbar-right-actions">
+          <div class="topbar-search-box">
+            <span class="search-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" placeholder="Cari di SIAK UFD...">
+          </div>
+
+          <button class="topbar-icon-btn" title="Notifikasi" onclick="alert('Tidak ada notifikasi baru')">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+
+          <div class="topbar-profile-widget" onclick="openRoleSwitcher()">
+            <div class="user-avatar-initials">NP</div>
+            <div class="user-meta-wrap">
+              <span class="user-full-name">Nadia Putri</span>
+              <span class="user-role-badge">Operator BAK</span>
+            </div>
+            <span class="user-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- SCROLLABLE WORKSPACE (Max 1136px) -->
+      <main class="siak-workspace-scroll">
+        <div class="siak-content-container">
+
+          <!-- PAGE TITLE & SEMESTER ROW -->
+          <div class="workspace-header-row">
+            <div>
+              <h2 class="page-main-title">Perbaikan Nilai</h2>
+              <p class="page-main-subtitle">Kelola perbaikan nilai dengan informasi yang terintegrasi.</p>
+            </div>
+            <div class="semester-filter-pill">
+              <span class="pill-dot"></span>
+              <span>Genap 2024/2025</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+
+          <!-- FOUR STAT METRICS (Node 2170 / Line 72031) -->
+          <div class="stats-metrics-grid">
+            <div class="stat-metric-card">
+              <span class="stat-metric-label">Permohonan masuk</span>
+              <div class="stat-metric-value">12</div>
+              <span class="stat-metric-sub">Semester ini</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-metric-label">Menunggu tinjauan</span>
+              <div class="stat-metric-value">4</div>
+              <span class="stat-metric-sub">Permohonan baru</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-metric-label">Disetujui</span>
+              <div class="stat-metric-value">7</div>
+              <span class="stat-metric-sub">Perubahan tercatat</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-metric-label">Ditolak</span>
+              <div class="stat-metric-value">1</div>
+              <span class="stat-metric-sub">Tidak memenuhi syarat</span>
+            </div>
+          </div>
+
+          <!-- TOOLBAR ROW: Search, Filter & Action Button -->
+          <div class="table-toolbar-row">
+            <div class="table-toolbar-title">
+              <h3>Permohonan perbaikan</h3>
+            </div>
+            <div class="table-toolbar-actions">
+              <div class="search-input-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="input-search-perbaikan" placeholder="Cari nama atau kode...">
+              </div>
+
+              <select id="select-prodi-perbaikan" class="filter-select">
+                <option value="all" selected>Semua program studi</option>
+                <option value="ti">Teknik Informatika</option>
+                <option value="si">Sistem Informasi</option>
+                <option value="mn">Manajemen</option>
+                <option value="ak">Akuntansi</option>
+              </select>
+
+              <button type="button" class="btn-add-primary" onclick="tinjauSemuaPermohonan()">
+                <span>Tinjau permohonan</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- DATA TABLE CARD CONTAINER (6 rows from FigCraft) -->
+          <div class="table-card-container">
+            <div class="table-responsive-box">
+              <table class="siak-data-table">
+                <thead>
+                  <tr>
+                    <th>MAHASISWA</th>
+                    <th>MATA KULIAH</th>
+                    <th>NILAI AWAL</th>
+                    <th>PENGAJUAN</th>
+                    <th>STATUS</th>
+                    <th>AKSI</th>
+                  </tr>
+                </thead>
+                <tbody id="perbaikan-tbody">
+                  <!-- Row 1: Alya Rahma Putri -->
+                  <tr data-status="menunggu">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">AR</div>
+                        <div class="student-name-wrap">
+                          <span class="student-name">Alya Rahma Putri</span>
+                          <span class="student-nim">2023010042</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="course-text">Basis Data</td>
+                    <td><span class="grade-badge-cell">B</span></td>
+                    <td class="date-text">16 Agu 2025</td>
+                    <td><span class="badge-status-menunggu">Menunggu</span></td>
+                    <td><a href="#" onclick="tinjauPermohonan('Alya Rahma Putri', 'Basis Data', 'B')" class="link-action-review">Tinjau  →</a></td>
+                  </tr>
+
+                  <!-- Row 2: Bagas Pratama -->
+                  <tr data-status="menunggu">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">BP</div>
+                        <div class="student-name-wrap">
+                          <span class="student-name">Bagas Pratama</span>
+                          <span class="student-nim">2023010048</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="course-text">Jaringan Komputer</td>
+                    <td><span class="grade-badge-cell">C</span></td>
+                    <td class="date-text">16 Agu 2025</td>
+                    <td><span class="badge-status-menunggu">Menunggu</span></td>
+                    <td><a href="#" onclick="tinjauPermohonan('Bagas Pratama', 'Jaringan Komputer', 'C')" class="link-action-review">Tinjau  →</a></td>
+                  </tr>
+
+                  <!-- Row 3: Citra Anindya -->
+                  <tr data-status="menunggu">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">CA</div>
+                        <div class="student-name-wrap">
+                          <span class="student-name">Citra Anindya</span>
+                          <span class="student-nim">2023020015</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="course-text">Statistika</td>
+                    <td><span class="grade-badge-cell">B−</span></td>
+                    <td class="date-text">16 Agu 2025</td>
+                    <td><span class="badge-status-menunggu">Menunggu</span></td>
+                    <td><a href="#" onclick="tinjauPermohonan('Citra Anindya', 'Statistika', 'B−')" class="link-action-review">Tinjau  →</a></td>
+                  </tr>
+
+                  <!-- Row 4: Dimas Saputra -->
+                  <tr data-status="menunggu">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">DS</div>
+                        <div class="student-name-wrap">
+                          <span class="student-name">Dimas Saputra</span>
+                          <span class="student-nim">2023010057</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="course-text">Sistem Operasi</td>
+                    <td><span class="grade-badge-cell">B</span></td>
+                    <td class="date-text">16 Agu 2025</td>
+                    <td><span class="badge-status-menunggu">Menunggu</span></td>
+                    <td><a href="#" onclick="tinjauPermohonan('Dimas Saputra', 'Sistem Operasi', 'B')" class="link-action-review">Tinjau  →</a></td>
+                  </tr>
+
+                  <!-- Row 5: Elena Maharani -->
+                  <tr data-status="disetujui">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">EM</div>
+                        <div class="student-name-wrap">
+                          <span class="student-name">Elena Maharani</span>
+                          <span class="student-nim">2023040032</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="course-text">Pemrograman Web</td>
+                    <td><span class="grade-badge-cell">C+</span></td>
+                    <td class="date-text">16 Agu 2025</td>
+                    <td><span class="badge-status-disetujui">Disetujui</span></td>
+                    <td><a href="#" onclick="tinjauPermohonan('Elena Maharani', 'Pemrograman Web', 'C+')" class="link-action-review">Tinjau  →</a></td>
+                  </tr>
+
+                  <!-- Row 6: Farhan Maulana -->
+                  <tr data-status="disetujui">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">FM</div>
+                        <div class="student-name-wrap">
+                          <span class="student-name">Farhan Maulana</span>
+                          <span class="student-nim">2023020043</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="course-text">Interaksi Manusia Komputer</td>
+                    <td><span class="grade-badge-cell">B</span></td>
+                    <td class="date-text">16 Agu 2025</td>
+                    <td><span class="badge-status-disetujui">Disetujui</span></td>
+                    <td><a href="#" onclick="tinjauPermohonan('Farhan Maulana', 'Interaksi Manusia Komputer', 'B')" class="link-action-review">Tinjau  →</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- TABLE PAGINATION FOOTER -->
+            <div class="table-pagination-footer">
+              <div>Menampilkan 1–6 data · Diperbarui hari ini</div>
+              <div class="pagination-controls">
+                <button type="button" class="btn-page-nav" disabled>← Sebelumnya</button>
+                <button type="button" class="btn-page-number active">1</button>
+                <button type="button" class="btn-page-number">2</button>
+                <button type="button" class="btn-page-number">3</button>
+                <span class="page-dots">…</span>
+                <button type="button" class="btn-page-number">12</button>
+                <button type="button" class="btn-page-nav">Berikutnya →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- AUDIT TRAIL CALLOUT (From FigCraft) -->
+          <div class="audit-trail-callout">
+            <div class="audit-trail-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <div class="audit-trail-content">
+              <h4>Jejak perubahan tersimpan otomatis</h4>
+              <p>Setiap perbaikan nilai mencatat nilai awal, nilai akhir, alasan perubahan, dan identitas validator.</p>
+            </div>
+          </div>
+
+          <!-- METADATA FOOTER ROW -->
+          <div class="page-meta-footer-row">
+            <div>Tahun akademik 2025/2026</div>
+            <div>Terakhir diperbarui · 18 Agustus 2025, 08.30 WIB</div>
+          </div>
+
+        </div>
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

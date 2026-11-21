@@ -1,0 +1,228 @@
+/* ==========================================================================
+   STYLE.CSS — Dosen / Mata Kuliah Saya (FigCraft Node 2647)
+   Single Source of Truth: FigCraft Node 2647
+   Inherits full shell from ../shell.css (Zero Shift Guarantee)
+   Fluid, perfectly fitted, zero horizontal scrollbar.
+   ========================================================================== */
+
+/* Shell loaded via HTML link */
+
+.siak-workspace-scroll {
+  overflow-x: hidden !important;
+}
+
+/* ==========================================================================
+   1. SUBHEADER BAR (Nodes 2723 - 2725)
+   ========================================================================== */
+.matkul-dosen-subbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  width: 100%;
+}
+
+.subbar-counter-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.btn-subbar-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-subbar-action:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   2. 2-COLUMN COURSE CARDS GRID (Nodes 2726, 2741, 2756, 2771)
+   ========================================================================== */
+.teaching-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.teaching-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+  min-width: 0;
+}
+
+.teaching-card:hover {
+  border-color: var(--primary-border);
+  box-shadow: 0 4px 14px rgba(35, 119, 87, 0.06);
+}
+
+.teaching-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.class-tag-text {
+  font-size: 11.5px;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.2px;
+}
+
+.sks-badge-pill {
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.teaching-course-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.student-count-text {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.card-divider-line {
+  height: 1px;
+  background-color: var(--border-subtle);
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.schedule-row-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 12.5px;
+}
+
+.schedule-time-meta {
+  font-weight: 600;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.schedule-room-meta {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Progress Area */
+.progress-section-block {
+  margin-bottom: 18px;
+}
+
+.progress-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.progress-label-title {
+  color: var(--text-muted);
+}
+
+.progress-label-value {
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  color: var(--text-dark);
+}
+
+.full-progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #EEF2F6;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.full-progress-fill {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--radius-pill);
+}
+
+/* Actions Row */
+.card-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  gap: 12px;
+}
+
+.btn-card-link-muted {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: var(--transition);
+}
+
+.btn-card-link-muted:hover {
+  color: var(--primary);
+}
+
+.btn-card-link-primary {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.btn-card-link-primary:hover {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}

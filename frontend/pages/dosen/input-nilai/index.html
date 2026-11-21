@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Nilai — Dosen SIAK UFD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shell.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="siak-app-canvas">
+
+    <!-- 1. SIDEBAR (224px) — Dosen -->
+    <aside class="siak-sidebar">
+      <div>
+        <!-- Brand Row -->
+        <div class="sidebar-header-box">
+          <a href="../dashboard/index.html" class="siak-brand-row">
+            <div class="siak-wordmark-tile">S</div>
+            <div class="siak-brand-titles">
+              <h1>SIAK UFD</h1>
+            </div>
+          </a>
+          <p class="siak-brand-subtitle">Sistem Informasi Akademik</p>
+
+          <!-- Active Role Widget -->
+          <div class="active-role-widget" onclick="openRoleSwitcher()">
+            <div class="role-info-wrap">
+              <span class="role-title">Dosen</span>
+              <span class="role-sub">Ruang kerja akademik</span>
+            </div>
+            <span class="role-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <div class="sidebar-nav-section">
+          <div class="menu-category-title">MENU UTAMA</div>
+          <ul class="siak-nav-list">
+            <li class="siak-nav-item">
+              <a href="../dashboard/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../matakuliah/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <span>Mata Kuliah Saya</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../jadwal/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </span>
+                <span>Jadwal Mengajar</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../mahasiswa/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span>Data Mahasiswa</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="index.html" class="active">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </span>
+                <span>Input Nilai</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../presensi/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </span>
+                <span>Input Presensi</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../validasi-nilai/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </span>
+                <span>Validasi Nilai</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../riwayat-penilaian/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </span>
+                <span>Riwayat Penilaian</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Meta & Help Section -->
+      <div>
+        <div class="sidebar-help-widget">
+          <div class="help-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="help-title">Butuh bantuan?</div>
+          <p class="help-desc">Hubungi layanan akademik</p>
+          <a href="#" class="help-link"><span>Pusat bantuan</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        </div>
+        <div class="sidebar-footer-text">
+          SIAK UFD © 2025
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. MAIN APP CONTAINER -->
+    <div class="siak-main-layout">
+
+      <!-- TOPBAR (72px) -->
+      <header class="siak-topbar">
+        <div class="topbar-breadcrumb">
+          <span>Akademik</span>
+          <span class="sep">/</span>
+          <span class="current">Input Nilai</span>
+        </div>
+
+        <div class="topbar-right-actions">
+          <div class="topbar-search-box">
+            <span class="search-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" placeholder="Cari di SIAK UFD...">
+          </div>
+
+          <button class="topbar-icon-btn" title="Notifikasi">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+
+          <div class="topbar-profile-widget" onclick="openRoleSwitcher()">
+            <div class="user-avatar-initials">AP</div>
+            <div class="user-meta-wrap">
+              <span class="user-full-name">Dr. Aditya Pratama</span>
+              <span class="user-role-badge">Dosen</span>
+            </div>
+            <span class="user-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- SCROLLABLE WORKSPACE (Max 1136px) -->
+      <main class="siak-workspace-scroll">
+        <div class="siak-content-container">
+
+          <!-- PAGE TITLE & SEMESTER ROW -->
+          <div class="workspace-header-row">
+            <div>
+              <h2 class="page-main-title">Input Nilai</h2>
+              <p class="page-main-subtitle">Kelola input nilai dengan informasi yang terintegrasi.</p>
+            </div>
+            <div class="semester-filter-pill">
+              <span class="pill-dot"></span>
+              <span>Ganjil 2025/2026</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+
+          <!-- ACTION BAR: Course Selection & Main Buttons (Node 3089) -->
+          <div class="input-nilai-action-bar">
+            <div class="course-select-wrap">
+              <label class="filter-label" for="select-course">Mata kuliah</label>
+              <select id="select-course" class="filter-select">
+                <option value="bd-3a" selected>Basis Data · TI-3A</option>
+                <option value="algo-1a">Algoritma & Pemrograman · TI-1A</option>
+                <option value="rpl-5a">Rekayasa Perangkat Lunak · TI-5A</option>
+                <option value="pbo-3b">Pemrograman Berorientasi Objek · TI-3B</option>
+              </select>
+            </div>
+
+            <div class="action-buttons-group">
+              <button type="button" class="btn-action-outline" onclick="imporNilaiModal()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Impor nilai</span>
+              </button>
+              <button type="button" class="btn-action-outline" onclick="simpanDraftNilai()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                <span>Simpan draft</span>
+              </button>
+              <a href="../validasi-nilai/index.html" class="btn-action-primary">
+                <span>Kirim validasi →</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- GRADING RULES BANNER (Node 3089) -->
+          <div class="grading-rules-banner">
+            <div class="rules-left">
+              <span class="rules-badge">Bobot penilaian</span>
+              <span class="rules-text">Tugas 20% &nbsp;·&nbsp; Kuis 20% &nbsp;·&nbsp; UTS 25% &nbsp;·&nbsp; UAS 35%</span>
+            </div>
+            <div class="rules-formula-note">
+              Nilai akhir dihitung otomatis.
+            </div>
+          </div>
+
+          <!-- DATA TABLE CARD CONTAINER (Node 3089) -->
+          <div class="table-card-container">
+            <div class="table-responsive-box">
+              <table class="siak-data-table">
+                <thead>
+                  <tr>
+                    <th>MAHASISWA</th>
+                    <th class="th-center">TUGAS · 20%</th>
+                    <th class="th-center">KUIS · 20%</th>
+                    <th class="th-center">UTS · 25%</th>
+                    <th class="th-center">UAS · 35%</th>
+                    <th class="th-center">AKHIR</th>
+                    <th class="th-center">HURUF</th>
+                  </tr>
+                </thead>
+                <tbody id="grades-tbody">
+                  <!-- Row 1: Alya Rahma Putri -->
+                  <tr data-student="2023010042">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">AR</div>
+                        <div class="student-info-text">
+                          <span class="student-name">Alya Rahma Putri</span>
+                          <span class="student-nim">2023010042</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="90" min="0" max="100" data-type="tugas"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="88" min="0" max="100" data-type="kuis"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="92" min="0" max="100" data-type="uts"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="90" min="0" max="100" data-type="uas"></td>
+                    <td class="td-center final-grade-cell">90.1</td>
+                    <td class="td-center"><span class="badge-grade-a">A</span></td>
+                  </tr>
+
+                  <!-- Row 2: Bagas Pratama -->
+                  <tr data-student="2023010048">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">BP</div>
+                        <div class="student-info-text">
+                          <span class="student-name">Bagas Pratama</span>
+                          <span class="student-nim">2023010048</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="85" min="0" max="100" data-type="tugas"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="80" min="0" max="100" data-type="kuis"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="84" min="0" max="100" data-type="uts"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="86" min="0" max="100" data-type="uas"></td>
+                    <td class="td-center final-grade-cell">84.1</td>
+                    <td class="td-center"><span class="badge-grade-a">A−</span></td>
+                  </tr>
+
+                  <!-- Row 3: Citra Anindya -->
+                  <tr data-student="2023010050">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">CA</div>
+                        <div class="student-info-text">
+                          <span class="student-name">Citra Anindya</span>
+                          <span class="student-nim">2023010050</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="88" min="0" max="100" data-type="tugas"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="90" min="0" max="100" data-type="kuis"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="86" min="0" max="100" data-type="uts"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="92" min="0" max="100" data-type="uas"></td>
+                    <td class="td-center final-grade-cell">89.3</td>
+                    <td class="td-center"><span class="badge-grade-a">A</span></td>
+                  </tr>
+
+                  <!-- Row 4: Dimas Saputra -->
+                  <tr data-student="2023010057">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">DS</div>
+                        <div class="student-info-text">
+                          <span class="student-name">Dimas Saputra</span>
+                          <span class="student-nim">2023010057</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="78" min="0" max="100" data-type="tugas"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="82" min="0" max="100" data-type="kuis"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="80" min="0" max="100" data-type="uts"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="84" min="0" max="100" data-type="uas"></td>
+                    <td class="td-center final-grade-cell">81.4</td>
+                    <td class="td-center"><span class="badge-grade-a">A−</span></td>
+                  </tr>
+
+                  <!-- Row 5: Elena Maharani -->
+                  <tr data-student="2023010061">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">EM</div>
+                        <div class="student-info-text">
+                          <span class="student-name">Elena Maharani</span>
+                          <span class="student-nim">2023010061</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="86" min="0" max="100" data-type="tugas"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="88" min="0" max="100" data-type="kuis"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="90" min="0" max="100" data-type="uts"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="90" min="0" max="100" data-type="uas"></td>
+                    <td class="td-center final-grade-cell">88.8</td>
+                    <td class="td-center"><span class="badge-grade-a">A</span></td>
+                  </tr>
+
+                  <!-- Row 6: Farhan Maulana -->
+                  <tr data-student="2023010065">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">FM</div>
+                        <div class="student-info-text">
+                          <span class="student-name">Farhan Maulana</span>
+                          <span class="student-nim">2023010065</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="75" min="0" max="100" data-type="tugas"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="80" min="0" max="100" data-type="kuis"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="78" min="0" max="100" data-type="uts"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="82" min="0" max="100" data-type="uas"></td>
+                    <td class="td-center final-grade-cell">79.2</td>
+                    <td class="td-center"><span class="badge-grade-b">B+</span></td>
+                  </tr>
+
+                  <!-- Row 7: Gita Permatasari -->
+                  <tr data-student="2023010068">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">GP</div>
+                        <div class="student-info-text">
+                          <span class="student-name">Gita Permatasari</span>
+                          <span class="student-nim">2023010068</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="86" min="0" max="100" data-type="tugas"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="84" min="0" max="100" data-type="kuis"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="88" min="0" max="100" data-type="uts"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="87" min="0" max="100" data-type="uas"></td>
+                    <td class="td-center final-grade-cell">86.5</td>
+                    <td class="td-center"><span class="badge-grade-a">A</span></td>
+                  </tr>
+
+                  <!-- Row 8: Hafiz Ramadhan -->
+                  <tr data-student="2023010071">
+                    <td>
+                      <div class="student-profile-cell">
+                        <div class="student-avatar">HR</div>
+                        <div class="student-info-text">
+                          <span class="student-name">Hafiz Ramadhan</span>
+                          <span class="student-nim">2023010071</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="80" min="0" max="100" data-type="tugas"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="82" min="0" max="100" data-type="kuis"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="84" min="0" max="100" data-type="uts"></td>
+                    <td class="td-center"><input type="number" class="grade-input-field" value="82" min="0" max="100" data-type="uas"></td>
+                    <td class="td-center final-grade-cell">82.1</td>
+                    <td class="td-center"><span class="badge-grade-a">A−</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- TABLE PAGINATION FOOTER (Node 3089) -->
+            <div class="table-pagination-footer">
+              <div>Menampilkan 1–8 dari 32 mahasiswa</div>
+              <div class="pagination-controls">
+                <button type="button" class="btn-page-nav" disabled>← Sebelumnya</button>
+                <button type="button" class="btn-page-number active">1</button>
+                <button type="button" class="btn-page-number">2</button>
+                <button type="button" class="btn-page-number">3</button>
+                <button type="button" class="btn-page-number">4</button>
+                <button type="button" class="btn-page-nav">Berikutnya →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROGRESS NOTICE BANNER (Node 3089) -->
+          <div class="progress-notice-banner">
+            <div class="notice-icon-wrap">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            </div>
+            <div>
+              <span class="notice-bold">28 dari 32 nilai telah terisi.</span> Lengkapi seluruh nilai sebelum finalisasi.
+            </div>
+          </div>
+
+          <!-- METADATA FOOTER ROW -->
+          <div class="page-meta-footer-row">
+            <div>Tahun akademik 2025/2026</div>
+            <div>Terakhir diperbarui · 18 Agustus 2025, 08.30 WIB</div>
+          </div>
+
+        </div>
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

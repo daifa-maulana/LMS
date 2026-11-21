@@ -1,0 +1,364 @@
+/* ==========================================================================
+   STYLE.CSS — Operator BAK / Dashboard (Node 680)
+   Inherits full shell from ../shell.css (Zero Shift Guarantee, No Horizontal Scroll)
+   ========================================================================== */
+
+/* Shell loaded via HTML link */
+
+/* ==========================================================================
+   1. WELCOME BANNER (Node 680)
+   ========================================================================== */
+.bak-welcome-banner {
+  background-color: #EAF7F1;
+  border: 1px solid rgba(35, 119, 87, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.welcome-titles h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.welcome-titles p {
+  font-size: 13.5px;
+  color: #475467;
+  margin: 4px 0 0 0;
+}
+
+.btn-welcome-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 1px 3px rgba(35, 119, 87, 0.2);
+}
+
+.btn-welcome-action:hover {
+  background-color: #1B6045;
+}
+
+/* ==========================================================================
+   2. FOUR METRICS CARDS (Node 680)
+   ========================================================================== */
+.bak-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.bak-metric-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  position: relative;
+  transition: var(--transition);
+}
+
+.bak-metric-card:hover {
+  border-color: var(--primary-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.metric-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.metric-label-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.metric-icon-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #F8FAF9;
+  border: 1px solid var(--border-subtle);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.metric-number-big {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.metric-sub-note {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.metric-sub-note.trend-up {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.metric-sub-note.trend-alert {
+  color: #D97706;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   3. TWO-COLUMN SECTIONS (Middle & Bottom Grids)
+   ========================================================================== */
+.bak-two-col-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.bak-panel-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.panel-header-titles h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.panel-header-titles p {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 2px 0 0 0;
+}
+
+/* Academic Trend Chart */
+.trend-chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trend-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background-color: #EAF7F1;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  align-self: flex-start;
+}
+
+.trend-svg-box {
+  width: 100%;
+  height: 120px;
+}
+
+.trend-years-labels {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Priority Queue */
+.priority-queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.priority-queue-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background-color: #FAFCFB;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.priority-queue-item:hover {
+  border-color: var(--primary-border);
+  background-color: #FFFFFF;
+}
+
+.queue-item-info h5 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.queue-item-info p {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin: 2px 0 0 0;
+}
+
+.btn-queue-action {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-queue-action.action-amber {
+  background-color: #FEF3C7;
+  color: #B45309;
+}
+.btn-queue-action.action-amber:hover {
+  background-color: #FDE68A;
+}
+
+.btn-queue-action.action-green {
+  background-color: #EAF7F1;
+  color: var(--primary);
+}
+.btn-queue-action.action-green:hover {
+  background-color: #D1EFE2;
+}
+
+.btn-queue-action.action-neutral {
+  background-color: #F2F4F7;
+  color: #475467;
+}
+.btn-queue-action.action-neutral:hover {
+  background-color: #E4E7EC;
+}
+
+/* Activity Timeline */
+.timeline-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.timeline-item-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.timeline-item-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.timeline-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timeline-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.timeline-meta {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.timeline-time-badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: #EAF7F1;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Programs Summary Bars */
+.program-bars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.program-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.program-item-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-dark);
+}
+
+.program-name {
+  font-weight: 600;
+}
+
+.program-count {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.program-progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: #F2F4F7;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.program-progress-fill {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: 100px;
+}

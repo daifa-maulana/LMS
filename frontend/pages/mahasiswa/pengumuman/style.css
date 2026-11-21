@@ -1,0 +1,286 @@
+/* ==========================================================================
+   STYLE.CSS — Mahasiswa / Pengumuman (Node 5354)
+   Inherits full shell from ../shell.css (Zero Shift Guarantee)
+   ========================================================================== */
+
+/* Shell loaded via HTML link */
+
+/* ==========================================================================
+   4. TWO-COLUMN PENGUMUMAN LAYOUT (748px / 364px) — Node 5433
+   ========================================================================== */
+.pengumuman-two-col-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.95fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* LEFT COLUMN: FEATURED BANNER & FEED */
+.pengumuman-main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.featured-announcement-card {
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.featured-announcement-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.featured-announcement-card p {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.featured-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--primary-border);
+}
+
+.featured-date {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.btn-featured-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn-featured-action:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ANNOUNCEMENTS FEED LIST */
+.announcements-feed-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.feed-header {
+  margin-bottom: 20px;
+}
+.feed-header h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.feed-header p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.feed-items-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.feed-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.feed-item:hover .feed-item-title {
+  color: var(--primary);
+}
+
+.feed-item-icon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--bg-page);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.feed-item-content {
+  flex: 1;
+}
+
+.feed-item-category {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.feed-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.3;
+  margin-bottom: 4px;
+  transition: var(--transition);
+}
+
+.feed-item-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.feed-item-arrow {
+  color: #94A3B8;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* RIGHT COLUMN: WIDGETS */
+.pengumuman-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.widget-dates-card, .widget-contact-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.widget-dates-card h4, .widget-contact-card h5 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.date-row-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed #F1F5F9;
+}
+.date-row-item:last-child {
+  border-bottom: none;
+}
+
+.date-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.date-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.date-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.date-time {
+  font-size: 11.5px;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.widget-contact-card p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.contact-pill, .location-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.location-pill {
+  margin-bottom: 0;
+}
+
+.contact-pill svg, .location-pill svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+
+/* ==========================================================================
+   5. FOOTER META
+   ========================================================================== */
+.workspace-footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #94A3B8;
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+

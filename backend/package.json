@@ -1,0 +1,24 @@
+{
+  "name": "siak-ufd-backend",
+  "version": "1.0.0",
+  "description": "SIAK UFD Enterprise Academic ERP & SaaS REST API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "siak",
+    "academic",
+    "erp",
+    "saas",
+    "rest-api",
+    "clean-architecture"
+  ],
+  "author": "Universitas Fatmawati Digital",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

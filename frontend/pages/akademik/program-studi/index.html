@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Studi — Operator BAK SIAK UFD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shell.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="siak-app-canvas">
+
+    <!-- 1. SIDEBAR (224px) — Operator BAK -->
+    <aside class="siak-sidebar">
+      <div>
+        <!-- Brand Row -->
+        <div class="sidebar-header-box">
+          <a href="../dashboard/index.html" class="siak-brand-row">
+            <div class="siak-wordmark-tile">S</div>
+            <div class="siak-brand-titles">
+              <h1>SIAK UFD</h1>
+            </div>
+          </a>
+          <p class="siak-brand-subtitle">Sistem Informasi Akademik</p>
+
+          <!-- Active Role Widget -->
+          <div class="active-role-widget" onclick="openRoleSwitcher()">
+            <div class="role-info-wrap">
+              <span class="role-title">Operator BAK</span>
+              <span class="role-sub">Ruang kerja akademik</span>
+            </div>
+            <span class="role-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <div class="sidebar-nav-section">
+          <div class="menu-category-title">MENU UTAMA</div>
+          <ul class="siak-nav-list">
+            <li class="siak-nav-item">
+              <a href="../dashboard/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../mahasiswa/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span>Mahasiswa</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../dosen/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </span>
+                <span>Dosen</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="index.html" class="active">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <span>Program Studi</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../matakuliah/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </span>
+                <span>Mata Kuliah</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../frs-krs/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </span>
+                <span>FRS/KRS</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../validasi-nilai/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </span>
+                <span>Validasi Nilai</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../publikasi-nilai/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
+                <span>Publikasi Nilai</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../perbaikan-nilai/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </span>
+                <span>Perbaikan Nilai</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../khs-transkrip/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <span>KHS & Transkrip</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Meta & Help Section -->
+      <div>
+        <div class="sidebar-help-widget">
+          <div class="help-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="help-title">Butuh bantuan?</div>
+          <p class="help-desc">Hubungi layanan akademik</p>
+          <a href="#" class="help-link"><span>Pusat bantuan</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        </div>
+        <div class="sidebar-footer-text">
+          SIAK UFD © 2025
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. MAIN APP CONTAINER -->
+    <div class="siak-main-layout">
+
+      <!-- TOPBAR (72px) -->
+      <header class="siak-topbar">
+        <div class="topbar-breadcrumb">
+          <span>Akademik</span>
+          <span class="sep">/</span>
+          <span class="current">Program Studi</span>
+        </div>
+
+        <div class="topbar-right-actions">
+          <div class="topbar-search-box">
+            <span class="search-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" placeholder="Cari di SIAK UFD...">
+          </div>
+
+          <button class="topbar-icon-btn" title="Notifikasi">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+
+          <div class="topbar-profile-widget" onclick="openRoleSwitcher()">
+            <div class="user-avatar-initials">NP</div>
+            <div class="user-meta-wrap">
+              <span class="user-full-name">Nadia Putri</span>
+              <span class="user-role-badge">Operator BAK</span>
+            </div>
+            <span class="user-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- SCROLLABLE WORKSPACE (Max 1136px) -->
+      <main class="siak-workspace-scroll">
+        <div class="siak-content-container">
+
+          <!-- PAGE TITLE & SEMESTER ROW -->
+          <div class="workspace-header-row">
+            <div>
+              <h2 class="page-main-title">Program Studi</h2>
+              <p class="page-main-subtitle">Kelola program studi dengan informasi yang terintegrasi.</p>
+            </div>
+            <div class="semester-filter-pill">
+              <span class="pill-dot"></span>
+              <span>Ganjil 2025/2026</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+
+          <!-- FOUR STAT METRICS (Node 1243) -->
+          <div class="stats-metrics-grid">
+            <div class="stat-metric-card">
+              <span class="stat-metric-label">Program studi</span>
+              <div class="stat-metric-value">12</div>
+              <span class="stat-metric-sub">Aktif</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-metric-label">Fakultas</span>
+              <div class="stat-metric-value">4</div>
+              <span class="stat-metric-sub">Fakultas</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-metric-label">Akreditasi unggul</span>
+              <div class="stat-metric-value">8</div>
+              <span class="stat-metric-sub">Program studi</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-metric-label">Mahasiswa aktif</span>
+              <div class="stat-metric-value">2.486</div>
+              <span class="stat-metric-sub">Seluruh prodi</span>
+            </div>
+          </div>
+
+          <!-- TOOLBAR ROW: Search, Filter & Add Button (Node 1243) -->
+          <div class="table-toolbar-row">
+            <div class="table-toolbar-title">
+              <h3>Program studi</h3>
+            </div>
+            <div class="table-toolbar-actions">
+              <div class="search-input-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="input-search-prodi" placeholder="Cari nama atau kode...">
+              </div>
+
+              <select id="select-fakultas" class="filter-select">
+                <option value="all" selected>Semua fakultas</option>
+                <option value="fasilkom">Fakultas Ilmu Komputer</option>
+                <option value="feb">Fakultas Ekonomi & Bisnis</option>
+                <option value="ft">Fakultas Teknik</option>
+                <option value="fisip">Fakultas Ilmu Sosial</option>
+              </select>
+
+              <button type="button" class="btn-add-primary" onclick="modalTambahProdi()">
+                <span>+ Program studi</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- THREE-COLUMN PROGRAM STUDI CARD GRID (Node 1243) -->
+          <div class="prodi-card-grid" id="prodi-grid">
+            <!-- Card 1: Teknik Informatika -->
+            <div class="prodi-card" data-fakultas="fasilkom">
+              <div>
+                <div class="prodi-card-top">
+                  <div class="prodi-abbr-tile">TI</div>
+                  <span class="badge-akreditasi-unggul">Unggul</span>
+                </div>
+                <div class="prodi-card-body">
+                  <h4>Teknik Informatika</h4>
+                  <div class="prodi-faculty-text">Fakultas Ilmu Komputer</div>
+                </div>
+              </div>
+              <div>
+                <div class="prodi-stats-row">
+                  <span>842 mahasiswa</span>
+                  <span class="prodi-stat-sep">·</span>
+                  <span>24 dosen</span>
+                </div>
+                <div class="prodi-card-footer">
+                  <span class="degree-level-tag">S1 · Reguler</span>
+                  <a href="../matakuliah/index.html" class="link-manage-prodi">Kelola →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Sistem Informasi -->
+            <div class="prodi-card" data-fakultas="fasilkom">
+              <div>
+                <div class="prodi-card-top">
+                  <div class="prodi-abbr-tile">SI</div>
+                  <span class="badge-akreditasi-unggul">Unggul</span>
+                </div>
+                <div class="prodi-card-body">
+                  <h4>Sistem Informasi</h4>
+                  <div class="prodi-faculty-text">Fakultas Ilmu Komputer</div>
+                </div>
+              </div>
+              <div>
+                <div class="prodi-stats-row">
+                  <span>528 mahasiswa</span>
+                  <span class="prodi-stat-sep">·</span>
+                  <span>18 dosen</span>
+                </div>
+                <div class="prodi-card-footer">
+                  <span class="degree-level-tag">S1 · Reguler</span>
+                  <a href="../matakuliah/index.html" class="link-manage-prodi">Kelola →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Manajemen -->
+            <div class="prodi-card" data-fakultas="feb">
+              <div>
+                <div class="prodi-card-top">
+                  <div class="prodi-abbr-tile">MN</div>
+                  <span class="badge-akreditasi-unggul">Unggul</span>
+                </div>
+                <div class="prodi-card-body">
+                  <h4>Manajemen</h4>
+                  <div class="prodi-faculty-text">Fakultas Ekonomi & Bisnis</div>
+                </div>
+              </div>
+              <div>
+                <div class="prodi-stats-row">
+                  <span>716 mahasiswa</span>
+                  <span class="prodi-stat-sep">·</span>
+                  <span>22 dosen</span>
+                </div>
+                <div class="prodi-card-footer">
+                  <span class="degree-level-tag">S1 · Reguler</span>
+                  <a href="../matakuliah/index.html" class="link-manage-prodi">Kelola →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Akuntansi -->
+            <div class="prodi-card" data-fakultas="feb">
+              <div>
+                <div class="prodi-card-top">
+                  <div class="prodi-abbr-tile">AK</div>
+                  <span class="badge-akreditasi-unggul">Unggul</span>
+                </div>
+                <div class="prodi-card-body">
+                  <h4>Akuntansi</h4>
+                  <div class="prodi-faculty-text">Fakultas Ekonomi & Bisnis</div>
+                </div>
+              </div>
+              <div>
+                <div class="prodi-stats-row">
+                  <span>186 mahasiswa</span>
+                  <span class="prodi-stat-sep">·</span>
+                  <span>16 dosen</span>
+                </div>
+                <div class="prodi-card-footer">
+                  <span class="degree-level-tag">S1 · Reguler</span>
+                  <a href="../matakuliah/index.html" class="link-manage-prodi">Kelola →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5: Teknik Sipil -->
+            <div class="prodi-card" data-fakultas="ft">
+              <div>
+                <div class="prodi-card-top">
+                  <div class="prodi-abbr-tile">TS</div>
+                  <span class="badge-akreditasi-unggul">Unggul</span>
+                </div>
+                <div class="prodi-card-body">
+                  <h4>Teknik Sipil</h4>
+                  <div class="prodi-faculty-text">Fakultas Teknik</div>
+                </div>
+              </div>
+              <div>
+                <div class="prodi-stats-row">
+                  <span>124 mahasiswa</span>
+                  <span class="prodi-stat-sep">·</span>
+                  <span>14 dosen</span>
+                </div>
+                <div class="prodi-card-footer">
+                  <span class="degree-level-tag">S1 · Reguler</span>
+                  <a href="../matakuliah/index.html" class="link-manage-prodi">Kelola →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6: Ilmu Komunikasi -->
+            <div class="prodi-card" data-fakultas="fisip">
+              <div>
+                <div class="prodi-card-top">
+                  <div class="prodi-abbr-tile">IK</div>
+                  <span class="badge-akreditasi-unggul">Unggul</span>
+                </div>
+                <div class="prodi-card-body">
+                  <h4>Ilmu Komunikasi</h4>
+                  <div class="prodi-faculty-text">Fakultas Ilmu Sosial</div>
+                </div>
+              </div>
+              <div>
+                <div class="prodi-stats-row">
+                  <span>90 mahasiswa</span>
+                  <span class="prodi-stat-sep">·</span>
+                  <span>12 dosen</span>
+                </div>
+                <div class="prodi-card-footer">
+                  <span class="degree-level-tag">S1 · Reguler</span>
+                  <a href="../matakuliah/index.html" class="link-manage-prodi">Kelola →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MORE BAR (Node 1243) -->
+          <div class="prodi-more-bar">
+            <div>Menampilkan 6 dari 12 program studi</div>
+            <button type="button" class="btn-more-outline" onclick="alert('Menampilkan 6 program studi lainnya: Teknik Elektro, Arsitektur, Hukum, Psikologi, Hubungan Internasional, Desain Komunikasi Visual.')">
+              <span>Lihat program lainnya  →</span>
+            </button>
+          </div>
+
+          <!-- METADATA FOOTER ROW -->
+          <div class="page-meta-footer-row">
+            <div>Tahun akademik 2025/2026</div>
+            <div>Terakhir diperbarui · 18 Agustus 2025, 08.30 WIB</div>
+          </div>
+
+        </div>
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

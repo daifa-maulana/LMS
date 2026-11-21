@@ -1,0 +1,23 @@
+{
+  "name": "siak-ufd-monorepo",
+  "version": "2.0.0",
+  "description": "SIAK UFD Enterprise Academic ERP & SaaS (Frontend & Backend)",
+  "scripts": {
+    "start": "npm run backend",
+    "backend": "cd backend && npm start",
+    "backend:dev": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "dev": "node scripts/dev.js",
+    "test:backend": "node scratch/test_backend.js"
+  },
+  "keywords": [
+    "siak",
+    "academic-erp",
+    "saas",
+    "frontend",
+    "backend",
+    "clean-architecture"
+  ],
+  "author": "Universitas Fatmawati Digital",
+  "license": "ISC"
+}

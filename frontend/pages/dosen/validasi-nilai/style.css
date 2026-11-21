@@ -1,0 +1,369 @@
+/* ==========================================================================
+   STYLE.CSS — Dosen / Validasi Nilai (Node 3507)
+   Inherits full shell from ../shell.css (Zero Shift Guarantee, No Horizontal Scroll)
+   ========================================================================== */
+
+/* Shell loaded via HTML link */
+
+/* ==========================================================================
+   1. VALIDATION INTRODUCTION BANNER (Node 3507)
+   ========================================================================== */
+.validation-intro-banner {
+  background-color: #EAF7F1;
+  border: 1px solid rgba(35, 119, 87, 0.2);
+  border-radius: var(--radius-md);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.intro-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(35, 119, 87, 0.2);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.intro-text-wrap h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.intro-text-wrap p {
+  font-size: 13px;
+  color: #475467;
+  margin: 3px 0 0 0;
+}
+
+/* ==========================================================================
+   2. TWO-COLUMN VALIDATION GRID (Node 3507: 728px / 384px)
+   ========================================================================== */
+.validation-two-col-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.validation-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.validation-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   3. SELECTED CLASS SUMMARY CARD (Node 3507)
+   ========================================================================== */
+.selected-class-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.class-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.class-header-row h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.badge-draft-neutral {
+  padding: 4px 10px;
+  background-color: #F2F4F7;
+  color: #475467;
+  border-radius: 100px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.class-meta-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.class-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.class-stat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label-muted {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.stat-val-bold {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   4. GRADE DISTRIBUTION CARD (Node 3507)
+   ========================================================================== */
+.grade-distribution-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.grade-distribution-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 20px 0;
+}
+
+.chart-bars-layout {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 120px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.chart-bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 70px;
+}
+
+.chart-bar-val {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.chart-bar-fill {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s ease;
+}
+
+.bar-fill-highest {
+  background-color: #45B98E;
+}
+
+.bar-fill-regular {
+  background-color: #B6E2CF;
+}
+
+.chart-bar-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #475467;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   5. SUBMISSION CHECKLIST CARD (Node 3507)
+   ========================================================================== */
+.submission-checklist-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.submission-checklist-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 18px 0;
+}
+
+.checklist-items-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.check-item-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.check-icon-success {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #EAF7F1;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.check-icon-warning {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #FEF3C7;
+  color: #D97706;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.checklist-warning-box {
+  background-color: #FFFAEB;
+  border: 1px solid #FEE4E2;
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 12.5px;
+  color: #B54708;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.btn-complete-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  height: 42px;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 1px 3px rgba(35, 119, 87, 0.2);
+}
+
+.btn-complete-input:hover {
+  background-color: #1B6045;
+}
+
+/* ==========================================================================
+   6. VALIDATION HISTORY / OTHER CLASSES CARD (Node 3507)
+   ========================================================================== */
+.validation-history-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  width: 100%;
+}
+
+.validation-history-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 18px 0;
+}
+
+.other-classes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.other-class-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background-color: #FAFCFB;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.other-class-item:hover {
+  border-color: var(--primary-border);
+  background-color: #FFFFFF;
+}
+
+.other-class-titles {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.class-code-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  background-color: #E8EEEB;
+  border-radius: 4px;
+  color: var(--text-dark);
+}
+
+.class-title-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.other-class-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.meta-count-text {
+  font-size: 13px;
+  color: var(--text-muted);
+}

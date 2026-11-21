@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRS/KRS Mahasiswa — SIAK UFD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shell.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="siak-app-canvas">
+
+    <!-- 1. SIDEBAR (224px) — Identical to Dashboard -->
+    <aside class="siak-sidebar">
+      <div>
+        <!-- Brand Row -->
+        <div class="sidebar-header-box">
+          <a href="../dashboard/index.html" class="siak-brand-row">
+            <div class="siak-wordmark-tile">S</div>
+            <div class="siak-brand-titles">
+              <h1>SIAK UFD</h1>
+            </div>
+          </a>
+          <p class="siak-brand-subtitle">Sistem Informasi Akademik</p>
+
+          <!-- Active Role Widget -->
+          <div class="active-role-widget" onclick="openRoleSwitcher()">
+            <div class="role-info-wrap">
+              <span class="role-title">Mahasiswa</span>
+              <span class="role-sub">Ruang kerja akademik</span>
+            </div>
+            <span class="role-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <div class="sidebar-nav-section">
+          <div class="menu-category-title">MENU UTAMA</div>
+          <ul class="siak-nav-list">
+            <li class="siak-nav-item">
+              <a href="../dashboard/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../biodata/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span>Biodata</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../frs/index.html" class="active">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </span>
+                <span>FRS/KRS</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../matakuliah/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <span>Mata Kuliah</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../jadwal/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </span>
+                <span>Jadwal Kuliah</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../hasilstudi/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </span>
+                <span>Hasil Studi</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../khs/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                </span>
+                <span>KHS</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../transkrip/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg>
+                </span>
+                <span>Transkrip Akademik</span>
+              </a>
+            </li>
+            <li class="siak-nav-item">
+              <a href="../pengumuman/index.html">
+                <span class="nav-active-marker"></span>
+                <span class="nav-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                </span>
+                <span>Pengumuman</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer-box">
+        <div class="academic-help-card">
+          <div class="academic-help-card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <h6>Butuh bantuan?</h6>
+          </div>
+          <p>Hubungi layanan akademik</p>
+          <a href="../pengumuman/index.html">
+            <span>Pusat bantuan</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+        <div class="siak-footer-copyright">
+          SIAK UFD © 2025
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. MAIN LAYOUT (Topbar + Workspace) -->
+    <div class="siak-main-layout">
+
+      <!-- TOPBAR (72px) — Identical to Dashboard -->
+      <header class="siak-topbar">
+        <div class="topbar-breadcrumbs">
+          <span class="crumb-muted">Akademik</span>
+          <span class="crumb-muted">/</span>
+          <span class="crumb-active">FRS/KRS</span>
+        </div>
+
+        <div class="topbar-right-controls">
+          <div class="topbar-search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="topbar-search-input" placeholder="Cari matkul, nilai, jadwal...">
+          </div>
+
+          <button class="topbar-btn-icon" title="Notifikasi" onclick="alert('Tidak ada notifikasi baru')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+
+          <div class="topbar-profile-divider"></div>
+
+          <div class="topbar-profile-tile" onclick="location.href='../biodata/index.html'">
+            <div class="topbar-profile-meta">
+              <div class="topbar-profile-name">Alya Rahma Putri</div>
+              <div class="topbar-profile-role">Mahasiswa</div>
+            </div>
+            <span class="topbar-chevron">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- WORKSPACE SCROLL -->
+      <main class="siak-workspace-scroll">
+        <div class="workspace-inner-container">
+
+          <div class="workspace-header-row">
+            <div class="workspace-titles">
+              <h2>FRS/KRS</h2>
+              <p>Kelola frs/krs dengan informasi yang terintegrasi</p>
+            </div>
+            <div class="semester-selector-box">
+              <span>Ganjil 2025/2026</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+
+          <!-- Page Content (Node 4195) -->
+          <div class="page-content-wrapper">
+
+            <!-- Registration Period Banner (Node 4196) -->
+            <div class="registration-period-banner">
+              <div class="reg-banner-info">
+                <h3>Periode pengisian KRS dibuka</h3>
+                <p>18–29 Agustus 2025 · Maksimal 24 SKS berdasarkan IPS 3,86</p>
+              </div>
+              <div>
+                <span class="reg-status-badge" id="reg-badge-status">Draft rencana studi</span>
+              </div>
+            </div>
+
+            <!-- Two-Column Grid: Left (748px) & Right (364px) -->
+            <div class="frs-two-col-layout">
+
+              <!-- Left Column: Selected Courses Table (Node 4201, 748px) -->
+              <div class="frs-courses-card">
+                <div class="courses-card-header">
+                  <h4>Mata kuliah dipilih</h4>
+                  <p id="frs-course-count">7 mata kuliah · Semester 5</p>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="frs-study-table">
+                    <thead>
+                      <tr>
+                        <th>MATA KULIAH</th>
+                        <th style="width: 100px; text-align: center;">KELAS</th>
+                        <th style="width: 80px; text-align: center;">SKS</th>
+                        <th style="width: 90px; text-align: right;">AKSI</th>
+                      </tr>
+                    </thead>
+                    <tbody id="frs-table-body">
+                      <!-- Populated via script.js -->
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Add Course Button (Node 4271) -->
+                <a href="../matakuliah/index.html" class="btn-add-course-bar">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <span>Tambah mata kuliah</span>
+                </a>
+              </div>
+
+              <!-- Right Column: Summary (Node 4250) + Guidance (Node 4267) (364px) -->
+              <div class="frs-side-col">
+
+                <!-- Summary Card (Node 4250) -->
+                <div class="frs-summary-card">
+                  <h4>Ringkasan rencana studi</h4>
+                  
+                  <div class="summary-item-row">
+                    <span class="summary-label">Semester</span>
+                    <span class="summary-val">Ganjil 2025/2026</span>
+                  </div>
+                  <div class="summary-item-row">
+                    <span class="summary-label">IPS sebelumnya</span>
+                    <span class="summary-val font-mono">3,86</span>
+                  </div>
+                  <div class="summary-item-row">
+                    <span class="summary-label">Batas SKS</span>
+                    <span class="summary-val font-mono">24 SKS</span>
+                  </div>
+                  <div class="summary-item-row">
+                    <span class="summary-label">SKS dipilih</span>
+                    <span class="summary-val font-mono text-primary font-bold" id="frs-sks-chosen">21 SKS</span>
+                  </div>
+                  <div class="summary-item-row">
+                    <span class="summary-label">Sisa kuota</span>
+                    <span class="summary-val font-mono text-muted" id="frs-sks-remaining">3 SKS</span>
+                  </div>
+
+                  <div class="summary-divider"></div>
+
+                  <div class="summary-check-row">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#237757" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Tidak ada bentrok jadwal</span>
+                  </div>
+                  <div class="summary-check-row">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#237757" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Prasyarat mata kuliah terpenuhi</span>
+                  </div>
+
+                  <button class="btn-submit-krs" id="btn-submit-krs">
+                    <span>Ajukan KRS</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                </div>
+
+                <!-- Guidance Card (Node 4267) -->
+                <div class="frs-guidance-card">
+                  <h5>Sebelum mengajukan</h5>
+                  <p>Pastikan mata kuliah dan kelas sesuai rencana studi Anda. Pengajuan akan ditinjau oleh dosen PA dan Operator BAK.</p>
+                  <div class="guidance-dpa-pill">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Dosen PA: Dr. Maya Lestari</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Bottom Meta -->
+          <div class="workspace-footer-meta">
+            <span class="meta-item">Tahun akademik 2025/2026</span>
+            <span class="meta-separator">·</span>
+            <span class="meta-item">Terakhir diperbarui · 18 Agustus 2025, 08.30 WIB</span>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

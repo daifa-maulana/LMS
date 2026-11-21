@@ -1,0 +1,352 @@
+{
+  "tenants": [
+    {
+      "id": "ten-ufd-prod",
+      "name": "Universitas Fatmawati Digital",
+      "code": "UFD",
+      "domain": "ufd.ac.id",
+      "status": "ACTIVE"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-mhs-01",
+      "tenant_id": "ten-ufd-prod",
+      "username": "2023010042",
+      "password_hash": "$2b$10$demoHashForSIAKUFD2025",
+      "role": "mahasiswa",
+      "display_name": "Alya Rahma Putri",
+      "email": "alya.rahma@student.ufd.ac.id"
+    },
+    {
+      "id": "usr-mhs-02",
+      "tenant_id": "ten-ufd-prod",
+      "username": "20230801045",
+      "password_hash": "$2b$10$demoHashForSIAKUFD2025",
+      "role": "mahasiswa",
+      "display_name": "Da'ffa Maulana",
+      "email": "daffa.maulana@student.ufd.ac.id"
+    },
+    {
+      "id": "usr-dsn-01",
+      "tenant_id": "ten-ufd-prod",
+      "username": "0412088501",
+      "password_hash": "$2b$10$demoHashForSIAKUFD2025",
+      "role": "dosen",
+      "display_name": "Dr. Aditya Pratama",
+      "email": "aditya.pratama@dosen.ufd.ac.id"
+    },
+    {
+      "id": "usr-dsn-02",
+      "tenant_id": "ten-ufd-prod",
+      "username": "0415098202",
+      "password_hash": "$2b$10$demoHashForSIAKUFD2025",
+      "role": "dosen",
+      "display_name": "Dr. Hendra Gunawan, M.Kom",
+      "email": "hendra.gunawan@dosen.ufd.ac.id"
+    },
+    {
+      "id": "usr-bak-01",
+      "tenant_id": "ten-ufd-prod",
+      "username": "198503152010121001",
+      "password_hash": "$2b$10$demoHashForSIAKUFD2025",
+      "role": "akademik",
+      "display_name": "Biro Administrasi Akademik (BAK)",
+      "email": "bak@ufd.ac.id"
+    }
+  ],
+  "students": [
+    {
+      "nim": "2023010042",
+      "tenant_id": "ten-ufd-prod",
+      "user_id": "usr-mhs-01",
+      "nama": "Alya Rahma Putri",
+      "program_studi": "Teknik Informatika",
+      "prodi_code": "TI-S1",
+      "jenjang": "S1",
+      "fakultas": "Teknologi Informasi & Desain",
+      "dosen_pa": "Dr. Aditya Pratama",
+      "dosen_pa_nidn": "0412088501",
+      "semester_aktif": 4,
+      "ips_sebelumnya": 3.75,
+      "max_sks": 24,
+      "sks_lulus": 68,
+      "ipk": 3.82,
+      "status": "Aktif",
+      "avatar_initials": "AR"
+    },
+    {
+      "nim": "20230801045",
+      "tenant_id": "ten-ufd-prod",
+      "user_id": "usr-mhs-02",
+      "nama": "Da'ffa Maulana",
+      "program_studi": "Teknik Informatika",
+      "prodi_code": "TI-S1",
+      "jenjang": "S1",
+      "fakultas": "Teknologi Informasi & Desain",
+      "dosen_pa": "Dr. Hendra Gunawan, M.Kom",
+      "dosen_pa_nidn": "0415098202",
+      "semester_aktif": 4,
+      "ips_sebelumnya": 3.80,
+      "max_sks": 24,
+      "sks_lulus": 72,
+      "ipk": 3.86,
+      "status": "Aktif",
+      "avatar_initials": "DM"
+    }
+  ],
+  "lecturers": [
+    {
+      "nidn": "0412088501",
+      "tenant_id": "ten-ufd-prod",
+      "user_id": "usr-dsn-01",
+      "nama": "Dr. Aditya Pratama",
+      "gelar": "Dr., S.Kom., M.T.",
+      "prodi": "Teknik Informatika",
+      "jabatan_fungsional": "Lektor Kepala",
+      "status": "Aktif"
+    },
+    {
+      "nidn": "0415098202",
+      "tenant_id": "ten-ufd-prod",
+      "user_id": "usr-dsn-02",
+      "nama": "Dr. Hendra Gunawan, M.Kom",
+      "gelar": "Dr., M.Kom.",
+      "prodi": "Teknik Informatika",
+      "jabatan_fungsional": "Lektor",
+      "status": "Aktif"
+    }
+  ],
+  "courses": [
+    {
+      "kode": "IF201",
+      "nama": "Sistem Basis Data Lanjut",
+      "sks": 3,
+      "semester": 4,
+      "prodi": "TI-S1",
+      "prasyarat": "IF102"
+    },
+    {
+      "kode": "IF202",
+      "nama": "Pemrograman Web Fullstack",
+      "sks": 3,
+      "semester": 4,
+      "prodi": "TI-S1",
+      "prasyarat": "IF101"
+    },
+    {
+      "kode": "IF203",
+      "nama": "Rekayasa Perangkat Lunak",
+      "sks": 3,
+      "semester": 4,
+      "prodi": "TI-S1",
+      "prasyarat": "IF103"
+    },
+    {
+      "kode": "IF204",
+      "nama": "Jaringan Komputer & Keamanan",
+      "sks": 4,
+      "semester": 4,
+      "prodi": "TI-S1",
+      "prasyarat": null
+    },
+    {
+      "kode": "IF205",
+      "nama": "Kecerdasan Buatan & ML",
+      "sks": 3,
+      "semester": 4,
+      "prodi": "TI-S1",
+      "prasyarat": "IF201"
+    },
+    {
+      "kode": "IF301",
+      "nama": "Algoritma & Pemrograman Lanjut",
+      "sks": 3,
+      "semester": 4,
+      "prodi": "TI-S1",
+      "prasyarat": null
+    }
+  ],
+  "classes": [
+    {
+      "id": "cls-bd-3a",
+      "kode_mk": "IF201",
+      "nama_mk": "Sistem Basis Data Lanjut",
+      "kelas": "TI-3A",
+      "sks": 3,
+      "dosen_nidn": "0412088501",
+      "dosen_nama": "Dr. Aditya Pratama",
+      "hari": "Senin",
+      "jam": "08.00 - 09.40",
+      "ruang": "Lab 02 Komputer",
+      "kapasitas": 40,
+      "terisi": 38,
+      "status_penilaian": "DRAFT"
+    },
+    {
+      "id": "cls-algo-1a",
+      "kode_mk": "IF301",
+      "nama_mk": "Algoritma & Pemrograman Lanjut",
+      "kelas": "TI-1A",
+      "sks": 3,
+      "dosen_nidn": "0412088501",
+      "dosen_nama": "Dr. Aditya Pratama",
+      "hari": "Selasa",
+      "jam": "08.00 - 09.40",
+      "ruang": "Lab 01 RPL",
+      "kapasitas": 40,
+      "terisi": 39,
+      "status_penilaian": "VALIDATED"
+    },
+    {
+      "id": "cls-oop-3b",
+      "kode_mk": "IF202",
+      "nama_mk": "Pemrograman Web Fullstack",
+      "kelas": "TI-3B",
+      "sks": 3,
+      "dosen_nidn": "0412088501",
+      "dosen_nama": "Dr. Aditya Pratama",
+      "hari": "Rabu",
+      "jam": "10.00 - 11.40",
+      "ruang": "Lab 02 Komputer",
+      "kapasitas": 35,
+      "terisi": 34,
+      "status_penilaian": "PUBLISHED"
+    }
+  ],
+  "krs_enrollments": [
+    {
+      "id": "krs-001",
+      "nim": "2023010042",
+      "class_id": "cls-bd-3a",
+      "kode_mk": "IF201",
+      "nama_mk": "Sistem Basis Data Lanjut",
+      "sks": 3,
+      "status": "APPROVED_PA"
+    },
+    {
+      "id": "krs-002",
+      "nim": "2023010042",
+      "class_id": "cls-oop-3b",
+      "kode_mk": "IF202",
+      "nama_mk": "Pemrograman Web Fullstack",
+      "sks": 3,
+      "status": "APPROVED_PA"
+    },
+    {
+      "id": "krs-003",
+      "nim": "2023010042",
+      "class_id": "cls-algo-1a",
+      "kode_mk": "IF301",
+      "nama_mk": "Algoritma & Pemrograman Lanjut",
+      "sks": 3,
+      "status": "APPROVED_PA"
+    }
+  ],
+  "attendances": [
+    {
+      "id": "att-001",
+      "class_id": "cls-bd-3a",
+      "nim": "2023010042",
+      "total_sessions": 16,
+      "attended": 15,
+      "percentage": 93.75,
+      "eligible_for_exam": true
+    },
+    {
+      "id": "att-002",
+      "class_id": "cls-oop-3b",
+      "nim": "2023010042",
+      "total_sessions": 16,
+      "attended": 16,
+      "percentage": 100.0,
+      "eligible_for_exam": true
+    },
+    {
+      "id": "att-003",
+      "class_id": "cls-algo-1a",
+      "nim": "2023010042",
+      "total_sessions": 16,
+      "attended": 14,
+      "percentage": 87.5,
+      "eligible_for_exam": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "grd-001",
+      "class_id": "cls-bd-3a",
+      "nim": "2023010042",
+      "student_name": "Alya Rahma Putri",
+      "tugas": 88,
+      "kuis": 85,
+      "uts": 90,
+      "uas": 92,
+      "nilai_akhir": 89.3,
+      "huruf_mutu": "A",
+      "bobot": 4.0,
+      "status": "DRAFT"
+    },
+    {
+      "id": "grd-002",
+      "class_id": "cls-oop-3b",
+      "nim": "2023010042",
+      "student_name": "Alya Rahma Putri",
+      "tugas": 90,
+      "kuis": 88,
+      "uts": 85,
+      "uas": 90,
+      "nilai_akhir": 88.35,
+      "huruf_mutu": "A",
+      "bobot": 4.0,
+      "status": "PUBLISHED"
+    },
+    {
+      "id": "grd-003",
+      "class_id": "cls-algo-1a",
+      "nim": "2023010042",
+      "student_name": "Alya Rahma Putri",
+      "tugas": 82,
+      "kuis": 80,
+      "uts": 85,
+      "uas": 85,
+      "nilai_akhir": 83.4,
+      "huruf_mutu": "AB",
+      "bobot": 3.5,
+      "status": "VALIDATED"
+    }
+  ],
+  "grade_revisions": [
+    {
+      "id": "rev-001",
+      "class_id": "cls-bd-3a",
+      "nim": "2023010042",
+      "student_name": "Alya Rahma Putri",
+      "kode_mk": "IF201",
+      "nama_mk": "Sistem Basis Data Lanjut",
+      "old_grade": "C",
+      "new_grade": "A",
+      "reason": "Koreksi nilai lembar jawaban susulan yang tertukar di berkas ujian fisik",
+      "requested_by": "Dr. Aditya Pratama",
+      "approved_by_dekan": true,
+      "status": "EXECUTED",
+      "timestamp": "2026-11-18T08:15:30Z"
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ann-01",
+      "title": "Batas Waktu Pengisian FRS Semester Genap 2025/2026",
+      "date": "18 November 2026",
+      "category": "Akademik",
+      "summary": "Pengisian dan revisi kartu rencana studi paling lambat disetujui Dosen Pembimbing Akademik pada tanggal 25 November 2026."
+    },
+    {
+      "id": "ann-02",
+      "title": "Jadwal Validasi & Publikasi Nilai Akhir Semester",
+      "date": "15 November 2026",
+      "category": "BAK",
+      "summary": "Seluruh dosen pengampu dimohon menyelesaikan finalisasi nilai kelas sebelum batas penguncian sistem pada 30 November 2026."
+    }
+  ]
+}
