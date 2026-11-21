@@ -230,22 +230,22 @@
                   <div class="doc-meta-row">
                     <span class="doc-meta-lbl">Nama Mahasiswa</span>
                     <span class="doc-meta-sep">:</span>
-                    <span class="doc-meta-val">Alya Rahma Putri</span>
+                    <span class="doc-meta-val" id="khs-meta-name">Alya Rahma Putri</span>
                   </div>
                   <div class="doc-meta-row">
                     <span class="doc-meta-lbl">Nomor Induk (NIM)</span>
                     <span class="doc-meta-sep">:</span>
-                    <span class="doc-meta-val font-mono">2023010042</span>
+                    <span class="doc-meta-val font-mono" id="khs-meta-nim">2023010042</span>
                   </div>
                   <div class="doc-meta-row">
                     <span class="doc-meta-lbl">Program Studi</span>
                     <span class="doc-meta-sep">:</span>
-                    <span class="doc-meta-val">S1 Teknik Informatika</span>
+                    <span class="doc-meta-val" id="khs-meta-prodi">S1 Teknik Informatika</span>
                   </div>
                   <div class="doc-meta-row">
                     <span class="doc-meta-lbl">Dosen Pembimbing</span>
                     <span class="doc-meta-sep">:</span>
-                    <span class="doc-meta-val">Dr. Maya Lestari</span>
+                    <span class="doc-meta-val" id="khs-meta-dpa">Dr. Aditya Pratama</span>
                   </div>
                 </div>
 
@@ -262,70 +262,8 @@
                       <th style="width: 50px; text-align: right;">MUTU</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td class="text-center font-mono">1</td>
-                      <td class="font-mono">TI2401</td>
-                      <td>Analisis & Perancangan Sistem</td>
-                      <td class="text-center font-mono">3</td>
-                      <td class="text-center font-bold">A</td>
-                      <td class="text-center font-mono">4,00</td>
-                      <td class="text-right font-mono">12,00</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center font-mono">2</td>
-                      <td class="font-mono">TI2402</td>
-                      <td>Pemrograman Berorientasi Objek</td>
-                      <td class="text-center font-mono">3</td>
-                      <td class="text-center font-bold">A</td>
-                      <td class="text-center font-mono">4,00</td>
-                      <td class="text-right font-mono">12,00</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center font-mono">3</td>
-                      <td class="font-mono">TI2403</td>
-                      <td>Struktur Data</td>
-                      <td class="text-center font-mono">3</td>
-                      <td class="text-center font-bold">A</td>
-                      <td class="text-center font-mono">4,00</td>
-                      <td class="text-right font-mono">12,00</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center font-mono">4</td>
-                      <td class="font-mono">TI2404</td>
-                      <td>Matematika Diskrit</td>
-                      <td class="text-center font-mono">3</td>
-                      <td class="text-center font-bold">A</td>
-                      <td class="text-center font-mono">4,00</td>
-                      <td class="text-right font-mono">12,00</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center font-mono">5</td>
-                      <td class="font-mono">TI2405</td>
-                      <td>Arsitektur Komputer</td>
-                      <td class="text-center font-mono">3</td>
-                      <td class="text-center font-bold">A</td>
-                      <td class="text-center font-mono">4,00</td>
-                      <td class="text-right font-mono">12,00</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center font-mono">6</td>
-                      <td class="font-mono">TI2406</td>
-                      <td>Metode Penelitian</td>
-                      <td class="text-center font-mono">3</td>
-                      <td class="text-center font-bold">A</td>
-                      <td class="text-center font-mono">4,00</td>
-                      <td class="text-right font-mono">12,00</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center font-mono">7</td>
-                      <td class="font-mono">TI2407</td>
-                      <td>Kewirausahaan</td>
-                      <td class="text-center font-mono">3</td>
-                      <td class="text-center font-bold">B</td>
-                      <td class="text-center font-mono">3,00</td>
-                      <td class="text-right font-mono">9,00</td>
-                    </tr>
+                  <tbody id="khs-grades-tbody">
+                    <!-- Loaded dynamically from localStorage -->
                   </tbody>
                 </table>
 
@@ -333,19 +271,19 @@
                 <div class="doc-summary-strip">
                   <div class="doc-stat-col">
                     <span class="doc-stat-lbl">SKS Semester</span>
-                    <span class="doc-stat-val font-mono">21</span>
+                    <span class="doc-stat-val font-mono" id="khs-stat-sks">0</span>
                   </div>
                   <div class="doc-stat-col">
                     <span class="doc-stat-lbl">Total Mutu</span>
-                    <span class="doc-stat-val font-mono">81,00</span>
+                    <span class="doc-stat-val font-mono" id="khs-stat-mutu">0,00</span>
                   </div>
                   <div class="doc-stat-col">
                     <span class="doc-stat-lbl">Indeks Prestasi Semester (IPS)</span>
-                    <span class="doc-stat-val font-mono text-primary">3,86</span>
+                    <span class="doc-stat-val font-mono text-primary" id="khs-stat-ips">0,00</span>
                   </div>
                   <div class="doc-stat-col">
                     <span class="doc-stat-lbl">Indeks Prestasi Kumulatif (IPK)</span>
-                    <span class="doc-stat-val font-mono text-primary">3,78</span>
+                    <span class="doc-stat-val font-mono text-primary" id="khs-stat-ipk">0,00</span>
                   </div>
                 </div>
 
@@ -439,6 +377,7 @@
 
   </div>
 
+  <script src="../../js/siak-storage.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

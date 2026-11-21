@@ -1,4 +1,4 @@
-// SIAK UFD - Operator BAK Suite: Publikasi Nilai (FigCraft Alignment)
+// SIAK UFD - Operator BAK Suite: Publikasi Nilai (Integrated with LocalStorage)
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('input-search-publikasi');
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tableRows.forEach(row => {
       const text = row.textContent.toLowerCase();
       const matchSearch = !query || text.includes(query);
-      const matchProdi = prodi === 'all' || prodi === 'ti'; // In FigCraft TI-3A classes
+      const matchProdi = prodi === 'all' || prodi === 'ti';
 
       if (matchSearch && matchProdi) {
         row.style.display = '';
@@ -32,8 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function publikasikanKelas(mk, kelas, linkEl) {
-  if (confirm(`Publikasikan nilai akhir untuk mata kuliah ${mk} (${kelas}) ke portal mahasiswa?`)) {
-    const row = linkEl.closest('tr');
+  if (confirm(`Publikasikan nilai akhir untuk mata kuliah ${mk} (${kelas}) ke portal mahasiswa via LocalStorage?`)) {
+    if (window.siakStorage) {
+      const classes = window.siakStorage.get().classes;
+      const match = classes.find(c => c.nama_mk.toLowerCase().includes(mk.toLowerCase()) || c.kelas === kelas);
+      if (match) {
+        window.siakStorage.updateClassStatus(match.id, 'PUBLISHED');
+      }
+    }
+
+    const row = linkEl ? linkEl.closest('tr') : null;
     if (row) {
       const statusBadge = row.querySelector('.badge-status-siap');
       if (statusBadge) {
@@ -44,7 +52,8 @@ function publikasikanKelas(mk, kelas, linkEl) {
       linkEl.textContent = 'Lihat nilai →';
       linkEl.setAttribute('onclick', `lihatNilaiTerbit('${mk}', '${kelas}')`);
     }
-    alert(`Nilai ${mk} (${kelas}) berhasil dipublikasikan dan langsung terlihat di KHS mahasiswa!`);
+
+    alert(`Sukses! Nilai ${mk} (${kelas}) berhasil dipublikasikan resmi. Nilai sekarang langsung tampil di KHS mahasiswa.`);
   }
 }
 
@@ -53,7 +62,13 @@ function lihatNilaiTerbit(mk, kelas) {
 }
 
 function publikasikanBatch() {
-  alert('Memproses publikasi massal untuk seluruh kelas yang telah lolos validasi BAK.');
+  if (!window.siakStorage) return;
+  const ok = confirm('Publikasikan seluruh kelas yang telah divalidasi ke KHS mahasiswa via LocalStorage?');
+  if (ok) {
+    window.siakStorage.publishBatchClasses();
+    alert('Sukses! Seluruh kelas berstatus VALIDATED telah resmi diterbitkan ke KHS mahasiswa.');
+    location.reload();
+  }
 }
 
 function openRoleSwitcher() {
