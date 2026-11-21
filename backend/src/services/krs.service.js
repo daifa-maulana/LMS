@@ -17,10 +17,20 @@ class KrsService {
 
   submitKrs(nim, classIds) {
     const eligibility = studentService.getEligibility(nim);
-    const classes = repo.findAll('classes');
+    const allClasses = repo.findAll('classes');
     
-    // Calculate total requested SKS
-    const selectedClasses = classes.filter(c => classIds.includes(c.id));
+    // Deduplicate class IDs to prevent duplicate enrollment in same class
+    const uniqueClassIds = [...new Set(classIds)];
+
+    // Resolve classes and calculate total SKS
+    const selectedClasses = [];
+    for (const id of uniqueClassIds) {
+      const found = allClasses.find(c => c.id === id);
+      if (found) {
+        selectedClasses.push(found);
+      }
+    }
+
     const totalSks = selectedClasses.reduce((sum, c) => sum + c.sks, 0);
 
     if (totalSks > eligibility.max_sks_allowed) {
@@ -52,7 +62,7 @@ class KrsService {
       nim,
       total_sks: totalSks,
       status: 'SUBMITTED',
-      message: 'Rencana Studi (KRS) berhasil diajukan ke Dosen Pembimbing Akademik.',
+      message: 'Rencana Studi (KRS) berhasil diajukan ke Dosen PA.',
       enrollments: newEnrollments
     };
   }

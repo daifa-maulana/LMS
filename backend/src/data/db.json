@@ -87,7 +87,7 @@
       "dosen_pa": "Dr. Hendra Gunawan, M.Kom",
       "dosen_pa_nidn": "0415098202",
       "semester_aktif": 4,
-      "ips_sebelumnya": 3.80,
+      "ips_sebelumnya": 3.8,
       "max_sks": 24,
       "sks_lulus": 72,
       "ipk": 3.86,
@@ -181,7 +181,10 @@
       "ruang": "Lab 02 Komputer",
       "kapasitas": 40,
       "terisi": 38,
-      "status_penilaian": "DRAFT"
+      "status_penilaian": "PUBLISHED",
+      "rejection_reason": "Nilai tugas kurang merata",
+      "validated_at": "2026-11-21T01:09:07.460Z",
+      "published_at": "2026-11-21T01:09:07.462Z"
     },
     {
       "id": "cls-algo-1a",
@@ -216,31 +219,24 @@
   ],
   "krs_enrollments": [
     {
-      "id": "krs-001",
+      "id": "krs-1795223347440-788",
       "nim": "2023010042",
       "class_id": "cls-bd-3a",
       "kode_mk": "IF201",
       "nama_mk": "Sistem Basis Data Lanjut",
       "sks": 3,
-      "status": "APPROVED_PA"
+      "status": "SUBMITTED",
+      "submitted_at": "2026-11-21T01:09:07.440Z"
     },
     {
-      "id": "krs-002",
-      "nim": "2023010042",
-      "class_id": "cls-oop-3b",
-      "kode_mk": "IF202",
-      "nama_mk": "Pemrograman Web Fullstack",
-      "sks": 3,
-      "status": "APPROVED_PA"
-    },
-    {
-      "id": "krs-003",
+      "id": "krs-1795223347441-914",
       "nim": "2023010042",
       "class_id": "cls-algo-1a",
       "kode_mk": "IF301",
       "nama_mk": "Algoritma & Pemrograman Lanjut",
       "sks": 3,
-      "status": "APPROVED_PA"
+      "status": "SUBMITTED",
+      "submitted_at": "2026-11-21T01:09:07.441Z"
     }
   ],
   "attendances": [
@@ -249,9 +245,10 @@
       "class_id": "cls-bd-3a",
       "nim": "2023010042",
       "total_sessions": 16,
-      "attended": 15,
-      "percentage": 93.75,
-      "eligible_for_exam": true
+      "attended": 16,
+      "percentage": 100,
+      "eligible_for_exam": true,
+      "last_check_in": "2026-11-21T01:09:07.428Z"
     },
     {
       "id": "att-002",
@@ -259,7 +256,7 @@
       "nim": "2023010042",
       "total_sessions": 16,
       "attended": 16,
-      "percentage": 100.0,
+      "percentage": 100,
       "eligible_for_exam": true
     },
     {
@@ -284,8 +281,9 @@
       "uas": 92,
       "nilai_akhir": 89.3,
       "huruf_mutu": "A",
-      "bobot": 4.0,
-      "status": "DRAFT"
+      "bobot": 4,
+      "status": "PUBLISHED",
+      "revision_flag": true
     },
     {
       "id": "grd-002",
@@ -298,7 +296,7 @@
       "uas": 90,
       "nilai_akhir": 88.35,
       "huruf_mutu": "A",
-      "bobot": 4.0,
+      "bobot": 4,
       "status": "PUBLISHED"
     },
     {
@@ -331,6 +329,30 @@
       "approved_by_dekan": true,
       "status": "EXECUTED",
       "timestamp": "2026-11-18T08:15:30Z"
+    },
+    {
+      "id": "rev-1795223209621",
+      "class_id": "cls-bd-3a",
+      "nim": "2023010042",
+      "student_name": "Alya Rahma Putri",
+      "old_grade": "C",
+      "new_grade": "A",
+      "reason": "Koreksi lembar jawaban ujian susulan yang tertukar",
+      "executed_by": "Operator BAK",
+      "status": "EXECUTED",
+      "timestamp": "2026-11-21T01:06:49.621Z"
+    },
+    {
+      "id": "rev-1795223347465",
+      "class_id": "cls-bd-3a",
+      "nim": "2023010042",
+      "student_name": "Alya Rahma Putri",
+      "old_grade": "C",
+      "new_grade": "A",
+      "reason": "Koreksi lembar jawaban ujian susulan yang tertukar",
+      "executed_by": "Operator BAK",
+      "status": "EXECUTED",
+      "timestamp": "2026-11-21T01:09:07.465Z"
     }
   ],
   "announcements": [
