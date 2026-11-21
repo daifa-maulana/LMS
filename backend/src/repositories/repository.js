@@ -1,11 +1,12 @@
 /**
- * REPOSITORY.JS — Data Access Layer
- * In-Memory Database with Auto JSON Persistence
+ * REPOSITORY.JS — Hybrid Data Access Layer
+ * Supports Supabase PostgreSQL Cloud with Auto-Fallback to In-Memory JSON
  * SIAK UFD Enterprise SaaS
  */
 
 const fs = require('fs');
 const path = require('path');
+const { supabase, isSupabaseConfigured } = require('../config/supabase');
 
 const DB_FILE = path.join(__dirname, '../data/db.json');
 
@@ -46,6 +47,7 @@ class Repository {
     }
   }
 
+  // Local In-Memory & JSON Operations (Instant & Reliable Fallback)
   findAll(collectionName) {
     return this.data[collectionName] || [];
   }
@@ -89,6 +91,26 @@ class Repository {
       return true;
     }
     return false;
+  }
+
+  // Supabase PostgreSQL Cloud Operations
+  async fromSupabase(tableName) {
+    if (!isSupabaseConfigured()) {
+      return null;
+    }
+    return supabase.from(tableName);
+  }
+
+  async syncWithSupabase(tableName, localData) {
+    if (!isSupabaseConfigured()) return;
+    try {
+      const { error } = await supabase.from(tableName).upsert(localData);
+      if (error) {
+        console.warn(`[Supabase] Sync warning on ${tableName}:`, error.message);
+      }
+    } catch (err) {
+      console.error(`[Supabase] Sync failed on ${tableName}:`, err.message);
+    }
   }
 }
 

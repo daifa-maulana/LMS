@@ -34,7 +34,7 @@ LMS/
 │   ├── package.json
 │   └── README.md
 │
-├── docs/                          # Dokumentasi Enterprise 10 Berkas
+├── docs/                          # Dokumentasi Enterprise 11 Berkas
 │   ├── PRD.md                     # Product Requirements Document
 │   ├── USECASE.md                 # Use Case Diagrams & Specifications
 │   ├── ACTIVITY.md                # 10 Activity Diagrams per aktivitas
@@ -44,7 +44,12 @@ LMS/
 │   ├── ARCHITECTURE.md            # Clean Architecture & System Design
 │   ├── API_SPEC.md                # RESTful API Specification
 │   ├── TESTING.md                 # QA Test Verification Matrix
-│   └── DESIGN.md                  # FigCraft UI Design System
+│   ├── DESIGN.md                  # FigCraft UI Design System
+│   └── SUPABASE_SETUP.md          # Panduan Setup PostgreSQL & Supabase Cloud
+│
+├── supabase/                      # Skrip Database & Migrasi Cloud
+│   └── migrations/
+│       └── 20261121_init_siak_schema.sql  # Skrip DDL 12 Tabel, RLS & Seed Data Otomatis
 │
 ├── scripts/
 │   └── dev.js                     # Script runner bersama Frontend (3000) & Backend (5000)
