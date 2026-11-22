@@ -123,6 +123,40 @@ function cancelSubmission() {
   }
 }
 
+function printOfficialKRS() {
+  const frsData = getFRSSnapshot();
+  const printTbody = document.getElementById('krs-print-tbody');
+  const printTotalSks = document.getElementById('krs-print-total-sks');
+  const printableKrs = document.getElementById('printable-krs');
+  
+  if (!printTbody || !printableKrs) {
+    window.print();
+    return;
+  }
+
+  const courses = frsData.courses || [];
+  let totalSks = 0;
+  
+  printTbody.innerHTML = courses.map((c, idx) => {
+    totalSks += c.sks;
+    return `
+      <tr style="border-bottom: 1px solid #E2E8F0;">
+        <td style="padding: 6px 8px; text-align: center; font-family: monospace;">${idx + 1}</td>
+        <td style="padding: 6px 8px; font-family: monospace; font-weight: 600;">${c.kode}</td>
+        <td style="padding: 6px 8px;"><strong>${c.matkul}</strong></td>
+        <td style="padding: 6px 8px; text-align: center;">${c.kelas}</td>
+        <td style="padding: 6px 8px; text-align: center; font-family: monospace;">${c.sks}</td>
+        <td style="padding: 6px 8px;">${c.hari || 'Senin'}, ${c.jam || '08.00 - 09.40'}<br><span style="color: #64748B; font-size: 10px;">${c.ruang || 'Lab Komputer'}</span></td>
+        <td style="padding: 6px 8px;">${c.dosen}</td>
+      </tr>
+    `;
+  }).join('');
+
+  if (printTotalSks) printTotalSks.textContent = `${totalSks} SKS`;
+
+  window.print();
+}
+
 function showToast(message) {
   const existing = document.getElementById('toast-alert');
   if (existing) existing.remove();

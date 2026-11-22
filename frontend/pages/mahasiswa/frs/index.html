@@ -287,6 +287,11 @@
                     <span>Ajukan KRS</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   </button>
+
+                  <button type="button" class="btn-print-krs-action" id="btn-print-krs" onclick="printOfficialKRS()" style="margin-top: 10px; width: 100%; padding: 10px; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 12.5px; font-weight: 600; color: #1E293B; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                    <span>Cetak Kartu Rencana Studi (KRS)</span>
+                  </button>
                 </div>
 
                 <!-- Guidance Card (Node 4267) -->
@@ -316,6 +321,72 @@
       </main>
     </div>
 
+  </div>
+
+  <!-- OFFICIAL PRINTABLE KRS SHEET (Displayed during Print) -->
+  <div id="printable-krs" style="display: none;">
+    <div class="a4-paper-sheet" style="max-width: 800px; margin: 0 auto; background: #FFFFFF; padding: 24px; font-family: Inter, sans-serif; color: #1E293B;">
+      <!-- Letterhead -->
+      <div style="text-align: center; margin-bottom: 12px;">
+        <div style="font-size: 15px; font-weight: 800; letter-spacing: 0.5px; color: #0F172A;">UNIVERSITAS FATMAWATI DIGITAL</div>
+        <div style="font-size: 12px; font-weight: 600; color: #237757; margin-top: 2px;">BIRO ADMINISTRASI AKADEMIK & KEMAHASISWAAN</div>
+        <div style="font-size: 10px; color: #64748B; margin-top: 2px;">Jl. Margonda Raya No. 100, Depok, Jawa Barat · Telp: (021) 786-3421 · info@ufd.ac.id</div>
+        <div style="height: 3px; border-top: 2px solid #0F172A; border-bottom: 1px solid #0F172A; margin-top: 8px;"></div>
+      </div>
+      <!-- Title -->
+      <div style="text-align: center; margin: 16px 0;">
+        <h3 style="font-size: 14px; font-weight: 800; margin: 0; color: #0F172A;">KARTU RENCANA STUDI (KRS)</h3>
+        <p style="font-size: 11px; color: #64748B; margin: 4px 0 0 0;">Semester Ganjil · Tahun Akademik 2025/2026</p>
+      </div>
+      <!-- Meta -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 11.5px; margin-bottom: 16px; padding: 10px; background: #F8FAFC; border-radius: 6px;">
+        <div><strong>Nama Mahasiswa:</strong> <span id="krs-meta-name">Alya Rahma Putri</span></div>
+        <div><strong>Program Studi:</strong> <span id="krs-meta-prodi">S1 Teknik Informatika</span></div>
+        <div><strong>NIM:</strong> <span id="krs-meta-nim" style="font-family: monospace;">2023010042</span></div>
+        <div><strong>Dosen PA:</strong> <span id="krs-meta-dpa">Dr. Maya Lestari</span></div>
+      </div>
+      <!-- Table -->
+      <table style="width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 16px;">
+        <thead>
+          <tr style="background: #F1F5F9; border-top: 1px solid #CBD5E1; border-bottom: 1px solid #CBD5E1;">
+            <th style="padding: 6px 8px; text-align: center; width: 30px;">NO</th>
+            <th style="padding: 6px 8px; text-align: left; width: 65px;">KODE</th>
+            <th style="padding: 6px 8px; text-align: left;">MATA KULIAH</th>
+            <th style="padding: 6px 8px; text-align: center; width: 40px;">KELAS</th>
+            <th style="padding: 6px 8px; text-align: center; width: 35px;">SKS</th>
+            <th style="padding: 6px 8px; text-align: left;">JADWAL & RUANG</th>
+            <th style="padding: 6px 8px; text-align: left;">DOSEN PENGAMPU</th>
+          </tr>
+        </thead>
+        <tbody id="krs-print-tbody">
+          <!-- Dynamically populated -->
+        </tbody>
+        <tfoot>
+          <tr style="border-top: 2px solid #CBD5E1; font-weight: 700; background: #F8FAFC;">
+            <td colspan="4" style="padding: 8px; text-align: right;">TOTAL BEBAN SKS:</td>
+            <td id="krs-print-total-sks" style="padding: 8px; text-align: center; font-family: monospace;">21 SKS</td>
+            <td colspan="2" style="padding: 8px; font-size: 10.5px; color: #237757;">Status: Disetujui Dosen Pembimbing Akademik</td>
+          </tr>
+        </tfoot>
+      </table>
+      <!-- Signatures -->
+      <div style="display: flex; justify-content: space-between; margin-top: 24px; font-size: 11px;">
+        <div style="text-align: center; width: 220px;">
+          <p style="margin: 0;">Mahasiswa Yang Bersangkutan,</p>
+          <div style="height: 60px;"></div>
+          <p style="margin: 0; font-weight: 700; text-decoration: underline;" id="krs-sig-student">Alya Rahma Putri</p>
+          <p style="margin: 2px 0 0 0; font-family: monospace; font-size: 10px;">NIM 2023010042</p>
+        </div>
+        <div style="text-align: center; width: 220px;">
+          <p style="margin: 0;">Bandung, 18 Agustus 2025<br>Dosen Pembimbing Akademik,</p>
+          <div style="height: 60px; display: flex; align-items: center; justify-content: center;">
+            <div style="border: 1px solid #10B981; color: #065F46; background: #D1FAE5; padding: 4px 8px; border-radius: 4px; font-size: 9px; font-weight: 700;">QR-VALIDATED</div>
+          </div>
+          <p style="margin: 0; font-weight: 700; text-decoration: underline;">Dr. Maya Lestari</p>
+          <p style="margin: 2px 0 0 0; font-family: monospace; font-size: 10px;">NIDN 0408098201</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="../../../js/siak-storage.js"></script>

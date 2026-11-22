@@ -6,16 +6,21 @@
 
 const SIAK_STORAGE_KEY = 'SIAK_UFD_LOCAL_STATE_V1';
 
-// Initial Test Data (Hanya data uji fungsional — tanpa dummy berlebih)
+// Initial Test Data (Data akademik fungsional dan realistis)
 const SIAK_INITIAL_TEST_DATA = {
-  activeSemester: '2025/2026 Genap',
+  activeSemester: '2024/2025 Genap',
+  nextSemester: '2025/2026 Ganjil',
   students: [
     {
       nim: '2023010042',
       nama: 'Alya Rahma Putri',
       prodi: 'S1 Teknik Informatika',
-      dosen_pa: 'Dr. Aditya Pratama',
-      ips_lalu: 3.75,
+      fakultas: 'Teknologi Informasi & Desain',
+      dosen_pa: 'Dr. Maya Lestari',
+      dosen_pa_nidn: '0408098201',
+      angkatan: '2023',
+      semester: 4,
+      ips_lalu: 3.86,
       max_sks: 24,
       status: 'Aktif'
     },
@@ -23,18 +28,158 @@ const SIAK_INITIAL_TEST_DATA = {
       nim: '20230801045',
       nama: "Da'ffa Maulana",
       prodi: 'S1 Teknik Informatika',
+      fakultas: 'Teknologi Informasi & Desain',
       dosen_pa: 'Dr. Hendra Gunawan, M.Kom',
+      dosen_pa_nidn: '0415098202',
+      angkatan: '2023',
+      semester: 4,
       ips_lalu: 3.80,
       max_sks: 24,
       status: 'Aktif'
     }
   ],
   classes: [
+    // 7 Mata Kuliah Semester 4 (Resmi Dipublikasikan untuk KHS Realistis)
+    {
+      id: 'cls-aps-4a',
+      kode_mk: 'TI2401',
+      nama_mk: 'Analisis & Perancangan Sistem',
+      kelas: 'TI-4A',
+      sks: 3,
+      dosen_nidn: '0419088201',
+      dosen_nama: 'Fajar Hidayat, M.Kom.',
+      hari: 'Senin',
+      jam: '08.00 - 09.40',
+      ruang: 'R. 401 Teori',
+      kapasitas: 40,
+      semester: '2024/2025 Genap',
+      status_penilaian: 'PUBLISHED',
+      students: [
+        { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 88, kuis: 85, uts: 90, uas: 92 },
+        { nim: '20230801045', nama: "Da'ffa Maulana", tugas: 90, kuis: 88, uts: 92, uas: 94 }
+      ]
+    },
+    {
+      id: 'cls-pbo-4a',
+      kode_mk: 'TI2402',
+      nama_mk: 'Pemrograman Berorientasi Objek',
+      kelas: 'TI-4A',
+      sks: 3,
+      dosen_nidn: '0412088501',
+      dosen_nama: 'Dr. Aditya Pratama',
+      hari: 'Senin',
+      jam: '10.00 - 11.40',
+      ruang: 'Lab 01 RPL',
+      kapasitas: 40,
+      semester: '2024/2025 Genap',
+      status_penilaian: 'PUBLISHED',
+      students: [
+        { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 90, kuis: 88, uts: 85, uas: 90 },
+        { nim: '20230801045', nama: "Da'ffa Maulana", tugas: 92, kuis: 90, uts: 90, uas: 95 }
+      ]
+    },
+    {
+      id: 'cls-sda-4a',
+      kode_mk: 'TI2403',
+      nama_mk: 'Struktur Data & Algoritma Lanjut',
+      kelas: 'TI-4A',
+      sks: 3,
+      dosen_nidn: '0412088501',
+      dosen_nama: 'Dr. Aditya Pratama',
+      hari: 'Selasa',
+      jam: '08.00 - 09.40',
+      ruang: 'Lab 02 Komputer',
+      kapasitas: 40,
+      semester: '2024/2025 Genap',
+      status_penilaian: 'PUBLISHED',
+      students: [
+        { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 85, kuis: 82, uts: 88, uas: 86 },
+        { nim: '20230801045', nama: "Da'ffa Maulana", tugas: 88, kuis: 85, uts: 89, uas: 88 }
+      ]
+    },
+    {
+      id: 'cls-matdis-4a',
+      kode_mk: 'TI2404',
+      nama_mk: 'Matematika Diskrit Lanjut',
+      kelas: 'TI-4A',
+      sks: 3,
+      dosen_nidn: '0421038401',
+      dosen_nama: 'Dwi Saputra, M.Si.',
+      hari: 'Rabu',
+      jam: '08.00 - 09.40',
+      ruang: 'R. 402 Teori',
+      kapasitas: 40,
+      semester: '2024/2025 Genap',
+      status_penilaian: 'PUBLISHED',
+      students: [
+        { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 88, kuis: 85, uts: 86, uas: 90 },
+        { nim: '20230801045', nama: "Da'ffa Maulana", tugas: 86, kuis: 84, uts: 88, uas: 90 }
+      ]
+    },
+    {
+      id: 'cls-arkom-4a',
+      kode_mk: 'TI2405',
+      nama_mk: 'Arsitektur Komputer Lanjut',
+      kelas: 'TI-4A',
+      sks: 3,
+      dosen_nidn: '0415068902',
+      dosen_nama: 'Rina Anggraini, M.Kom.',
+      hari: 'Kamis',
+      jam: '08.00 - 09.40',
+      ruang: 'R. 403 Teori',
+      kapasitas: 40,
+      semester: '2024/2025 Genap',
+      status_penilaian: 'PUBLISHED',
+      students: [
+        { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 86, kuis: 85, uts: 84, uas: 88 },
+        { nim: '20230801045', nama: "Da'ffa Maulana", tugas: 88, kuis: 86, uts: 85, uas: 89 }
+      ]
+    },
+    {
+      id: 'cls-metpen-4a',
+      kode_mk: 'TI2406',
+      nama_mk: 'Metode Penelitian Informatika',
+      kelas: 'TI-4A',
+      sks: 3,
+      dosen_nidn: '0408098201',
+      dosen_nama: 'Dr. Maya Lestari',
+      hari: 'Kamis',
+      jam: '10.00 - 11.40',
+      ruang: 'R. 305 Teori',
+      kapasitas: 40,
+      semester: '2024/2025 Genap',
+      status_penilaian: 'PUBLISHED',
+      students: [
+        { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 92, kuis: 90, uts: 88, uas: 90 },
+        { nim: '20230801045', nama: "Da'ffa Maulana", tugas: 94, kuis: 92, uts: 90, uas: 92 }
+      ]
+    },
+    {
+      id: 'cls-kwu-4a',
+      kode_mk: 'TI2407',
+      nama_mk: 'Kewirausahaan & Startup Teknologi',
+      kelas: 'TI-4A',
+      sks: 3,
+      dosen_nidn: '0430058801',
+      dosen_nama: 'Siti Nurhaliza, M.Pd.',
+      hari: 'Jumat',
+      jam: '08.00 - 09.40',
+      ruang: 'R. 301 Teori',
+      kapasitas: 40,
+      semester: '2024/2025 Genap',
+      status_penilaian: 'PUBLISHED',
+      students: [
+        { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 78, kuis: 76, uts: 80, uas: 78 },
+        { nim: '20230801045', nama: "Da'ffa Maulana", tugas: 80, kuis: 78, uts: 82, uas: 80 }
+      ]
+    },
+
+    // Kelas Ongoing / Penilaian Aktif (Dosen Input & BAK Validasi)
     {
       id: 'cls-bd-3a',
-      kode_mk: 'IF201',
-      nama_mk: 'Sistem Basis Data Lanjut',
-      kelas: 'TI-3A',
+      kode_mk: 'TI3501',
+      nama_mk: 'Sistem Basis Data Terdistribusi',
+      kelas: 'TI-5A',
       sks: 3,
       dosen_nidn: '0412088501',
       dosen_nama: 'Dr. Aditya Pratama',
@@ -42,6 +187,7 @@ const SIAK_INITIAL_TEST_DATA = {
       jam: '08.00 - 09.40',
       ruang: 'Lab 02 Komputer',
       kapasitas: 40,
+      semester: '2025/2026 Ganjil',
       status_penilaian: 'DRAFT',
       students: [
         { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 88, kuis: 85, uts: 90, uas: 92 },
@@ -50,16 +196,17 @@ const SIAK_INITIAL_TEST_DATA = {
     },
     {
       id: 'cls-algo-1a',
-      kode_mk: 'IF301',
-      nama_mk: 'Algoritma & Pemrograman Lanjut',
-      kelas: 'TI-1A',
+      kode_mk: 'TI3502',
+      nama_mk: 'Jaringan Komputer & Cloud Infrastructure',
+      kelas: 'TI-5A',
       sks: 3,
-      dosen_nidn: '0412088501',
-      dosen_nama: 'Dr. Aditya Pratama',
+      dosen_nidn: '0415068902',
+      dosen_nama: 'Rina Anggraini, M.Kom.',
       hari: 'Selasa',
-      jam: '08.00 - 09.40',
+      jam: '10.00 - 11.40',
       ruang: 'Lab 01 RPL',
       kapasitas: 40,
+      semester: '2025/2026 Ganjil',
       status_penilaian: 'VALIDATED',
       students: [
         { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 82, kuis: 80, uts: 85, uas: 85 },
@@ -68,67 +215,38 @@ const SIAK_INITIAL_TEST_DATA = {
     },
     {
       id: 'cls-oop-3b',
-      kode_mk: 'IF202',
-      nama_mk: 'Pemrograman Web Fullstack',
-      kelas: 'TI-3B',
+      kode_mk: 'TI3505',
+      nama_mk: 'Rekayasa Perangkat Lunak Berbasis Agile',
+      kelas: 'TI-5A',
       sks: 3,
-      dosen_nidn: '0412088501',
-      dosen_nama: 'Dr. Aditya Pratama',
-      hari: 'Rabu',
-      jam: '10.00 - 11.40',
+      dosen_nidn: '0419088201',
+      dosen_nama: 'Fajar Hidayat, M.Kom.',
+      hari: 'Kamis',
+      jam: '13.00 - 14.40',
       ruang: 'Lab 02 Komputer',
       kapasitas: 35,
+      semester: '2025/2026 Ganjil',
       status_penilaian: 'PUBLISHED',
       students: [
         { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 90, kuis: 88, uts: 85, uas: 90 },
         { nim: '20230801045', nama: "Da'ffa Maulana", tugas: 92, kuis: 90, uts: 90, uas: 95 }
-      ]
-    },
-    {
-      id: 'cls-jarkom-5a',
-      kode_mk: 'TI2302',
-      nama_mk: 'Jaringan Komputer & Cloud',
-      kelas: 'TI-5A',
-      sks: 3,
-      dosen_nidn: '0415068902',
-      dosen_nama: 'Rina Anggraini, M.Kom.',
-      hari: 'Kamis',
-      jam: '13.00 - 15.30',
-      ruang: 'Lab 03 Jaringan',
-      kapasitas: 35,
-      status_penilaian: 'DRAFT',
-      students: [
-        { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 85, kuis: 80, uts: 88, uas: 86 }
-      ]
-    },
-    {
-      id: 'cls-so-5a',
-      kode_mk: 'TI2304',
-      nama_mk: 'Sistem Operasi Terdistribusi',
-      kelas: 'TI-5A',
-      sks: 3,
-      dosen_nidn: '0408098201',
-      dosen_nama: 'Dr. Maya Lestari',
-      hari: 'Jumat',
-      jam: '08.00 - 10.30',
-      ruang: 'R. 402 Teori',
-      kapasitas: 40,
-      status_penilaian: 'DRAFT',
-      students: [
-        { nim: '2023010042', nama: 'Alya Rahma Putri', tugas: 89, kuis: 86, uts: 87, uas: 90 }
       ]
     }
   ],
   frs: [
     {
       nim: '2023010042',
-      status: 'draft', // 'draft' | 'submitted'
+      semester: '2025/2026 Ganjil',
+      status: 'submitted', // 'draft' | 'submitted'
+      dosen_pa: 'Dr. Maya Lestari',
       courses: [
-        { id: 'cls-bd-3a', kode: 'IF201', matkul: 'Sistem Basis Data Lanjut', dosen: 'Dr. Aditya Pratama', kelas: 'TI-3A', sks: 3 },
-        { id: 'cls-algo-1a', kode: 'IF301', matkul: 'Algoritma & Pemrograman Lanjut', dosen: 'Dr. Aditya Pratama', kelas: 'TI-1A', sks: 3 },
-        { id: 'cls-oop-3b', kode: 'IF202', matkul: 'Pemrograman Web Fullstack', dosen: 'Dr. Aditya Pratama', kelas: 'TI-3B', sks: 3 },
-        { id: 'cls-jarkom-5a', kode: 'TI2302', matkul: 'Jaringan Komputer & Cloud', dosen: 'Rina Anggraini, M.Kom.', kelas: 'TI-5A', sks: 3 },
-        { id: 'cls-so-5a', kode: 'TI2304', matkul: 'Sistem Operasi Terdistribusi', dosen: 'Dr. Maya Lestari', kelas: 'TI-5A', sks: 3 }
+        { id: 'TI3501', kode: 'TI3501', matkul: 'Sistem Basis Data Terdistribusi', dosen: 'Dr. Aditya Pratama', kelas: 'TI-5A', sks: 3, hari: 'Senin', jam: '08.00 - 09.40', ruang: 'Lab 02 Komputer' },
+        { id: 'TI3502', kode: 'TI3502', matkul: 'Jaringan Komputer & Cloud Infrastructure', dosen: 'Rina Anggraini, M.Kom.', kelas: 'TI-5A', sks: 3, hari: 'Selasa', jam: '10.00 - 11.40', ruang: 'Lab 01 RPL' },
+        { id: 'TI3503', kode: 'TI3503', matkul: 'Kecerdasan Buatan & Machine Learning', dosen: 'Dr. Hendra Gunawan, M.Kom.', kelas: 'TI-5A', sks: 3, hari: 'Rabu', jam: '08.00 - 09.40', ruang: 'R. 401 Teori' },
+        { id: 'TI3504', kode: 'TI3504', matkul: 'Sistem Operasi Terdistribusi', dosen: 'Dr. Maya Lestari', kelas: 'TI-5A', sks: 3, hari: 'Kamis', jam: '08.00 - 09.40', ruang: 'R. 402 Teori' },
+        { id: 'TI3505', kode: 'TI3505', matkul: 'Rekayasa Perangkat Lunak Berbasis Agile', dosen: 'Fajar Hidayat, M.Kom.', kelas: 'TI-5A', sks: 3, hari: 'Kamis', jam: '13.00 - 14.40', ruang: 'Lab 01 RPL' },
+        { id: 'TI3506', kode: 'TI3506', matkul: 'Interaksi Manusia & Komputer', dosen: 'Dr. Indah Puspita', kelas: 'TI-5A', sks: 3, hari: 'Jumat', jam: '08.00 - 09.40', ruang: 'R. 305 Teori' },
+        { id: 'TI3507', kode: 'TI3507', matkul: 'Keamanan Informasi & Etika Siber', dosen: 'Dr. Hendra Gunawan, M.Kom.', kelas: 'TI-5A', sks: 3, hari: 'Jumat', jam: '13.30 - 15.10', ruang: 'Lab Keamanan' }
       ]
     }
   ],
@@ -138,7 +256,7 @@ const SIAK_INITIAL_TEST_DATA = {
       nim: '2023010042',
       nama: 'Alya Rahma Putri',
       prodi: 'Teknik Informatika',
-      mata_kuliah: 'Sistem Basis Data Lanjut',
+      mata_kuliah: 'Sistem Basis Data Terdistribusi',
       nilai_awal: 'B',
       nilai_diajukan: 'A',
       tanggal: '16 Agu 2025',
@@ -151,7 +269,7 @@ const SIAK_INITIAL_TEST_DATA = {
       nim: '20230801045',
       nama: "Da'ffa Maulana",
       prodi: 'Teknik Informatika',
-      mata_kuliah: 'Algoritma & Pemrograman Lanjut',
+      mata_kuliah: 'Jaringan Komputer & Cloud Infrastructure',
       nilai_awal: 'B',
       nilai_diajukan: 'AB',
       tanggal: '17 Agu 2025',
@@ -273,6 +391,7 @@ class SiakStorageEngine {
     const student = data.students.find(s => s.nim === nim) || data.students[0];
     const results = [];
 
+    // Filter published classes
     data.classes.forEach(cls => {
       if (cls.status_penilaian === 'PUBLISHED') {
         const studentScore = cls.students.find(s => s.nim === student.nim);
@@ -283,6 +402,7 @@ class SiakStorageEngine {
             nama_mk: cls.nama_mk,
             kelas: cls.kelas,
             sks: cls.sks,
+            dosen: cls.dosen_nama,
             tugas: studentScore.tugas,
             kuis: studentScore.kuis,
             uts: studentScore.uts,
@@ -309,36 +429,20 @@ class SiakStorageEngine {
 
     return {
       student,
-      semester: data.activeSemester,
+      semester: data.activeSemester || '2024/2025 Genap',
       courses: results,
       totalSks,
-      totalMutu,
+      totalMutu: Number(totalMutu.toFixed(2)),
       ips,
       maxSksNext
     };
   }
 
-  // 2. Data Transkrip Akademik Kumulatif (Semester 1–4 + Nilai Published Terkini)
+  // 2. Data Transkrip Akademik Kumulatif (Semester 1–4)
   getStudentTranscript(nim) {
     const data = this.get();
     const student = data.students.find(s => s.nim === nim) || data.students[0];
     const semesters = JSON.parse(JSON.stringify(data.transcript_history || []));
-
-    // Tambahkan mata kuliah published semester aktif jika ada
-    const currentKHS = this.getStudentKHS(student.nim);
-    if (currentKHS.courses.length > 0) {
-      semesters.push({
-        semester: 5,
-        nama_semester: `SEMESTER 5 (${data.activeSemester})`,
-        courses: currentKHS.courses.map(c => ({
-          kode: c.kode_mk,
-          nama: c.nama_mk,
-          sks: c.sks,
-          nilai: c.letter,
-          bobot: c.bobot
-        }))
-      });
-    }
 
     let grandTotalSks = 0;
     let grandTotalMutu = 0;
@@ -362,6 +466,7 @@ class SiakStorageEngine {
 
     return {
       student,
+      nomor_sk: '042/TA/BAK/UFD/VIII/2025',
       semesters,
       totalCourses: counter - 1,
       totalSks: grandTotalSks,
@@ -378,15 +483,10 @@ class SiakStorageEngine {
     if (!userFrs) {
       userFrs = {
         nim,
-        status: 'draft',
-        courses: data.classes.slice(0, 5).map(c => ({
-          id: c.id,
-          kode: c.kode_mk,
-          matkul: c.nama_mk,
-          dosen: c.dosen_nama,
-          kelas: c.kelas,
-          sks: c.sks
-        }))
+        semester: data.nextSemester || '2025/2026 Ganjil',
+        status: 'submitted',
+        dosen_pa: 'Dr. Maya Lestari',
+        courses: (data.frs && data.frs[0]) ? data.frs[0].courses : []
       };
       if (!data.frs) data.frs = [];
       data.frs.push(userFrs);
@@ -492,7 +592,7 @@ class SiakStorageEngine {
   // Reset helper
   resetToTestData() {
     this.save(SIAK_INITIAL_TEST_DATA);
-    console.log('[SiakStorage] Reset to clean initial test state.');
+    console.log('[SiakStorage] Reset to clean realistic test state.');
   }
 }
 

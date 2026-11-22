@@ -8,6 +8,7 @@
     "backend:dev": "cd backend && npm run dev",
     "frontend": "cd frontend && npm start",
     "dev": "node scripts/dev.js",
+    "generate:docs": "node scripts/generate_academic_outputs.js",
     "test:backend": "node scratch/test_backend.js"
   },
   "keywords": [

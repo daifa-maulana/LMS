@@ -71,10 +71,12 @@ function renderKHSFromLocalStorage() {
   const ipsEl = document.getElementById('khs-stat-ips');
   const ipkEl = document.getElementById('khs-stat-ipk');
 
+  const transcript = window.siakStorage.getStudentTranscript(nim);
+
   if (sksEl) sksEl.textContent = khs.totalSks;
   if (mutuEl) mutuEl.textContent = khs.totalMutu.toFixed(2).replace('.', ',');
   if (ipsEl) ipsEl.textContent = khs.ips.toFixed(2).replace('.', ',');
-  if (ipkEl) ipkEl.textContent = khs.ips.toFixed(2).replace('.', ',');
+  if (ipkEl) ipkEl.textContent = transcript ? transcript.ipk.toFixed(2).replace('.', ',') : khs.ips.toFixed(2).replace('.', ',');
 }
 
 function downloadPDF() {

@@ -309,3 +309,48 @@
   padding-bottom: 24px;
 }
 
+/* ==========================================================================
+   7. OFFICIAL KRS PRINT STYLING (@media print)
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 10mm 12mm;
+  }
+  body, html {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .siak-sidebar,
+  .siak-topbar,
+  .workspace-header-row,
+  .registration-period-banner,
+  .frs-two-col-layout,
+  .workspace-footer-meta,
+  #toast-alert {
+    display: none !important;
+  }
+  .siak-app-canvas,
+  .siak-main-layout,
+  .siak-workspace-scroll,
+  .workspace-inner-container {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+  #printable-krs {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
