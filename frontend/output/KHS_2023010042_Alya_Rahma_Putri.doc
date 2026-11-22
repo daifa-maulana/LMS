@@ -1,0 +1,124 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset='utf-8'>
+  <title>KHS - Alya Rahma Putri</title>
+  <!--[if gte mso 9]>
+  <xml>
+    <w:WordDocument>
+      <w:View>Print</w:View>
+      <w:Zoom>100</w:Zoom>
+      <w:DoNotOptimizeForBrowser/>
+    </w:WordDocument>
+  </xml>
+  <![endif]-->
+  <style>
+    @page Section1 {
+      size: 595.3pt 841.9pt; /* A4 */
+      margin: 1.0in 1.0in 1.0in 1.0in;
+      mso-header-margin: 35.4pt;
+      mso-footer-margin: 35.4pt;
+      mso-paper-source: 0;
+    }
+    div.Section1 { page: Section1; }
+    body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; color: #000000; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10pt; margin-bottom: 10pt; }
+    table, th, td { border: 1pt solid #000000; }
+    th { background-color: #E2E8F0; padding: 6pt; font-weight: bold; text-align: center; }
+    td { padding: 5pt; }
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+    .kop { text-align: center; margin-bottom: 12pt; }
+    .univ { font-size: 14pt; font-weight: bold; }
+    .fakultas { font-size: 12pt; font-weight: bold; color: #237757; }
+    .sub { font-size: 9pt; color: #555555; }
+    .garis-kop { border-top: 2pt solid #000000; border-bottom: 1pt solid #000000; height: 3pt; margin-top: 6pt; margin-bottom: 14pt; }
+    .doc-title { text-align: center; font-size: 12pt; font-weight: bold; text-transform: uppercase; margin-bottom: 12pt; }
+    .meta-table { border: none !important; margin-bottom: 12pt; }
+    .meta-table td { border: none !important; padding: 2pt 4pt; font-size: 10pt; }
+    .summary-box { border: 1pt solid #000000; padding: 6pt; margin-top: 10pt; font-weight: bold; }
+  </style>
+</head>
+<body>
+<div class="Section1">
+  <div class="kop">
+    <div class="univ">UNIVERSITAS FATMAWATI DIGITAL</div>
+    <div class="fakultas">FAKULTAS TEKNOLOGI INFORMASI & DESAIN</div>
+    <div class="sub">BIRO ADMINISTRASI AKADEMIK & KEMAHASISWAAN (BAK)</div>
+    <div class="sub">Jl. Margonda Raya No. 100, Depok, Jawa Barat · Telp: (021) 786-3421 · Email: info@ufd.ac.id</div>
+    <div class="garis-kop"></div>
+  </div>
+  
+  <div class="doc-title">
+    KARTU HASIL STUDI (KHS)<br>
+    <span style="font-size: 10pt; font-weight: normal;">Semester Genap · Tahun Akademik 2024/2025</span><br>
+    <span style="font-size: 9pt; font-family: monospace;">Nomor: KHS/20242/TI/010042</span>
+  </div>
+
+  <table class="meta-table">
+    <tr>
+      <td width="20%">Nama Mahasiswa</td><td width="2%">:</td><td width="38%"><strong>Alya Rahma Putri</strong></td>
+      <td width="20%">Tahun Masuk / Smtr</td><td width="2%">:</td><td width="18%">2023 / 4 (Empat)</td>
+    </tr>
+    <tr>
+      <td>NIM</td><td>:</td><td><strong>2023010042</strong></td>
+      <td>Dosen Pembimbing PA</td><td>:</td><td>Dr. Maya Lestari</td>
+    </tr>
+    <tr>
+      <td>Program Studi</td><td>:</td><td>S1 Teknik Informatika</td>
+      <td>Status Mahasiswa</td><td>:</td><td>Aktif Kuliah</td>
+    </tr>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th width="5%">NO</th>
+        <th width="15%">KODE MK</th>
+        <th>NAMA MATA KULIAH</th>
+        <th width="8%">KELAS</th>
+        <th width="6%">SKS</th>
+        <th width="8%">NILAI</th>
+        <th width="8%">BOBOT</th>
+        <th width="10%">MUTU</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="text-center">1</td><td class="text-center">TI2401</td><td>Analisis & Perancangan Sistem</td><td class="text-center">TI-4A</td><td class="text-center">3</td><td class="text-center"><strong>A</strong></td><td class="text-center">4.00</td><td class="text-right">12.00</td></tr>
+      <tr><td class="text-center">2</td><td class="text-center">TI2402</td><td>Pemrograman Berorientasi Objek</td><td class="text-center">TI-4A</td><td class="text-center">3</td><td class="text-center"><strong>A</strong></td><td class="text-center">4.00</td><td class="text-right">12.00</td></tr>
+      <tr><td class="text-center">3</td><td class="text-center">TI2403</td><td>Struktur Data & Algoritma Lanjut</td><td class="text-center">TI-4A</td><td class="text-center">3</td><td class="text-center"><strong>A</strong></td><td class="text-center">4.00</td><td class="text-right">12.00</td></tr>
+      <tr><td class="text-center">4</td><td class="text-center">TI2404</td><td>Matematika Diskrit Lanjut</td><td class="text-center">TI-4A</td><td class="text-center">3</td><td class="text-center"><strong>A</strong></td><td class="text-center">4.00</td><td class="text-right">12.00</td></tr>
+      <tr><td class="text-center">5</td><td class="text-center">TI2405</td><td>Arsitektur Komputer Lanjut</td><td class="text-center">TI-4A</td><td class="text-center">3</td><td class="text-center"><strong>A</strong></td><td class="text-center">4.00</td><td class="text-right">12.00</td></tr>
+      <tr><td class="text-center">6</td><td class="text-center">TI2406</td><td>Metode Penelitian Informatika</td><td class="text-center">TI-4A</td><td class="text-center">3</td><td class="text-center"><strong>A</strong></td><td class="text-center">4.00</td><td class="text-right">12.00</td></tr>
+      <tr><td class="text-center">7</td><td class="text-center">TI2407</td><td>Kewirausahaan & Startup Teknologi</td><td class="text-center">TI-4A</td><td class="text-center">3</td><td class="text-center"><strong>B</strong></td><td class="text-center">3.00</td><td class="text-right">9.00</td></tr>
+    </tbody>
+    <tfoot>
+      <tr style="background-color: #F8FAFC; font-weight: bold;">
+        <td colspan="4" class="text-right">TOTAL:</td>
+        <td class="text-center">21</td>
+        <td colspan="2"></td>
+        <td class="text-right">81.00</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="summary-box">
+    Indeks Prestasi Semester (IPS): 3.86 &nbsp;|&nbsp; Total SKS Semester: 21 SKS &nbsp;|&nbsp; Maks. SKS Semester Berikutnya: 24 SKS
+  </div>
+
+  <br><br>
+  <table style="border: none !important;">
+    <tr>
+      <td width="50%" class="text-center" style="border: none !important;">
+        Mengetahui,<br>Ketua Program Studi Teknik Informatika<br><br><br><br>
+        <strong><u>Prof. Dr. Ir. Hendra Gunawan, M.T.</u></strong><br>NIP 197805142003121002
+      </td>
+      <td width="50%" class="text-center" style="border: none !important;">
+        Bandung, 18 Juli 2025<br>Dosen Pembimbing Akademik,<br><br><br><br>
+        <strong><u>Dr. Maya Lestari</u></strong><br>NIDN 0408098201
+      </td>
+    </tr>
+  </table>
+
+</div>
+</body>
+</html>

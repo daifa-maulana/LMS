@@ -127,14 +127,28 @@ function bukaDokumenResmi() {
   window.open('../../../output/KRS_2023010042_Alya_Rahma_Putri.html', '_blank');
 }
 
-function unduhDokumenResmi() {
+function unduhDokumenPDF() {
   const link = document.createElement('a');
-  link.href = '../../../output/KRS_2023010042_Alya_Rahma_Putri.html';
-  link.download = 'KRS_2023010042_Alya_Rahma_Putri.html';
+  link.href = '../../../output/KRS_2023010042_Alya_Rahma_Putri.pdf';
+  link.download = 'KRS_2023010042_Alya_Rahma_Putri.pdf';
   document.body.appendChild(link);
   link.click();
   link.remove();
-  showToast('File KRS Resmi berhasil diunduh ke komputer Anda.');
+  showToast('Berkas PDF KRS resmi berhasil diunduh ke komputer Anda.');
+}
+
+function unduhDokumenWord() {
+  const link = document.createElement('a');
+  link.href = '../../../output/KRS_2023010042_Alya_Rahma_Putri.doc';
+  link.download = 'KRS_2023010042_Alya_Rahma_Putri.doc';
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  showToast('Berkas Word (.doc) KRS resmi berhasil diunduh ke komputer Anda.');
+}
+
+function unduhDokumenResmi() {
+  unduhDokumenPDF();
 }
 
 function printOfficialKRS() {

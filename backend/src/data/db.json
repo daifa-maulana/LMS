@@ -183,8 +183,8 @@
       "terisi": 38,
       "status_penilaian": "PUBLISHED",
       "rejection_reason": "Nilai tugas kurang merata",
-      "validated_at": "2026-11-22T02:47:28.434Z",
-      "published_at": "2026-11-22T02:47:28.436Z"
+      "validated_at": "2026-11-22T03:22:10.859Z",
+      "published_at": "2026-11-22T03:22:10.862Z"
     },
     {
       "id": "cls-algo-1a",
@@ -219,24 +219,24 @@
   ],
   "krs_enrollments": [
     {
-      "id": "krs-1795315648412-768",
+      "id": "krs-1795317730836-255",
       "nim": "2023010042",
       "class_id": "cls-bd-3a",
       "kode_mk": "IF201",
       "nama_mk": "Sistem Basis Data Lanjut",
       "sks": 3,
       "status": "SUBMITTED",
-      "submitted_at": "2026-11-22T02:47:28.412Z"
+      "submitted_at": "2026-11-22T03:22:10.836Z"
     },
     {
-      "id": "krs-1795315648413-998",
+      "id": "krs-1795317730837-799",
       "nim": "2023010042",
       "class_id": "cls-algo-1a",
       "kode_mk": "IF301",
       "nama_mk": "Algoritma & Pemrograman Lanjut",
       "sks": 3,
       "status": "SUBMITTED",
-      "submitted_at": "2026-11-22T02:47:28.413Z"
+      "submitted_at": "2026-11-22T03:22:10.837Z"
     }
   ],
   "attendances": [
@@ -248,7 +248,7 @@
       "attended": 16,
       "percentage": 100,
       "eligible_for_exam": true,
-      "last_check_in": "2026-11-22T02:47:28.399Z"
+      "last_check_in": "2026-11-22T03:22:10.821Z"
     },
     {
       "id": "att-002",
@@ -413,6 +413,18 @@
       "executed_by": "Operator BAK",
       "status": "EXECUTED",
       "timestamp": "2026-11-22T02:47:28.438Z"
+    },
+    {
+      "id": "rev-1795317730864",
+      "class_id": "cls-bd-3a",
+      "nim": "2023010042",
+      "student_name": "Alya Rahma Putri",
+      "old_grade": "C",
+      "new_grade": "A",
+      "reason": "Koreksi lembar jawaban ujian susulan yang tertukar",
+      "executed_by": "Operator BAK",
+      "status": "EXECUTED",
+      "timestamp": "2026-11-22T03:22:10.864Z"
     }
   ],
   "announcements": [
