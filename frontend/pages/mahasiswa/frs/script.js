@@ -123,6 +123,20 @@ function cancelSubmission() {
   }
 }
 
+function bukaDokumenResmi() {
+  window.open('../../../output/KRS_2023010042_Alya_Rahma_Putri.html', '_blank');
+}
+
+function unduhDokumenResmi() {
+  const link = document.createElement('a');
+  link.href = '../../../output/KRS_2023010042_Alya_Rahma_Putri.html';
+  link.download = 'KRS_2023010042_Alya_Rahma_Putri.html';
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  showToast('File KRS Resmi berhasil diunduh ke komputer Anda.');
+}
+
 function printOfficialKRS() {
   const frsData = getFRSSnapshot();
   const printTbody = document.getElementById('krs-print-tbody');

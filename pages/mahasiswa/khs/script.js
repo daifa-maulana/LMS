@@ -79,12 +79,58 @@ function renderKHSFromLocalStorage() {
   if (ipkEl) ipkEl.textContent = transcript ? transcript.ipk.toFixed(2).replace('.', ',') : khs.ips.toFixed(2).replace('.', ',');
 }
 
-function downloadPDF() {
+function bukaDokumenResmi() {
+  window.open('../../../output/KHS_2023010042_Alya_Rahma_Putri.html', '_blank');
+}
+
+function unduhDokumenResmi() {
+  const link = document.createElement('a');
+  link.href = '../../../output/KHS_2023010042_Alya_Rahma_Putri.html';
+  link.download = 'KHS_2023010042_Alya_Rahma_Putri.html';
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  showToast('File KHS Resmi berhasil diunduh ke komputer Anda.');
+}
+
+function cetakKePrinter() {
   window.print();
 }
 
+function downloadPDF() {
+  unduhDokumenResmi();
+}
+
 function printDocument() {
-  window.print();
+  cetakKePrinter();
+}
+
+function showToast(message) {
+  const existing = document.getElementById('toast-alert');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.id = 'toast-alert';
+  toast.style.position = 'fixed';
+  toast.style.bottom = '24px';
+  toast.style.right = '24px';
+  toast.style.backgroundColor = '#1D302D';
+  toast.style.color = '#FFFFFF';
+  toast.style.padding = '12px 20px';
+  toast.style.borderRadius = '8px';
+  toast.style.fontSize = '12px';
+  toast.style.fontWeight = '500';
+  toast.style.boxShadow = '0 10px 25px rgba(0,0,0,0.15)';
+  toast.style.zIndex = '9999';
+  toast.style.display = 'flex';
+  toast.style.alignItems = 'center';
+  toast.style.gap = '8px';
+  toast.innerHTML = `<span style="color: #45B98E;">[OK]</span> <span>${message}</span>`;
+
+  document.body.appendChild(toast);
+  setTimeout(() => {
+    toast.remove();
+  }, 3500);
 }
 
 function openRoleSwitcher() {
