@@ -9,8 +9,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Role Switcher Navigation
-function openRoleSwitcher() {
-  if (confirm("Ganti peran (Role Switcher)? Anda akan diarahkan ke halaman login peran.")) {
-    window.location.href = '../../auth/login/index.html';
-  }
-}

@@ -55,15 +55,3 @@ function tinjauKRS(nim, name, sks) {
   alert(`Meninjau Berkas KRS Mahasiswa:\nNama: ${name}\nNIM: ${nim}\nBeban: ${sks}\nStatus: Siap diproses.`);
 }
 
-function openRoleSwitcher() {
-  const roles = [
-    { title: '1. Portal Login', url: '../../auth/login/index.html' },
-    { title: '2. Mahasiswa - Dashboard', url: '../../mahasiswa/dashboard/index.html' },
-    { title: '3. Dosen - Dashboard', url: '../../dosen/dashboard/index.html' },
-    { title: '4. Operator BAK - Dashboard', url: '../dashboard/index.html' }
-  ];
-  const choice = prompt('PILIH ROLE / HALAMAN TUJUAN:\n' + roles.map(r => r.title).join('\n') + '\n\nKetik angka 1-4:');
-  if (choice && roles[parseInt(choice, 10) - 1]) {
-    window.location.href = roles[parseInt(choice, 10) - 1].url;
-  }
-}

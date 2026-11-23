@@ -3,11 +3,6 @@
  * Exact match to FigCraft Node 5354
  */
 
-function openRoleSwitcher() {
-  if (confirm("Ganti peran (Role Switcher)? Anda akan diarahkan ke halaman login peran.")) {
-    window.location.href = '../../auth/login/index.html';
-  }
-}
 
 function showToast(message) {
   const existing = document.getElementById('toast-alert');

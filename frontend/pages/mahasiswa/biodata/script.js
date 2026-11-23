@@ -23,11 +23,6 @@ const STUDENT_BIODATA = {
   dpaJadwal: "Selasa, 10.00–12.00 WIB"
 };
 
-function openRoleSwitcher() {
-  if (confirm("Ganti peran (Role Switcher)? Anda akan diarahkan ke halaman login peran.")) {
-    window.location.href = '../../auth/login/index.html';
-  }
-}
 
 function showToast(message) {
   const existing = document.getElementById('toast-alert');
