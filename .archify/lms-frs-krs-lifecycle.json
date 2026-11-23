@@ -1,0 +1,50 @@
+{
+  "schema_version": 3,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "Siklus Hidup FRS ke KRS Resmi — SIAK UFD",
+    "output": ".archify/lms-frs-krs-lifecycle.html",
+    "animation": "trace",
+    "quality_profile": "showcase"
+  },
+  "mainPath": ["buka", "draft", "ajukan", "review", "acc", "terbit"],
+  "states": [
+    { "id": "buka", "type": "start", "label": "Masa FRS", "sublabel": "18–29 Agu", "tag": "start", "step": "01" },
+    { "id": "draft", "type": "active", "label": "Pilih Matkul", "sublabel": "Maks 24 SKS", "tag": "mhs", "step": "02" },
+    { "id": "ajukan", "type": "waiting", "label": "Diajukan", "sublabel": "Ke Dosen PA", "tag": "antrean", "step": "03" },
+    { "id": "review", "type": "decision", "label": "Review DPA", "sublabel": "Cek Prasyarat", "tag": "dosen", "step": "04" },
+    { "id": "acc", "type": "success", "label": "ACC Dosen", "sublabel": "Disetujui", "tag": "acc", "step": "05" },
+    { "id": "terbit", "type": "success", "label": "KRS Terbit", "sublabel": "PDF & DOC", "tag": "resmi", "step": "06" },
+    { "id": "revisi", "type": "waiting", "label": "Revisi FRS", "sublabel": "Edit Matkul", "tag": "revisi" },
+    { "id": "tutup", "type": "failure", "label": "FRS Ditutup", "sublabel": "Terkunci", "tag": "final" }
+  ],
+  "transitions": [
+    { "id": "t1", "from": "buka", "to": "draft", "label": "buka" },
+    { "id": "t2", "from": "draft", "to": "ajukan", "label": "ajukan" },
+    { "id": "t3", "from": "ajukan", "to": "review", "label": "proses" },
+    { "id": "t4", "from": "review", "to": "acc", "label": "ACC" },
+    { "id": "t5", "from": "acc", "to": "terbit", "label": "terbit" },
+    { "id": "t6", "from": "review", "to": "revisi", "label": "revisi", "variant": "dashed" },
+    { "id": "t7", "from": "revisi", "to": "draft", "label": "ubah", "variant": "dashed" },
+    { "id": "t8", "from": "review", "to": "tutup", "label": "deadline", "variant": "security" },
+    { "id": "t9", "from": "tutup", "to": "terbit", "label": "kunci", "variant": "security" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Alur FRS ke KRS Resmi",
+      "items": [
+        "FRS aktif & dapat diubah selama rentang waktu pengisian belum di-ACC Dosen Wali",
+        "KRS merupakan dokumen sah definitif setelah di-ACC Dosen Wali atau saat masa FRS ditutup"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Integritas & Format Output",
+      "items": [
+        "Beban SKS ditentukan oleh IPS semester sebelumnya (IPS 3.86 -> Max 24 SKS)",
+        "Output resmi dapat diunduh langsung dalam format A4 PDF dan Microsoft Word (.doc)"
+      ]
+    }
+  ]
+}
