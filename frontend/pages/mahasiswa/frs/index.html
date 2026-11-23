@@ -14,7 +14,7 @@
 
   <div class="siak-app-canvas">
 
-    <!-- 1. SIDEBAR (224px) — Identical to Dashboard -->
+    <!-- 1. SIDEBAR (224px) -->
     <aside class="siak-sidebar">
       <div>
         <!-- Brand Row -->
@@ -147,15 +147,15 @@
       </div>
     </aside>
 
-    <!-- 2. MAIN LAYOUT (Topbar + Workspace) -->
+    <!-- 2. MAIN LAYOUT -->
     <div class="siak-main-layout">
 
-      <!-- TOPBAR (72px) — Identical to Dashboard -->
+      <!-- TOPBAR (72px) -->
       <header class="siak-topbar">
         <div class="topbar-breadcrumbs">
           <span class="crumb-muted">Akademik</span>
           <span class="crumb-muted">/</span>
-          <span class="crumb-active">FRS/KRS</span>
+          <span class="crumb-active" id="topbar-crumb-title">FRS/KRS</span>
         </div>
 
         <div class="topbar-right-controls">
@@ -186,10 +186,11 @@
       <main class="siak-workspace-scroll">
         <div class="workspace-inner-container">
 
+          <!-- Workspace Header -->
           <div class="workspace-header-row">
             <div class="workspace-titles">
-              <h2>FRS/KRS</h2>
-              <p>Kelola frs/krs dengan informasi yang terintegrasi</p>
+              <h2 id="page-main-heading">KRS — Kartu Rencana Studi</h2>
+              <p id="page-main-subheading">Dokumen resmi rencana studi yang telah disetujui (ACC) oleh Dosen Pembimbing Akademik</p>
             </div>
             <div class="semester-selector-box">
               <span>Ganjil 2025/2026</span>
@@ -197,24 +198,26 @@
             </div>
           </div>
 
-          <!-- Page Content (Node 4195) -->
+          <!-- Page Content Wrapper -->
           <div class="page-content-wrapper">
 
-            <!-- Registration Period Banner (Node 4196) -->
-            <div class="registration-period-banner">
+            <!-- Registration Period Banner -->
+            <div class="registration-period-banner" id="registration-banner" style="margin-bottom: 24px;">
               <div class="reg-banner-info">
-                <h3>Periode pengisian KRS dibuka</h3>
-                <p>18–29 Agustus 2025 · Maksimal 24 SKS berdasarkan IPS 3,86</p>
+                <h3 id="banner-title">Kartu Rencana Studi (KRS) Resmi Terbit</h3>
+                <p id="banner-subtitle">Telah disetujui resmi (ACC) oleh Dosen Pembimbing Akademik · Rencana studi terkunci</p>
               </div>
               <div>
-                <span class="reg-status-badge" id="reg-badge-status">Draft rencana studi</span>
+                <span class="reg-status-badge approved" id="reg-badge-status">Disetujui Dosen Wali (ACC)</span>
               </div>
             </div>
 
-            <!-- Two-Column Grid: Left (748px) & Right (364px) -->
-            <div class="frs-two-col-layout">
+            <!-- ============================================================= -->
+            <!-- 1. VIEW MODE A: FRS EDIT VIEW (Saat masih dalam rentang waktu & belum di-ACC) -->
+            <!-- ============================================================= -->
+            <div class="frs-two-col-layout" id="frs-edit-container" style="display: none;">
 
-              <!-- Left Column: Selected Courses Table (Node 4201, 748px) -->
+              <!-- Left Column: Selected Courses Table -->
               <div class="frs-courses-card">
                 <div class="courses-card-header">
                   <h4>Mata kuliah dipilih</h4>
@@ -237,17 +240,17 @@
                   </table>
                 </div>
 
-                <!-- Add Course Button (Node 4271) -->
+                <!-- Add Course Button -->
                 <a href="../matakuliah/index.html" class="btn-add-course-bar">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                   <span>Tambah mata kuliah</span>
                 </a>
               </div>
 
-              <!-- Right Column: Summary (Node 4250) + Guidance (Node 4267) (364px) -->
+              <!-- Right Column: Summary & Actions -->
               <div class="frs-side-col">
 
-                <!-- Summary Card (Node 4250) -->
+                <!-- Summary Card -->
                 <div class="frs-summary-card">
                   <h4>Ringkasan rencana studi</h4>
                   
@@ -283,40 +286,200 @@
                     <span>Prasyarat mata kuliah terpenuhi</span>
                   </div>
 
-                  <button class="btn-submit-krs" id="btn-submit-krs">
+                  <button class="btn-submit-krs" id="btn-submit-krs" onclick="submitKRS()">
                     <span>Ajukan KRS</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   </button>
-
-                  <button type="button" class="btn-print-krs-action" id="btn-pdf-krs" onclick="unduhDokumenPDF()" style="margin-top: 10px; width: 100%; padding: 10px; background: #237757; color: #FFFFFF; border: none; border-radius: 8px; font-size: 12.5px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    <span>Unduh Berkas PDF (.pdf)</span>
-                  </button>
-
-                  <button type="button" class="btn-print-krs-action" id="btn-doc-krs" onclick="unduhDokumenWord()" style="margin-top: 8px; width: 100%; padding: 10px; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 12.5px; font-weight: 600; color: #1E293B; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    <span>Unduh Berkas Word (.doc)</span>
-                  </button>
-
-                  <button type="button" class="btn-print-krs-action" id="btn-view-krs" onclick="bukaDokumenResmi()" style="margin-top: 8px; width: 100%; padding: 10px; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 12.5px; font-weight: 600; color: #1E293B; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    <span>Buka Tampilan Layar Penuh</span>
-                  </button>
-
-                  <button type="button" class="btn-print-krs-action" id="btn-print-krs" onclick="printOfficialKRS()" style="margin-top: 8px; width: 100%; padding: 10px; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 12.5px; font-weight: 600; color: #1E293B; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                    <span>Cetak ke Printer Fisik</span>
-                  </button>
                 </div>
 
-                <!-- Guidance Card (Node 4267) -->
+                <!-- Guidance Card -->
                 <div class="frs-guidance-card">
                   <h5>Sebelum mengajukan</h5>
-                  <p>Pastikan mata kuliah dan kelas sesuai rencana studi Anda. Pengajuan akan ditinjau oleh dosen PA dan Operator BAK.</p>
+                  <p>Pastikan mata kuliah dan kelas sesuai rencana studi Anda. KRS resmi akan diterbitkan setelah disetujui (ACC) oleh Dosen Pembimbing Akademik atau saat masa FRS berakhir.</p>
                   <div class="guidance-dpa-pill">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     <span>Dosen PA: Dr. Maya Lestari</span>
                   </div>
+                </div>
+
+                <!-- Simulation Panel: ACC Dosen Wali -->
+                <div class="frs-simulation-card" style="padding: 16px; background: #F0FDF4; border: 1px dashed #22C55E; border-radius: 8px;">
+                  <div style="font-size: 12px; font-weight: 700; color: #166534; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    <span>Simulasi Alur Akademik</span>
+                  </div>
+                  <p style="font-size: 11px; color: #15803D; margin-bottom: 12px; line-height: 1.4;">Klik tombol di bawah untuk menyimulasikan persetujuan (ACC) Dosen Wali, yang mengunci FRS dan menerbitkan dokumen KRS resmi:</p>
+                  <button type="button" onclick="simulateApproveDPA()" style="width: 100%; padding: 10px 12px; background: #237757; color: #FFFFFF; border: none; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Simulasikan ACC Dosen Wali & Terbitkan KRS</span>
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- ============================================================= -->
+            <!-- 2. VIEW MODE B: OFFICIAL KRS DOCUMENT VIEW (Setelah di-ACC / Masa FRS Selesai) -->
+            <!-- ============================================================= -->
+            <div class="frs-two-col-layout" id="krs-official-container">
+
+              <!-- Left Column: Official A4 Document Paper Sheet -->
+              <div class="a4-viewer-card">
+                <div class="a4-viewer-header">
+                  <div class="a4-viewer-title">Kartu Rencana Studi (KRS) Resmi · Ganjil 2025/2026</div>
+                  <div class="a4-viewer-zoom font-mono">A4 · Dokumen Resmi</div>
+                </div>
+
+                <!-- Printable Paper Sheet -->
+                <div class="a4-paper-sheet" id="printable-krs">
+                  <!-- Letterhead -->
+                  <div class="doc-letterhead">
+                    <div class="doc-brand-title">UNIVERSITAS FATMAWATI DIGITAL</div>
+                    <div class="doc-brand-subtitle">BIRO ADMINISTRASI AKADEMIK & KEMAHASISWAAN</div>
+                    <div class="doc-brand-address">Jl. Margonda Raya No. 100, Depok, Jawa Barat · Telp: (021) 786-3421 · info@ufd.ac.id</div>
+                  </div>
+
+                  <div class="doc-double-divider"></div>
+
+                  <!-- Title Block -->
+                  <div class="doc-title-block">
+                    <h3>KARTU RENCANA STUDI (KRS)</h3>
+                    <p>Semester Ganjil · Tahun Akademik 2025/2026</p>
+                  </div>
+
+                  <!-- Student Metadata Grid -->
+                  <div class="doc-student-meta-grid">
+                    <div class="doc-meta-row">
+                      <span class="doc-meta-lbl">Nama Mahasiswa</span>
+                      <span class="doc-meta-sep">:</span>
+                      <span class="doc-meta-val" id="krs-doc-name">Alya Rahma Putri</span>
+                    </div>
+                    <div class="doc-meta-row">
+                      <span class="doc-meta-lbl">Program Studi</span>
+                      <span class="doc-meta-sep">:</span>
+                      <span class="doc-meta-val" id="krs-doc-prodi">S1 Teknik Informatika</span>
+                    </div>
+                    <div class="doc-meta-row">
+                      <span class="doc-meta-lbl">Nomor Induk (NIM)</span>
+                      <span class="doc-meta-sep">:</span>
+                      <span class="doc-meta-val font-mono" id="krs-doc-nim">2023010042</span>
+                    </div>
+                    <div class="doc-meta-row">
+                      <span class="doc-meta-lbl">Fakultas</span>
+                      <span class="doc-meta-sep">:</span>
+                      <span class="doc-meta-val" id="krs-doc-fakultas">Teknologi Informasi & Desain</span>
+                    </div>
+                    <div class="doc-meta-row">
+                      <span class="doc-meta-lbl">Dosen Wali / PA</span>
+                      <span class="doc-meta-sep">:</span>
+                      <span class="doc-meta-val" id="krs-doc-dpa">Dr. Maya Lestari</span>
+                    </div>
+                    <div class="doc-meta-row">
+                      <span class="doc-meta-lbl">Status Registrasi</span>
+                      <span class="doc-meta-sep">:</span>
+                      <span class="doc-meta-val" style="color: #237757; font-weight: 700;">Disetujui Dosen Wali (ACC)</span>
+                    </div>
+                  </div>
+
+                  <!-- Course Schedule Table -->
+                  <table class="doc-krs-table">
+                    <thead>
+                      <tr>
+                        <th style="width: 30px; text-align: center;">NO</th>
+                        <th style="width: 65px; text-align: left;">KODE</th>
+                        <th style="text-align: left;">MATA KULIAH</th>
+                        <th style="width: 45px; text-align: center;">KELAS</th>
+                        <th style="width: 40px; text-align: center;">SKS</th>
+                        <th style="text-align: left;">JADWAL & RUANG</th>
+                        <th style="text-align: left;">DOSEN PENGAMPU</th>
+                      </tr>
+                    </thead>
+                    <tbody id="krs-official-tbody">
+                      <!-- Loaded dynamically via script.js -->
+                    </tbody>
+                    <tfoot>
+                      <tr style="border-top: 2px solid #CBD5E1; font-weight: 700; background: #F8FAFC;">
+                        <td colspan="4" style="padding: 8px 10px; text-align: right;">TOTAL BEBAN SKS:</td>
+                        <td id="krs-official-total-sks" style="padding: 8px 10px; text-align: center; font-family: monospace;">21 SKS</td>
+                        <td colspan="2" style="padding: 8px 10px; font-size: 10.5px; color: #237757;">Status: Terdaftar & Tervalidasi Sistem</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+
+                  <!-- Official Signature Block -->
+                  <div class="doc-signature-row">
+                    <div class="doc-sig-box">
+                      <p class="sig-place-date">Mahasiswa Yang Bersangkutan,</p>
+                      <p class="sig-role">Pemohon Studi</p>
+                      <div class="sig-qr-placeholder">
+                        <div class="qr-box">TERDAFTAR</div>
+                      </div>
+                      <p class="sig-name" id="krs-sig-student">Alya Rahma Putri</p>
+                      <p class="sig-id font-mono">NIM 2023010042</p>
+                    </div>
+
+                    <div class="doc-sig-box text-right">
+                      <p class="sig-place-date">Depok, 19 Agustus 2025</p>
+                      <p class="sig-role">Dosen Pembimbing Akademik</p>
+                      <div class="sig-qr-placeholder align-right">
+                        <div class="qr-box" style="border-color: #10B981; color: #065F46; background: #D1FAE5;">QR-VALIDATED</div>
+                      </div>
+                      <p class="sig-name" id="krs-sig-dpa">Dr. Maya Lestari</p>
+                      <p class="sig-id font-mono">NIDN 0408098201</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Right Column: Document Action Buttons & Lifecycle Status -->
+              <div class="frs-side-col">
+
+                <!-- Action Buttons Card -->
+                <div class="khs-action-card">
+                  <h4>Aksi Dokumen KRS Resmi</h4>
+                  <div class="action-buttons-vertical">
+                    <button type="button" class="btn-primary-wide" onclick="unduhDokumenPDF()" title="Unduh berkas PDF resmi (A4)">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                      <span>Unduh Berkas PDF (.pdf)</span>
+                    </button>
+                    <button type="button" class="btn-outline-wide" onclick="unduhDokumenWord()" title="Unduh berkas Microsoft Word">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                      <span>Unduh Berkas Word (.doc)</span>
+                    </button>
+                    <button type="button" class="btn-outline-wide" onclick="bukaDokumenResmi()" title="Buka tampilan layar penuh dokumen KRS">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                      <span>Buka Tampilan Layar Penuh</span>
+                    </button>
+                    <button type="button" class="btn-outline-wide" onclick="printOfficialKRS()" title="Cetak langsung ke mesin printer fisik">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                      <span>Cetak ke Printer Fisik</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Guidance & Status Card -->
+                <div class="frs-guidance-card">
+                  <h5>Status Registrasi KRS</h5>
+                  <p>Masa pengisian FRS telah ditutup dan rencana studi Anda telah resmi disetujui (di-ACC) oleh Dosen Wali. Jadwal perkuliahan telah terbit di sistem PDDikti.</p>
+                  <div class="guidance-dpa-pill">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#237757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span>Status: Terkunci & Sah</span>
+                  </div>
+                </div>
+
+                <!-- Simulation Panel: Reopen FRS Mode -->
+                <div class="frs-simulation-card" style="padding: 16px; background: #F8FAFC; border: 1px dashed #94A3B8; border-radius: 8px;">
+                  <div style="font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><polyline points="3 3 3 8 8 8"/></svg>
+                    <span>Uji Coba: Masa FRS</span>
+                  </div>
+                  <p style="font-size: 11px; color: #64748B; margin-bottom: 12px; line-height: 1.4;">Ingin mencoba mode pengisian FRS kembali (tambah/hapus mata kuliah)?</p>
+                  <button type="button" onclick="simulateReopenFRS()" style="width: 100%; padding: 10px 12px; background: #FFFFFF; border: 1px solid #CBD5E1; color: #334155; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    <span>Buka Kembali Masa FRS (Mode Edit)</span>
+                  </button>
                 </div>
 
               </div>
@@ -327,81 +490,15 @@
 
           <!-- Bottom Meta -->
           <div class="workspace-footer-meta">
-            <span class="meta-item">Tahun akademik 2025/2026</span>
+            <span class="meta-item">Tahun akademik 2025/2026 Ganjil</span>
             <span class="meta-separator">·</span>
-            <span class="meta-item">Terakhir diperbarui · 18 Agustus 2025, 08.30 WIB</span>
+            <span class="meta-item" id="footer-update-time">Terakhir diperbarui · 19 Agustus 2025, 10.15 WIB</span>
           </div>
 
         </div>
       </main>
     </div>
 
-  </div>
-
-  <!-- OFFICIAL PRINTABLE KRS SHEET (Displayed during Print) -->
-  <div id="printable-krs" style="display: none;">
-    <div class="a4-paper-sheet" style="max-width: 800px; margin: 0 auto; background: #FFFFFF; padding: 24px; font-family: Inter, sans-serif; color: #1E293B;">
-      <!-- Letterhead -->
-      <div style="text-align: center; margin-bottom: 12px;">
-        <div style="font-size: 15px; font-weight: 800; letter-spacing: 0.5px; color: #0F172A;">UNIVERSITAS FATMAWATI DIGITAL</div>
-        <div style="font-size: 12px; font-weight: 600; color: #237757; margin-top: 2px;">BIRO ADMINISTRASI AKADEMIK & KEMAHASISWAAN</div>
-        <div style="font-size: 10px; color: #64748B; margin-top: 2px;">Jl. Margonda Raya No. 100, Depok, Jawa Barat · Telp: (021) 786-3421 · info@ufd.ac.id</div>
-        <div style="height: 3px; border-top: 2px solid #0F172A; border-bottom: 1px solid #0F172A; margin-top: 8px;"></div>
-      </div>
-      <!-- Title -->
-      <div style="text-align: center; margin: 16px 0;">
-        <h3 style="font-size: 14px; font-weight: 800; margin: 0; color: #0F172A;">KARTU RENCANA STUDI (KRS)</h3>
-        <p style="font-size: 11px; color: #64748B; margin: 4px 0 0 0;">Semester Ganjil · Tahun Akademik 2025/2026</p>
-      </div>
-      <!-- Meta -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 11.5px; margin-bottom: 16px; padding: 10px; background: #F8FAFC; border-radius: 6px;">
-        <div><strong>Nama Mahasiswa:</strong> <span id="krs-meta-name">Alya Rahma Putri</span></div>
-        <div><strong>Program Studi:</strong> <span id="krs-meta-prodi">S1 Teknik Informatika</span></div>
-        <div><strong>NIM:</strong> <span id="krs-meta-nim" style="font-family: monospace;">2023010042</span></div>
-        <div><strong>Dosen PA:</strong> <span id="krs-meta-dpa">Dr. Maya Lestari</span></div>
-      </div>
-      <!-- Table -->
-      <table style="width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 16px;">
-        <thead>
-          <tr style="background: #F1F5F9; border-top: 1px solid #CBD5E1; border-bottom: 1px solid #CBD5E1;">
-            <th style="padding: 6px 8px; text-align: center; width: 30px;">NO</th>
-            <th style="padding: 6px 8px; text-align: left; width: 65px;">KODE</th>
-            <th style="padding: 6px 8px; text-align: left;">MATA KULIAH</th>
-            <th style="padding: 6px 8px; text-align: center; width: 40px;">KELAS</th>
-            <th style="padding: 6px 8px; text-align: center; width: 35px;">SKS</th>
-            <th style="padding: 6px 8px; text-align: left;">JADWAL & RUANG</th>
-            <th style="padding: 6px 8px; text-align: left;">DOSEN PENGAMPU</th>
-          </tr>
-        </thead>
-        <tbody id="krs-print-tbody">
-          <!-- Dynamically populated -->
-        </tbody>
-        <tfoot>
-          <tr style="border-top: 2px solid #CBD5E1; font-weight: 700; background: #F8FAFC;">
-            <td colspan="4" style="padding: 8px; text-align: right;">TOTAL BEBAN SKS:</td>
-            <td id="krs-print-total-sks" style="padding: 8px; text-align: center; font-family: monospace;">21 SKS</td>
-            <td colspan="2" style="padding: 8px; font-size: 10.5px; color: #237757;">Status: Disetujui Dosen Pembimbing Akademik</td>
-          </tr>
-        </tfoot>
-      </table>
-      <!-- Signatures -->
-      <div style="display: flex; justify-content: space-between; margin-top: 24px; font-size: 11px;">
-        <div style="text-align: center; width: 220px;">
-          <p style="margin: 0;">Mahasiswa Yang Bersangkutan,</p>
-          <div style="height: 60px;"></div>
-          <p style="margin: 0; font-weight: 700; text-decoration: underline;" id="krs-sig-student">Alya Rahma Putri</p>
-          <p style="margin: 2px 0 0 0; font-family: monospace; font-size: 10px;">NIM 2023010042</p>
-        </div>
-        <div style="text-align: center; width: 220px;">
-          <p style="margin: 0;">Bandung, 18 Agustus 2025<br>Dosen Pembimbing Akademik,</p>
-          <div style="height: 60px; display: flex; align-items: center; justify-content: center;">
-            <div style="border: 1px solid #10B981; color: #065F46; background: #D1FAE5; padding: 4px 8px; border-radius: 4px; font-size: 9px; font-weight: 700;">QR-VALIDATED</div>
-          </div>
-          <p style="margin: 0; font-weight: 700; text-decoration: underline;">Dr. Maya Lestari</p>
-          <p style="margin: 2px 0 0 0; font-family: monospace; font-size: 10px;">NIDN 0408098201</p>
-        </div>
-      </div>
-    </div>
   </div>
 
   <script src="../../../js/siak-storage.js"></script>

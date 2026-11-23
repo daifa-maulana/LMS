@@ -10,6 +10,11 @@ const SIAK_STORAGE_KEY = 'SIAK_UFD_LOCAL_STATE_V1';
 const SIAK_INITIAL_TEST_DATA = {
   activeSemester: '2024/2025 Genap',
   nextSemester: '2025/2026 Ganjil',
+  frs_period: {
+    nama_periode: 'Pengisian & Perubahan FRS Ganjil 2025/2026',
+    rentang_waktu: '18–29 Agustus 2025',
+    is_open: true
+  },
   students: [
     {
       nim: '2023010042',
@@ -237,8 +242,10 @@ const SIAK_INITIAL_TEST_DATA = {
     {
       nim: '2023010042',
       semester: '2025/2026 Ganjil',
-      status: 'submitted', // 'draft' | 'submitted'
+      status: 'approved', // 'draft' | 'submitted' | 'approved' (approved = resmi terbit menjadi KRS)
+      approved_at: '19 Agustus 2025, 10:15 WIB',
       dosen_pa: 'Dr. Maya Lestari',
+      dosen_pa_nidn: '0408098201',
       courses: [
         { id: 'TI3501', kode: 'TI3501', matkul: 'Sistem Basis Data Terdistribusi', dosen: 'Dr. Aditya Pratama', kelas: 'TI-5A', sks: 3, hari: 'Senin', jam: '08.00 - 09.40', ruang: 'Lab 02 Komputer' },
         { id: 'TI3502', kode: 'TI3502', matkul: 'Jaringan Komputer & Cloud Infrastructure', dosen: 'Rina Anggraini, M.Kom.', kelas: 'TI-5A', sks: 3, hari: 'Selasa', jam: '10.00 - 11.40', ruang: 'Lab 01 RPL' },
@@ -334,6 +341,23 @@ const SIAK_INITIAL_TEST_DATA = {
   ]
 };
 
+let _memStore = {};
+const _storageAdapter = {
+  getItem: (key) => {
+    if (typeof localStorage !== 'undefined') {
+      return localStorage.getItem(key);
+    }
+    return _memStore[key] || null;
+  },
+  setItem: (key, val) => {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(key, val);
+    } else {
+      _memStore[key] = val;
+    }
+  }
+};
+
 class SiakStorageEngine {
   constructor() {
     this.init();
@@ -341,18 +365,18 @@ class SiakStorageEngine {
 
   init() {
     try {
-      const raw = localStorage.getItem(SIAK_STORAGE_KEY);
+      const raw = _storageAdapter.getItem(SIAK_STORAGE_KEY);
       if (!raw) {
         this.save(SIAK_INITIAL_TEST_DATA);
       }
     } catch (e) {
-      console.warn('[SiakStorage] LocalStorage unavailable:', e);
+      console.warn('[SiakStorage] Storage unavailable:', e);
     }
   }
 
   get() {
     try {
-      const raw = localStorage.getItem(SIAK_STORAGE_KEY);
+      const raw = _storageAdapter.getItem(SIAK_STORAGE_KEY);
       return raw ? JSON.parse(raw) : SIAK_INITIAL_TEST_DATA;
     } catch (e) {
       return SIAK_INITIAL_TEST_DATA;
@@ -361,7 +385,7 @@ class SiakStorageEngine {
 
   save(data) {
     try {
-      localStorage.setItem(SIAK_STORAGE_KEY, JSON.stringify(data));
+      _storageAdapter.setItem(SIAK_STORAGE_KEY, JSON.stringify(data));
     } catch (e) {
       console.error('[SiakStorage] Save error:', e);
     }
@@ -476,7 +500,71 @@ class SiakStorageEngine {
     };
   }
 
-  // 3. FRS / KRS Online Engine
+  // 3. FRS / KRS Online Engine & Lifecycle
+  getFRSPeriod() {
+    const data = this.get();
+    if (!data.frs_period) {
+      data.frs_period = {
+        nama_periode: 'Pengisian & Perubahan FRS Ganjil 2025/2026',
+        rentang_waktu: '18–29 Agustus 2025',
+        is_open: true
+      };
+      this.save(data);
+    }
+    return data.frs_period;
+  }
+
+  setFRSPeriodOpen(isOpen) {
+    const data = this.get();
+    if (!data.frs_period) {
+      data.frs_period = {
+        nama_periode: 'Pengisian & Perubahan FRS Ganjil 2025/2026',
+        rentang_waktu: '18–29 Agustus 2025',
+        is_open: true
+      };
+    }
+    data.frs_period.is_open = !!isOpen;
+    this.save(data);
+    return data.frs_period;
+  }
+
+  isKRSOfficial(nim) {
+    const frs = this.getStudentFRS(nim);
+    const period = this.getFRSPeriod();
+    // KRS resmi terbit jika:
+    // 1. FRS telah disetujui (ACC) oleh Dosen PA ('approved'), ATAU
+    // 2. Masa pengisian FRS telah ditutup (!is_open)
+    return frs.status === 'approved' || period.is_open === false;
+  }
+
+  approveStudentFRS(nim) {
+    const data = this.get();
+    if (!data.frs) data.frs = [];
+    let userFrs = data.frs.find(f => f.nim === nim);
+    if (!userFrs) {
+      userFrs = { nim, status: 'approved', courses: [] };
+      data.frs.push(userFrs);
+    }
+    userFrs.status = 'approved';
+    userFrs.approved_at = '19 Agustus 2025, 10:15 WIB';
+    userFrs.dosen_pa = userFrs.dosen_pa || 'Dr. Maya Lestari';
+    userFrs.dosen_pa_nidn = userFrs.dosen_pa_nidn || '0408098201';
+    this.save(data);
+    return userFrs;
+  }
+
+  reopenStudentFRS(nim) {
+    const data = this.get();
+    if (!data.frs) data.frs = [];
+    let userFrs = data.frs.find(f => f.nim === nim);
+    if (userFrs) {
+      userFrs.status = 'draft';
+      delete userFrs.approved_at;
+      this.save(data);
+    }
+    return userFrs;
+  }
+
   getStudentFRS(nim) {
     const data = this.get();
     let userFrs = data.frs ? data.frs.find(f => f.nim === nim) : null;
@@ -484,8 +572,10 @@ class SiakStorageEngine {
       userFrs = {
         nim,
         semester: data.nextSemester || '2025/2026 Ganjil',
-        status: 'submitted',
+        status: 'approved',
+        approved_at: '19 Agustus 2025, 10:15 WIB',
         dosen_pa: 'Dr. Maya Lestari',
+        dosen_pa_nidn: '0408098201',
         courses: (data.frs && data.frs[0]) ? data.frs[0].courses : []
       };
       if (!data.frs) data.frs = [];
@@ -597,4 +687,9 @@ class SiakStorageEngine {
 }
 
 // Global Singleton
-window.siakStorage = new SiakStorageEngine();
+if (typeof window !== 'undefined') {
+  window.siakStorage = new SiakStorageEngine();
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { SiakStorageEngine, SIAK_INITIAL_TEST_DATA };
+}

@@ -276,9 +276,56 @@ test('Document Service: Generates valid KHS summary and 16-char SHA-256 verifica
 });
 
 // -----------------------------------------------------------------------------
-// 8. FRONTEND SYNTAX & INTEGRITY CHECK
+// 8. FRS VS KRS LIFECYCLE RULES (Masa FRS vs KRS Resmi Hasil ACC Dosen Wali)
 // -----------------------------------------------------------------------------
-console.log('\n📌 8. Checking Frontend JavaScript Files Syntax:');
+console.log('\n📌 8. Testing FRS vs KRS Lifecycle & DPA Approval:');
+const { SiakStorageEngine, SIAK_INITIAL_TEST_DATA } = require('../frontend/js/siak-storage');
+
+test('FRS/KRS Lifecycle: Initial test data contains frs_period and approved KRS', () => {
+  const engine = new SiakStorageEngine();
+  const period = engine.getFRSPeriod();
+  assert.strictEqual(typeof period.is_open, 'boolean');
+  assert.ok(period.rentang_waktu.includes('Agustus 2025'));
+  
+  const isOfficial = engine.isKRSOfficial('2023010042');
+  assert.strictEqual(isOfficial, true, 'Default Alya should have official KRS output');
+});
+
+test('FRS/KRS Lifecycle: When student FRS is reopened (draft), isKRSOfficial returns false if period is open', () => {
+  const engine = new SiakStorageEngine();
+  engine.setFRSPeriodOpen(true);
+  engine.reopenStudentFRS('2023010042');
+  
+  const frs = engine.getStudentFRS('2023010042');
+  assert.strictEqual(frs.status, 'draft');
+  assert.strictEqual(engine.isKRSOfficial('2023010042'), false, 'Draft in open period should be in FRS edit mode');
+});
+
+test('FRS/KRS Lifecycle: When Dosen Wali ACCs (approves) FRS, isKRSOfficial becomes true and produces official KRS', () => {
+  const engine = new SiakStorageEngine();
+  engine.approveStudentFRS('2023010042');
+  
+  const frs = engine.getStudentFRS('2023010042');
+  assert.strictEqual(frs.status, 'approved');
+  assert.strictEqual(engine.isKRSOfficial('2023010042'), true, 'Approved FRS must transition to official KRS');
+});
+
+test('FRS/KRS Lifecycle: Even if draft, when FRS period closes (!is_open), isKRSOfficial becomes true (locked)', () => {
+  const engine = new SiakStorageEngine();
+  engine.reopenStudentFRS('2023010042');
+  engine.setFRSPeriodOpen(false); // Period closed
+  
+  assert.strictEqual(engine.isKRSOfficial('2023010042'), true, 'Closed period must lock into official KRS view');
+  
+  // Revert back to approved & open period for production default
+  engine.setFRSPeriodOpen(true);
+  engine.approveStudentFRS('2023010042');
+});
+
+// -----------------------------------------------------------------------------
+// 9. FRONTEND SYNTAX & INTEGRITY CHECK
+// -----------------------------------------------------------------------------
+console.log('\n📌 9. Checking Frontend JavaScript Files Syntax:');
 const frontendJsFiles = [
   'frontend/js/api-client.js',
   'frontend/js/data.js',

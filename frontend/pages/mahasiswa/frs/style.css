@@ -48,6 +48,12 @@
   border-color: #FCD34D;
 }
 
+.reg-status-badge.approved {
+  background-color: #D1FAE5;
+  color: #065F46;
+  border-color: #10B981;
+}
+
 /* ==========================================================================
    5. TWO COLUMN FRS LAYOUT (748px / 364px) — Node 4201 & 4250
    ========================================================================== */
@@ -118,34 +124,32 @@
 
 .class-badge {
   display: inline-block;
-  padding: 2px 8px;
-  background-color: #F1F5F9;
+  padding: 3px 8px;
   border-radius: var(--radius-sm);
+  background-color: #F1F5F9;
   font-size: 11.5px;
   font-weight: 600;
   color: #475569;
 }
 
 .sks-tag {
-  display: inline-block;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--text-dark);
 }
 
 .btn-remove-course {
-  background: none;
   border: none;
-  color: #EF4444;
+  background: none;
+  color: #DC2626;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   padding: 4px 8px;
   border-radius: var(--radius-sm);
-  transition: var(--transition);
 }
 
 .btn-remove-course:hover {
-  background-color: #FEE2E2;
+  background-color: #FEF2F2;
 }
 
 .btn-add-course-bar {
@@ -154,28 +158,28 @@
   justify-content: center;
   gap: 8px;
   width: 100%;
+  padding: 12px;
   margin-top: 16px;
-  padding: 11px;
-  background-color: #F8FAFC;
-  border: 1px dashed var(--border-subtle);
+  border: 1px dashed var(--primary-border);
   border-radius: var(--radius-md);
-  font-size: 12.5px;
-  font-weight: 600;
   color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  background-color: var(--primary-light);
   text-decoration: none;
-  transition: var(--transition);
+  transition: all 0.2s ease;
 }
 
 .btn-add-course-bar:hover {
-  background-color: var(--primary-light);
-  border-color: var(--primary-border);
+  background-color: #DEEFE7;
+  border-color: var(--primary);
 }
 
-/* RIGHT COLUMN SUMMARY CARD */
+/* SIDE COLUMN: SUMMARY & GUIDANCE (364px) */
 .frs-side-col {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .frs-summary-card {
@@ -187,7 +191,7 @@
 }
 
 .frs-summary-card h4 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 16px;
@@ -195,11 +199,10 @@
 
 .summary-item-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
-  font-size: 12.5px;
-  border-bottom: 1px dashed #F1F5F9;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 12px;
 }
 
 .summary-label {
@@ -222,40 +225,40 @@
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: var(--text-dark);
+  color: #475569;
   margin-bottom: 10px;
 }
 
 .btn-submit-krs {
-  width: 100%;
-  margin-top: 16px;
-  padding: 12px;
-  background-color: var(--primary);
-  color: #FFFFFF;
-  border: none;
-  border-radius: var(--radius-md);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: var(--transition);
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--primary);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .btn-submit-krs:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--primary-dark);
 }
 
 .btn-submit-krs.submitted {
-  background-color: #EF4444;
-}
-.btn-submit-krs.submitted:hover {
-  background-color: #DC2626;
+  background-color: #F59E0B;
 }
 
-/* GUIDANCE CARD */
+.btn-submit-krs.submitted:hover {
+  background-color: #D97706;
+}
+
 .frs-guidance-card {
   background-color: #FFFFFF;
   border: 1px solid var(--border-subtle);
@@ -265,7 +268,7 @@
 }
 
 .frs-guidance-card h5 {
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 6px;
@@ -275,29 +278,288 @@
   font-size: 12px;
   color: var(--text-muted);
   line-height: 1.5;
-  margin-bottom: 12px;
 }
 
 .guidance-dpa-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
-  background-color: var(--primary-light);
-  border: 1px solid var(--primary-border);
-  border-radius: var(--radius-pill);
+  margin-top: 12px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-subtle);
   font-size: 11.5px;
   font-weight: 600;
-  color: var(--primary);
+  color: #475569;
 }
 
-.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-.font-bold { font-weight: 700; }
-.text-primary { color: var(--primary); }
-.text-muted { color: var(--text-muted); }
+/* ==========================================================================
+   6. OFFICIAL KRS A4 DOCUMENT STYLES (Identical to KHS standard)
+   ========================================================================== */
+.a4-viewer-card {
+  background-color: #E2E8F0;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.a4-viewer-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.a4-paper-sheet {
+  width: 100%;
+  max-width: 660px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 36px 32px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-letterhead {
+  text-align: center;
+}
+
+.doc-brand-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: 0.5px;
+}
+
+.doc-brand-subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  margin-top: 2px;
+}
+
+.doc-brand-address {
+  font-size: 9.5px;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+.doc-double-divider {
+  border-top: 2px solid #0F172A;
+  border-bottom: 1px solid #0F172A;
+  height: 4px;
+  margin: 12px 0 16px;
+}
+
+.doc-title-block {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.doc-title-block h3 {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #0F172A;
+}
+
+.doc-title-block p {
+  font-size: 11px;
+  color: #475569;
+  margin-top: 2px;
+}
+
+.doc-student-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  margin-bottom: 16px;
+  font-size: 11.5px;
+}
+
+.doc-meta-row {
+  display: flex;
+  align-items: center;
+}
+
+.doc-meta-lbl {
+  width: 110px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.doc-meta-sep {
+  margin-right: 6px;
+  color: #94A3B8;
+}
+
+.doc-meta-val {
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.doc-krs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-bottom: 16px;
+}
+
+.doc-krs-table th {
+  background-color: #F8FAFC;
+  padding: 8px 10px;
+  font-weight: 700;
+  color: #334155;
+  border-top: 1px solid #CBD5E1;
+  border-bottom: 1px solid #CBD5E1;
+}
+
+.doc-krs-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #E2E8F0;
+  color: #1E293B;
+}
+
+.doc-signature-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+}
+
+.doc-sig-box {
+  width: 220px;
+}
+
+.doc-sig-box.text-right {
+  text-align: right;
+}
+
+.sig-place-date {
+  font-size: 10.5px;
+  color: #475569;
+  margin-bottom: 2px;
+}
+
+.sig-role {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 12px;
+}
+
+.sig-qr-placeholder {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sig-qr-placeholder.align-right {
+  justify-content: flex-end;
+}
+
+.qr-box {
+  border: 1px dashed var(--primary);
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.sig-name {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0F172A;
+  text-decoration: underline;
+}
+
+.sig-id {
+  font-size: 10px;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+/* ACTION BUTTONS (Right Column) */
+.khs-action-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.khs-action-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.action-buttons-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-primary-wide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-wide:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-outline-wide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #FFFFFF;
+  color: #1E293B;
+  border: 1px solid #D1D5DB;
+  border-radius: var(--radius-md);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-wide:hover {
+  background-color: #F8FAFC;
+  border-color: #94A3B8;
+}
 
 /* ==========================================================================
-   6. FOOTER META
+   7. FOOTER META
    ========================================================================== */
 .workspace-footer-meta {
   display: flex;
@@ -310,7 +572,7 @@
 }
 
 /* ==========================================================================
-   7. OFFICIAL KRS PRINT STYLING (@media print)
+   8. OFFICIAL KRS PRINT STYLING (@media print)
    ========================================================================== */
 @media print {
   @page {
@@ -329,7 +591,10 @@
   .siak-topbar,
   .workspace-header-row,
   .registration-period-banner,
-  .frs-two-col-layout,
+  .khs-action-card,
+  .frs-side-col,
+  .frs-simulation-card,
+  .a4-viewer-header,
   .workspace-footer-meta,
   #toast-alert {
     display: none !important;
@@ -337,7 +602,9 @@
   .siak-app-canvas,
   .siak-main-layout,
   .siak-workspace-scroll,
-  .workspace-inner-container {
+  .workspace-inner-container,
+  .frs-two-col-layout,
+  .a4-viewer-card {
     display: block !important;
     width: 100% !important;
     margin: 0 !important;
@@ -346,11 +613,12 @@
     box-shadow: none !important;
     background: transparent !important;
   }
-  #printable-krs {
+  .a4-paper-sheet {
     display: block !important;
     width: 100% !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    box-shadow: none !important;
   }
 }
-
